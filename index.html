@@ -3,505 +3,514 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio · BTS SIO SLAM</title>
+  <title>Portfolio · Prénom NOM · BTS SIO SLAM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:       #111114;
-      --surface:  #16161a;
-      --card:     #1c1c21;
-      --line:     #26262f;
-      --line2:    #33333f;
-      --blue:     #3b82f6;
-      --blue-dim: rgba(59,130,246,.12);
-      --blue-bd:  rgba(59,130,246,.22);
-      --text:     #e2e2e8;
-      --sub:      #a0a0b0;
-      --muted:    #52525f;
-      --inter:    'Inter', sans-serif;
+      --bg:       #0b0b0f;
+      --s1:       #0f0f14;
+      --s2:       #141419;
+      --card:     #1a1a22;
+      --card2:    #1f1f28;
+      --line:     #252530;
+      --line2:    #2f2f3e;
+      --accent:   #7c6ff7;
+      --accent2:  #a89cff;
+      --a-glow:   rgba(124,111,247,.15);
+      --a-bd:     rgba(124,111,247,.25);
+      --green:    #22c55e;
+      --text:     #eeeef5;
+      --sub:      #9292a8;
+      --muted:    #4e4e62;
+      --sans:     'Plus Jakarta Sans', sans-serif;
       --mono:     'JetBrains Mono', monospace;
     }
-
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { background:var(--bg); color:var(--text); font-family:var(--inter); font-size:15px; line-height:1.6; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+    body { background:var(--bg); color:var(--text); font-family:var(--sans); overflow-x:hidden; -webkit-font-smoothing:antialiased; }
 
-    /* ─── NAV ─────────────────────────────── */
+    /* ── NAV ─────────────────────────────── */
     nav {
-      position:fixed; top:0; left:0; right:0; z-index:100;
-      height:60px;
-      display:flex; align-items:center; justify-content:space-between;
-      padding:0 2.5rem;
-      background:rgba(17,17,20,.92);
-      backdrop-filter:blur(12px);
+      position:fixed; top:0; left:0; right:0; z-index:300;
+      height:62px; display:flex; align-items:center; justify-content:space-between;
+      padding:0 3rem;
+      background:rgba(11,11,15,.88); backdrop-filter:blur(20px) saturate(180%);
       border-bottom:1px solid var(--line);
     }
-    .logo {
-      font-family:var(--mono);
-      font-size:.8rem;
-      color:var(--blue);
-      letter-spacing:.04em;
-    }
-    .nav-links { display:flex; gap:2rem; list-style:none; }
+    .logo { font-size:.9rem; font-weight:700; color:var(--text); letter-spacing:-.01em; }
+    .logo em { font-style:normal; color:var(--accent2); }
+    .nav-links { display:flex; gap:1.75rem; list-style:none; align-items:center; }
     .nav-links a {
-      font-size:.78rem;
-      font-weight:500;
-      color:var(--muted);
-      text-decoration:none;
-      letter-spacing:.02em;
-      transition:color .18s;
+      font-size:.8rem; font-weight:500; color:var(--muted);
+      text-decoration:none; transition:color .18s;
     }
-    .nav-links a:hover, .nav-links a.active { color:var(--text); }
+    .nav-links a:hover, .nav-links a.on { color:var(--text); }
+    .nav-cta {
+      font-size:.78rem; font-weight:600;
+      background:var(--accent); color:#fff;
+      padding:.4rem 1rem; border-radius:7px;
+      text-decoration:none; transition:all .18s;
+    }
+    .nav-cta:hover { background:#6a5ee0; }
 
-    /* ─── LAYOUT HELPERS ─────────────────── */
-    .wrap { max-width:1080px; margin:0 auto; padding:0 2.5rem; }
-    section { border-top:1px solid var(--line); }
-
-    /* ─── HERO ───────────────────────────── */
+    /* ── HERO ────────────────────────────── */
     #hero {
       min-height:100vh;
-      padding:120px 2.5rem 80px;
-      max-width:1080px;
-      margin:0 auto;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      border-top:none;
+      display:flex; align-items:center;
+      padding:80px 3rem 0;
+      max-width:1140px; margin:0 auto;
+      gap:5rem;
     }
+    .hero-left { flex:1; }
+    .hero-right { flex-shrink:0; }
 
-    .hero-badge {
-      display:inline-flex; align-items:center; gap:.5rem;
-      font-family:var(--mono);
-      font-size:.72rem;
-      color:var(--blue);
-      border:1px solid var(--blue-bd);
-      background:var(--blue-dim);
-      padding:.35rem .8rem;
-      border-radius:4px;
-      margin-bottom:2.5rem;
-      width:fit-content;
-      opacity:0; animation:fade .6s ease .1s forwards;
+    .hero-status {
+      display:inline-flex; align-items:center; gap:.55rem;
+      font-size:.75rem; font-weight:600;
+      color:var(--green);
+      background:rgba(34,197,94,.08);
+      border:1px solid rgba(34,197,94,.2);
+      padding:.3rem .85rem; border-radius:100px;
+      margin-bottom:1.75rem;
     }
-    .hero-badge::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--blue); animation:blink 2s ease infinite; }
+    .hero-status::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--green); animation:blink 2s ease infinite; }
 
     .hero-name {
-      font-size:clamp(2.8rem, 6vw, 5rem);
-      font-weight:600;
-      letter-spacing:-.03em;
-      line-height:1.05;
-      color:#fff;
-      margin-bottom:1.25rem;
-      opacity:0; animation:fade .6s ease .25s forwards;
+      font-size:clamp(2.6rem,5.5vw,4.5rem);
+      font-weight:800; letter-spacing:-.035em; line-height:1.07;
+      color:#fff; margin-bottom:.75rem;
+      opacity:0; animation:up .55s ease .1s forwards;
     }
-    .hero-role {
-      font-size:clamp(1rem, 2vw, 1.2rem);
-      font-weight:400;
-      color:var(--sub);
-      margin-bottom:2rem;
-      opacity:0; animation:fade .6s ease .35s forwards;
+    .hero-name .hi { color:var(--accent2); }
+
+    .hero-title {
+      font-size:1.1rem; font-weight:400; color:var(--sub);
+      margin-bottom:1.5rem; line-height:1.5;
+      opacity:0; animation:up .55s ease .2s forwards;
     }
-    .hero-role span { color:var(--blue); }
+    .hero-title strong { color:var(--text); font-weight:600; }
 
     .hero-desc {
-      font-size:.9rem;
-      color:var(--sub);
-      max-width:520px;
-      line-height:1.8;
-      margin-bottom:3rem;
-      opacity:0; animation:fade .6s ease .45s forwards;
+      font-size:.9rem; color:var(--sub); line-height:1.8; max-width:480px;
+      margin-bottom:2.25rem;
+      opacity:0; animation:up .55s ease .3s forwards;
     }
 
-    .hero-actions {
-      display:flex; gap:.75rem; flex-wrap:wrap;
-      opacity:0; animation:fade .6s ease .55s forwards;
+    .hero-btns {
+      display:flex; gap:.65rem; flex-wrap:wrap;
+      opacity:0; animation:up .55s ease .4s forwards;
     }
-
     .btn {
       display:inline-flex; align-items:center; gap:.45rem;
-      padding:.6rem 1.25rem;
-      font-family:var(--inter);
-      font-size:.82rem;
-      font-weight:500;
-      text-decoration:none;
-      border-radius:6px;
-      transition:all .18s;
-      cursor:pointer;
-      border:none;
+      padding:.65rem 1.35rem; font-size:.85rem; font-weight:600;
+      text-decoration:none; border-radius:9px; transition:all .18s; border:none; cursor:pointer;
     }
-    .btn-primary {
-      background:var(--blue);
-      color:#fff;
-    }
-    .btn-primary:hover { background:#2563eb; transform:translateY(-1px); }
-    .btn-ghost {
-      background:transparent;
-      color:var(--sub);
+    .btn-p { background:var(--accent); color:#fff; }
+    .btn-p:hover { background:#6a5ee0; transform:translateY(-1px); box-shadow:0 8px 25px rgba(124,111,247,.35); }
+    .btn-s { background:var(--card); color:var(--sub); border:1px solid var(--line2); }
+    .btn-s:hover { color:var(--text); border-color:var(--muted); transform:translateY(-1px); }
+
+    /* avatar placeholder */
+    .avatar-wrap {
+      width:260px; height:260px; border-radius:24px;
+      background:linear-gradient(135deg, var(--card) 0%, var(--card2) 100%);
       border:1px solid var(--line2);
+      display:flex; align-items:center; justify-content:center;
+      font-size:5rem; color:var(--muted);
+      position:relative; overflow:hidden;
+      opacity:0; animation:up .6s ease .5s forwards;
     }
-    .btn-ghost:hover { color:var(--text); border-color:var(--muted); transform:translateY(-1px); }
+    .avatar-wrap::after {
+      content:'';
+      position:absolute; inset:0;
+      background:linear-gradient(135deg, rgba(124,111,247,.08) 0%, transparent 60%);
+    }
+    .avatar-badge {
+      position:absolute; bottom:12px; left:12px; right:12px;
+      background:rgba(11,11,15,.85); backdrop-filter:blur(10px);
+      border:1px solid var(--line2); border-radius:10px;
+      padding:.6rem .9rem; display:flex; align-items:center; gap:.6rem; z-index:1;
+    }
+    .avatar-badge-dot { width:8px; height:8px; border-radius:50%; background:var(--green); animation:blink 2s ease infinite; }
+    .avatar-badge-txt { font-size:.72rem; font-weight:600; color:var(--text); }
+    .avatar-badge-sub { font-size:.65rem; color:var(--sub); }
 
     .hero-stats {
-      display:flex; gap:3rem; margin-top:4rem; padding-top:2.5rem;
+      display:flex; gap:2.5rem;
+      margin-top:3.5rem; padding-top:2.25rem;
       border-top:1px solid var(--line);
-      opacity:0; animation:fade .6s ease .7s forwards;
+      opacity:0; animation:up .55s ease .55s forwards;
     }
-    .stat-val {
-      font-size:1.6rem;
-      font-weight:600;
-      color:#fff;
-      letter-spacing:-.02em;
-    }
-    .stat-val span { color:var(--blue); }
-    .stat-label {
-      font-size:.75rem;
-      color:var(--muted);
-      margin-top:.15rem;
-    }
+    .stat-n { font-size:1.75rem; font-weight:800; color:#fff; letter-spacing:-.03em; }
+    .stat-n em { font-style:normal; color:var(--accent2); }
+    .stat-l { font-size:.74rem; color:var(--muted); margin-top:.15rem; }
 
-    /* ─── SECTION HEADER ─────────────────── */
-    .sec-header { padding:5rem 0 3rem; }
-    .sec-tag {
-      font-family:var(--mono);
-      font-size:.7rem;
-      color:var(--blue);
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      margin-bottom:.6rem;
+    /* ── SHARED ──────────────────────────── */
+    .section-wrap { max-width:1140px; margin:0 auto; padding:0 3rem; }
+    .section-pad { padding:6rem 0; }
+    .s-eyebrow {
+      display:inline-flex; align-items:center; gap:.5rem;
+      font-family:var(--mono); font-size:.68rem; font-weight:500;
+      color:var(--accent2); letter-spacing:.1em; text-transform:uppercase;
+      margin-bottom:.8rem;
     }
-    .sec-title {
-      font-size:1.6rem;
-      font-weight:600;
-      letter-spacing:-.02em;
-      color:#fff;
-    }
+    .s-eyebrow::before { content:''; width:20px; height:1px; background:var(--accent2); }
+    .s-title { font-size:clamp(1.6rem,3vw,2.1rem); font-weight:800; letter-spacing:-.025em; color:#fff; margin-bottom:2.5rem; }
 
-    /* ─── ABOUT ──────────────────────────── */
-    #about { padding-bottom:5rem; }
+    .r { opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+    .r.on { opacity:1; transform:none; }
+    .d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s} .d4{transition-delay:.32s} .d5{transition-delay:.4s}
+
+    /* ── ABOUT / PARCOURS ────────────────── */
+    #about { background:var(--s1); border-top:1px solid var(--line); }
+
     .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; }
+
     .about-text { font-size:.88rem; color:var(--sub); line-height:1.85; }
-    .about-text p + p { margin-top:1rem; }
-    .about-text strong { color:var(--text); font-weight:500; }
+    .about-text p+p { margin-top:1rem; }
+    .about-text strong { color:var(--text); font-weight:600; }
 
-    .skills-section { display:flex; flex-direction:column; gap:1.5rem; }
-    .skill-group {}
-    .skill-group-label {
-      font-family:var(--mono);
-      font-size:.68rem;
-      color:var(--muted);
-      letter-spacing:.1em;
-      text-transform:uppercase;
-      margin-bottom:.6rem;
-    }
-    .skill-pills { display:flex; flex-wrap:wrap; gap:.4rem; }
-    .pill {
-      font-size:.76rem;
-      font-weight:500;
-      color:var(--sub);
-      background:var(--card);
-      border:1px solid var(--line2);
-      padding:.28rem .7rem;
-      border-radius:4px;
-      transition:all .15s;
-    }
-    .pill:hover { color:var(--text); border-color:var(--muted); }
-
-    /* ─── STAGES ─────────────────────────── */
-    #stage { padding-bottom:5rem; background:var(--surface); }
-    .stage-list { display:flex; flex-direction:column; gap:1px; }
-    .stage-item {
-      background:var(--card);
-      padding:2rem;
-      display:grid;
-      grid-template-columns:180px 1fr auto;
-      gap:2rem;
+    /* timeline */
+    .timeline { display:flex; flex-direction:column; gap:0; }
+    .tl-item {
+      display:grid; grid-template-columns:90px 1fr;
+      gap:1.25rem; padding:.75rem 0;
+      border-bottom:1px solid var(--line);
       align-items:start;
-      border:1px solid var(--line);
-      border-radius:8px;
-      margin-bottom:.75rem;
-      transition:border-color .18s;
     }
-    .stage-item:last-child { margin-bottom:0; }
-    .stage-item:hover { border-color:var(--line2); }
-    .stage-meta {}
-    .stage-period {
-      font-family:var(--mono);
-      font-size:.7rem;
-      color:var(--blue);
-      margin-bottom:.35rem;
+    .tl-item:last-child { border-bottom:none; }
+    .tl-year { font-family:var(--mono); font-size:.68rem; color:var(--accent2); padding-top:.15rem; }
+    .tl-content {}
+    .tl-title { font-size:.85rem; font-weight:700; color:var(--text); margin-bottom:.15rem; }
+    .tl-sub { font-size:.78rem; color:var(--sub); }
+    .tl-badge {
+      display:inline-block; font-size:.62rem; font-weight:600;
+      background:var(--a-glow); border:1px solid var(--a-bd);
+      color:var(--accent2); padding:.15rem .5rem; border-radius:4px;
+      margin-top:.3rem;
     }
-    .stage-duration {
-      font-size:.75rem;
-      color:var(--muted);
+
+    /* ── STAGES ──────────────────────────── */
+    #stage { background:var(--bg); border-top:1px solid var(--line); }
+    .stages-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+
+    .stage-card {
+      background:var(--card); border:1px solid var(--line); border-radius:16px;
+      padding:2rem; transition:border-color .2s, transform .2s;
+      position:relative; overflow:hidden;
     }
-    .stage-content {}
-    .stage-title {
-      font-size:1rem;
-      font-weight:600;
-      color:#fff;
-      margin-bottom:.2rem;
+    .stage-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg, var(--accent), transparent);
+      opacity:0; transition:opacity .2s;
     }
-    .stage-company {
-      font-size:.82rem;
-      color:var(--sub);
-      margin-bottom:1rem;
+    .stage-card:hover { border-color:var(--a-bd); transform:translateY(-3px); }
+    .stage-card:hover::before { opacity:1; }
+
+    .sc-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1.5rem; }
+    .sc-ico {
+      width:44px; height:44px; border-radius:11px;
+      background:var(--a-glow); border:1px solid var(--a-bd);
+      display:flex; align-items:center; justify-content:center; font-size:1.2rem;
     }
-    .stage-desc {
-      font-size:.84rem;
-      color:var(--sub);
-      line-height:1.75;
-      margin-bottom:1rem;
+    .sc-period {
+      text-align:right; font-family:var(--mono);
+      font-size:.65rem; color:var(--accent2); line-height:1.6;
     }
-    .stage-tags { display:flex; flex-wrap:wrap; gap:.35rem; }
+    .sc-title { font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:.25rem; }
+    .sc-company { font-size:.8rem; color:var(--sub); margin-bottom:1.1rem; }
+    .sc-desc { font-size:.82rem; color:var(--sub); line-height:1.75; margin-bottom:1.25rem; }
+    .sc-desc strong { color:var(--text); font-weight:500; }
+
+    .tags { display:flex; flex-wrap:wrap; gap:.35rem; margin-bottom:1.25rem; }
     .tag {
-      font-family:var(--mono);
-      font-size:.68rem;
-      padding:.22rem .55rem;
-      border-radius:3px;
-      border:1px solid var(--blue-bd);
-      color:var(--blue);
-      background:var(--blue-dim);
+      font-size:.7rem; font-weight:500; padding:.22rem .6rem; border-radius:5px;
     }
-    .tag-neutral {
-      border-color:var(--line2);
-      color:var(--muted);
-      background:transparent;
+    .tag-a { background:var(--a-glow); color:var(--accent2); border:1px solid var(--a-bd); }
+    .tag-n { background:var(--s2); color:var(--muted); border:1px solid var(--line); }
+
+    .sc-link {
+      display:inline-flex; align-items:center; gap:.4rem;
+      font-size:.78rem; font-weight:600; color:var(--sub);
+      text-decoration:none; border:1px solid var(--line2);
+      padding:.4rem .9rem; border-radius:7px; transition:all .18s;
     }
-    .stage-link {
-      font-size:.78rem;
-      color:var(--muted);
-      text-decoration:none;
-      border:1px solid var(--line);
-      padding:.45rem .9rem;
-      border-radius:5px;
-      white-space:nowrap;
+    .sc-link:hover { color:var(--accent2); border-color:var(--a-bd); background:var(--a-glow); }
+
+    /* ── PROJETS ─────────────────────────── */
+    #projets { background:var(--s1); border-top:1px solid var(--line); }
+
+    .proj-tabs { display:flex; gap:.4rem; margin-bottom:2rem; }
+    .proj-tab {
+      font-size:.78rem; font-weight:600; padding:.45rem 1.1rem;
+      border-radius:8px; border:1px solid var(--line2);
+      color:var(--muted); background:transparent; cursor:pointer;
       transition:all .18s;
     }
-    .stage-link:hover { color:var(--blue); border-color:var(--blue-bd); background:var(--blue-dim); }
+    .proj-tab.active, .proj-tab:hover { color:var(--text); background:var(--card); border-color:var(--muted); }
+    .proj-tab.active { background:var(--accent); border-color:var(--accent); color:#fff; }
 
-    /* ─── PROJETS ────────────────────────── */
-    #cours { padding-bottom:5rem; }
-    .proj-grid { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
-    .proj-card {
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:8px;
-      padding:1.75rem;
-      transition:border-color .2s, transform .2s;
+    .proj-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .proj-panel { display:none; }
+    .proj-panel.active { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+
+    .pcard {
+      background:var(--card); border:1px solid var(--line); border-radius:14px;
+      overflow:hidden; transition:border-color .2s, transform .2s;
       display:flex; flex-direction:column;
     }
-    .proj-card:hover { border-color:var(--line2); transform:translateY(-2px); }
-    .proj-head {
-      display:flex; justify-content:space-between; align-items:flex-start;
-      margin-bottom:1rem;
-    }
-    .proj-title { font-size:.95rem; font-weight:600; color:#fff; }
-    .proj-icon {
-      font-size:1.1rem;
-      opacity:.5;
-    }
-    .proj-desc { font-size:.82rem; color:var(--sub); line-height:1.7; flex:1; margin-bottom:1.25rem; }
-    .proj-footer { display:flex; align-items:center; justify-content:space-between; }
-    .proj-tags { display:flex; gap:.35rem; flex-wrap:wrap; }
-    .proj-link {
-      font-family:var(--mono);
-      font-size:.7rem;
-      color:var(--muted);
-      text-decoration:none;
-      transition:color .15s;
-      white-space:nowrap;
-    }
-    .proj-link:hover { color:var(--blue); }
+    .pcard:hover { border-color:var(--a-bd); transform:translateY(-3px); }
 
-    /* ─── COMPÉTENCES ────────────────────── */
-    #competences { padding-bottom:5rem; background:var(--surface); }
-    .comp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem; }
-    .comp-card {
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:8px;
-      padding:1.5rem;
-      transition:border-color .18s;
+    .pcard-preview {
+      height:160px; background:var(--s2);
+      display:flex; align-items:center; justify-content:center;
+      font-size:2.5rem; border-bottom:1px solid var(--line);
+      position:relative; overflow:hidden;
     }
-    .comp-card:hover { border-color:var(--line2); }
-    .comp-title {
-      font-size:.85rem;
-      font-weight:600;
-      color:#fff;
-      margin-bottom:1rem;
-      display:flex; align-items:center; gap:.6rem;
+    .pcard-preview::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(135deg, rgba(124,111,247,.06) 0%, transparent 60%);
     }
-    .comp-title::before {
-      content:'';
-      width:3px; height:14px;
-      background:var(--blue);
-      border-radius:2px;
-    }
-    .comp-items {
-      display:flex; flex-direction:column; gap:.4rem;
-    }
-    .comp-item {
-      font-size:.78rem;
-      color:var(--sub);
-      padding:.3rem 0;
-      border-bottom:1px solid var(--line);
-      display:flex; align-items:center; gap:.5rem;
-    }
-    .comp-item:last-child { border-bottom:none; }
-    .comp-item::before { content:'·'; color:var(--blue); font-size:1.2rem; line-height:0; }
 
-    /* ─── CONTACT ────────────────────────── */
-    #contact { padding-bottom:6rem; }
-    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
-    .contact-left {}
-    .contact-intro { font-size:.88rem; color:var(--sub); line-height:1.85; max-width:380px; }
-    .contact-right { display:flex; flex-direction:column; gap:.5rem; }
-    .contact-item {
+    .pcard-body { padding:1.35rem; flex:1; display:flex; flex-direction:column; }
+    .pcard-meta { font-family:var(--mono); font-size:.65rem; color:var(--accent2); margin-bottom:.4rem; }
+    .pcard-title { font-size:.95rem; font-weight:700; color:#fff; margin-bottom:.5rem; }
+    .pcard-desc { font-size:.8rem; color:var(--sub); line-height:1.7; flex:1; margin-bottom:1rem; }
+    .pcard-foot { display:flex; justify-content:space-between; align-items:center; }
+    .pcard-tags { display:flex; gap:.3rem; flex-wrap:wrap; }
+    .pcard-link {
+      font-size:.72rem; font-weight:600; color:var(--muted);
+      text-decoration:none; transition:color .15s;
+    }
+    .pcard-link:hover { color:var(--accent2); }
+
+    /* certifs */
+    .certifs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem; margin-top:2rem; }
+    .certif-card {
+      background:var(--card); border:1px solid var(--line); border-radius:12px;
+      padding:1.25rem; display:flex; align-items:center; gap:.9rem;
+    }
+    .certif-ico { font-size:1.6rem; }
+    .certif-name { font-size:.84rem; font-weight:700; color:var(--text); }
+    .certif-org { font-size:.72rem; color:var(--sub); }
+    .certif-year {
+      margin-left:auto; font-family:var(--mono);
+      font-size:.65rem; color:var(--green);
+      background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.2);
+      padding:.2rem .5rem; border-radius:5px;
+    }
+
+    /* ── COMPÉTENCES ─────────────────────── */
+    #competences { background:var(--bg); border-top:1px solid var(--line); }
+
+    .comp-intro { font-size:.88rem; color:var(--sub); line-height:1.8; max-width:580px; margin-bottom:2.5rem; }
+
+    /* tech stack icons row */
+    .stack-row {
+      display:flex; flex-wrap:wrap; gap:.75rem; margin-bottom:3rem;
+    }
+    .stack-item {
+      display:flex; flex-direction:column; align-items:center; gap:.4rem;
+      font-size:.65rem; font-weight:600; color:var(--sub);
+      background:var(--card); border:1px solid var(--line);
+      border-radius:10px; padding:.75rem 1rem;
+      min-width:64px; transition:all .18s;
+    }
+    .stack-item:hover { border-color:var(--a-bd); color:var(--text); }
+    .stack-item span { font-size:1.5rem; }
+
+    /* BTS grid */
+    .bts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border-radius:16px; overflow:hidden; border:1px solid var(--line); }
+    .bts-cell {
+      background:var(--card); padding:1.5rem;
+      transition:background .18s;
+    }
+    .bts-cell:hover { background:var(--card2); }
+    .bts-num {
+      font-family:var(--mono); font-size:.65rem; color:var(--accent2);
+      margin-bottom:.5rem;
+    }
+    .bts-title { font-size:.88rem; font-weight:700; color:#fff; margin-bottom:.9rem; }
+    .bts-items { display:flex; flex-direction:column; gap:.3rem; }
+    .bts-item {
+      font-size:.76rem; color:var(--sub); line-height:1.5;
+      display:flex; gap:.5rem; align-items:flex-start;
+    }
+    .bts-item::before { content:'→'; color:var(--muted); flex-shrink:0; font-size:.7rem; margin-top:.1rem; }
+
+    /* ── CONTACT ─────────────────────────── */
+    #contact { background:var(--s1); border-top:1px solid var(--line); }
+
+    .contact-box {
+      background:var(--card); border:1px solid var(--line); border-radius:20px;
+      padding:3.5rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem;
+      position:relative; overflow:hidden;
+    }
+    .contact-box::before {
+      content:''; position:absolute; width:350px; height:350px;
+      background:radial-gradient(circle, rgba(124,111,247,.1) 0%, transparent 65%);
+      top:-80px; right:-80px; pointer-events:none;
+    }
+    .contact-title { font-size:1.8rem; font-weight:800; color:#fff; letter-spacing:-.03em; margin-bottom:.75rem; }
+    .contact-sub { font-size:.88rem; color:var(--sub); line-height:1.8; margin-bottom:2rem; }
+    .contact-links { display:flex; flex-direction:column; gap:.6rem; }
+    .cl {
       display:flex; align-items:center; justify-content:space-between;
-      padding:.9rem 1.1rem;
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:7px;
-      text-decoration:none;
-      transition:all .18s;
+      padding:.85rem 1.1rem;
+      background:var(--s1); border:1px solid var(--line);
+      border-radius:11px; text-decoration:none; transition:all .2s;
     }
-    .contact-item:hover { border-color:var(--blue-bd); background:var(--blue-dim); }
-    .contact-item-left { display:flex; align-items:center; gap:.75rem; }
-    .contact-item-icon { font-size:.9rem; opacity:.6; }
-    .contact-item-label { font-size:.82rem; font-weight:500; color:var(--text); }
-    .contact-item-val { font-family:var(--mono); font-size:.72rem; color:var(--muted); }
-    .contact-item-arr { color:var(--muted); font-size:.8rem; transition:transform .18s, color .18s; }
-    .contact-item:hover .contact-item-arr { transform:translateX(3px); color:var(--blue); }
+    .cl:hover { border-color:var(--a-bd); background:var(--a-glow); }
+    .cl-l { display:flex; align-items:center; gap:.75rem; }
+    .cl-ic {
+      width:36px; height:36px; background:var(--a-glow); border:1px solid var(--a-bd);
+      border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:.9rem;
+    }
+    .cl-name { font-size:.84rem; font-weight:600; color:var(--text); }
+    .cl-val { font-family:var(--mono); font-size:.68rem; color:var(--muted); }
+    .cl-arr { color:var(--muted); transition:all .2s; font-size:.85rem; }
+    .cl:hover .cl-arr { color:var(--accent2); transform:translateX(3px); }
 
-    /* ─── FOOTER ─────────────────────────── */
-    footer {
-      border-top:1px solid var(--line);
-      padding:1.5rem 2.5rem;
-      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
-      font-size:.73rem;
-      color:var(--muted);
+    /* cv section */
+    .cv-box {
+      margin-top:1.5rem; padding:1.25rem;
+      background:var(--s1); border:1px dashed var(--line2); border-radius:11px;
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
     }
-    footer a { color:var(--muted); text-decoration:none; transition:color .15s; }
+    .cv-txt { font-size:.82rem; color:var(--sub); }
+    .cv-txt strong { color:var(--text); display:block; margin-bottom:.1rem; font-size:.88rem; }
+
+    /* ── FOOTER ──────────────────────────── */
+    footer {
+      border-top:1px solid var(--line); padding:1.5rem 3rem;
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
+      font-size:.73rem; color:var(--muted);
+    }
+    footer a { color:var(--muted); text-decoration:none; }
     footer a:hover { color:var(--sub); }
 
-    /* ─── REVEAL ─────────────────────────── */
-    .r { opacity:0; transform:translateY(16px); transition:opacity .55s ease, transform .55s ease; }
-    .r.on { opacity:1; transform:none; }
-    .r.d1 { transition-delay:.08s; }
-    .r.d2 { transition-delay:.16s; }
-    .r.d3 { transition-delay:.24s; }
-    .r.d4 { transition-delay:.32s; }
+    @keyframes up { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:none} }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
 
-    @keyframes fade { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
-    @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:.3; } }
-
-    /* ─── RESPONSIVE ─────────────────────── */
-    @media (max-width:800px) {
+    @media(max-width:900px){
       nav { padding:0 1.25rem; }
-      .nav-links { display:none; }
-      .wrap, #hero { padding-left:1.25rem; padding-right:1.25rem; }
-      .about-grid, .contact-grid { grid-template-columns:1fr; gap:2.5rem; }
-      .stage-item { grid-template-columns:1fr; gap:1rem; }
-      .stage-link { display:none; }
-      .proj-grid { grid-template-columns:1fr; }
-      .comp-grid { grid-template-columns:1fr 1fr; }
-      .hero-stats { gap:2rem; }
+      .nav-links li:not(:last-child) { display:none; }
+      #hero, .section-wrap { padding-left:1.25rem; padding-right:1.25rem; }
+      #hero { flex-direction:column; gap:2.5rem; align-items:flex-start; padding-top:100px; }
+      .hero-right { display:none; }
+      .about-grid, .stages-grid, .proj-panel.active, .contact-box { grid-template-columns:1fr; gap:2rem; }
+      .bts-grid { grid-template-columns:1fr 1fr; }
+      .certifs-grid { grid-template-columns:1fr 1fr; }
+      .contact-box { padding:2rem; }
       footer { padding:1.25rem; }
     }
-    @media (max-width:480px) { .comp-grid { grid-template-columns:1fr; } }
+    @media(max-width:540px){
+      .bts-grid { grid-template-columns:1fr; }
+      .certifs-grid { grid-template-columns:1fr; }
+      .hero-stats { gap:1.5rem; }
+    }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ── NAV ── -->
 <nav>
-  <div class="logo">thomas.comin</div>
+  <div class="logo">Prénom <em>NOM</em></div>
   <ul class="nav-links">
-    <li><a href="#about">Profil</a></li>
+    <li><a href="#about">Parcours</a></li>
     <li><a href="#stage">Stages</a></li>
-    <li><a href="#cours">Projets</a></li>
+    <li><a href="#projets">Projets</a></li>
     <li><a href="#competences">Compétences</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- ── HERO ── -->
 <section id="hero">
-  <div class="hero-badge">BTS SIO · SLAM · 2ème année · 2024–2025</div>
-  <h1 class="hero-name">Thomas COMIN</h1>
-  <p class="hero-role">Développeur logiciel &amp; web — <span>option SLAM</span></p>
-  <p class="hero-desc">
-    Étudiant en développement d'applications, passionné par la création de solutions logicielles propres et efficaces. À l'aise aussi bien côté front-end que back-end.
-  </p>
-  <div class="hero-actions">
-    <a href="#stage" class="btn btn-primary">Voir mes stages</a>
-    <a href="#" class="btn btn-ghost">↓ Télécharger mon CV</a>
+  <div class="hero-left">
+    <div class="hero-status">En formation · BTS SIO SLAM 2026</div>
+    <h1 class="hero-name">Bonjour, je suis<br><span class="hi">Prénom NOM</span> 👋</h1>
+    <p class="hero-title"><strong>Développeur web &amp; logiciel</strong> — BTS SIO option SLAM</p>
+    <p class="hero-desc">Étudiant passionné par le développement d'applications, basé à [Ta ville]. Curieux, autonome et toujours en train d'apprendre.</p>
+    <div class="hero-btns">
+      <a href="#projets" class="btn btn-p">Voir mes projets</a>
+      <a href="#stage" class="btn btn-s">Mes stages →</a>
+      <a href="#" class="btn btn-s">↓ Mon CV</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-n">2<em>×</em></div><div class="stat-l">Stages</div></div>
+      <div><div class="stat-n">5<em>+</em></div><div class="stat-l">Projets</div></div>
+      <div><div class="stat-n">2<em>ans</em></div><div class="stat-l">BTS SIO</div></div>
+    </div>
   </div>
-  <div class="hero-stats">
-    <div>
-      <div class="stat-val">2<span>×</span></div>
-      <div class="stat-label">Stages effectués</div>
-    </div>
-    <div>
-      <div class="stat-val">5<span>+</span></div>
-      <div class="stat-label">Projets réalisés</div>
-    </div>
-    <div>
-      <div class="stat-val">2<span>ans</span></div>
-      <div class="stat-label">de BTS SIO SLAM</div>
+  <div class="hero-right">
+    <div class="avatar-wrap">
+      👤
+      <div class="avatar-badge">
+        <div class="avatar-badge-dot"></div>
+        <div>
+          <div class="avatar-badge-txt">En formation</div>
+          <div class="avatar-badge-sub">Disponible dès juin 2026</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ── PARCOURS ── -->
 <section id="about">
-  <div class="wrap">
-    <div class="sec-header r">
-      <div class="sec-tag">01 · Profil</div>
-      <h2 class="sec-title">À propos de moi</h2>
-    </div>
+  <div class="section-wrap section-pad">
+    <div class="s-eyebrow r">Parcours</div>
+    <h2 class="s-title r">Mon parcours</h2>
     <div class="about-grid">
-      <div class="about-text r">
-        <p>Je m'appelle <strong>Thomas COMIN</strong>, étudiant en 2ème année de BTS SIO option <strong>SLAM</strong> au lycée <strong>Henri Wallon valenciennes</strong>.</p>
-        <p>J'ai développé des compétences en développement <strong>web et logiciel</strong>, en conception de bases de données, et en gestion de projet. Ces connaissances ont été mises en pratique lors de mes deux périodes de stage.</p>
-        <p>Je m'intéresse particulièrement à <strong>coder</strong>. En dehors du code, je pratique <strong>youtube et la salle</strong>.</p>
-        <br>
-        <a href="#" class="btn btn-ghost">↓ Mon CV complet</a>
+      <div class="r d1">
+        <div class="about-text">
+          <p>Je m'appelle <strong>Prénom NOM</strong>, étudiant en 2ème année de BTS SIO option <strong>SLAM</strong> au lycée <strong>[Ton lycée] · [Ta ville]</strong>.</p>
+          <p>Passionné par le développement logiciel depuis [X ans], j'aime créer des applications utiles et bien conçues. J'apprécie autant le côté technique que la réflexion autour de l'expérience utilisateur.</p>
+          <p>En dehors du code, je pratique <strong>[tes loisirs]</strong> et je fais de la veille techno régulièrement.</p>
+          <br>
+          <a href="#" class="btn btn-s" style="display:inline-flex">↓ Télécharger mon CV</a>
+        </div>
       </div>
-      <div class="skills-section r d1">
-        <div class="skill-group">
-          <div class="skill-group-label">Langages &amp; Frameworks</div>
-          <div class="skill-pills">
-            <span class="pill">PHP</span>
-            <span class="pill">Laravel</span>
-            <span class="pill">JavaScript</span>
-            <span class="pill">Python</span>
-            <span class="pill">Java</span>
-            <span class="pill">HTML / CSS</span>
-            <span class="pill">React</span>
-            <span class="pill">Vue.js</span>
+      <div class="r d2">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-year">2026</div>
+            <div class="tl-content">
+              <div class="tl-title">BTS SIO SLAM — 2ème année</div>
+              <div class="tl-sub">[Ton lycée] · [Ta ville]</div>
+              <span class="tl-badge">En cours</span>
+            </div>
           </div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-label">Bases de données</div>
-          <div class="skill-pills">
-            <span class="pill">MySQL</span>
-            <span class="pill">PostgreSQL</span>
-            <span class="pill">SQLite</span>
-            <span class="pill">Merise</span>
-            <span class="pill">UML</span>
+          <div class="tl-item">
+            <div class="tl-year">2025</div>
+            <div class="tl-content">
+              <div class="tl-title">Stage 2 · Développeur Web</div>
+              <div class="tl-sub">Nom de l'entreprise · 5 semaines</div>
+            </div>
           </div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-label">Outils</div>
-          <div class="skill-pills">
-            <span class="pill">Git</span>
-            <span class="pill">GitHub</span>
-            <span class="pill">Docker</span>
-            <span class="pill">Linux</span>
-            <span class="pill">Bash</span>
-            <span class="pill">VS Code</span>
+          <div class="tl-item">
+            <div class="tl-year">2024</div>
+            <div class="tl-content">
+              <div class="tl-title">BTS SIO SLAM — 1ère année</div>
+              <div class="tl-sub">[Ton lycée] · [Ta ville]</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2024</div>
+            <div class="tl-content">
+              <div class="tl-title">Stage 1 · Développeur Junior</div>
+              <div class="tl-sub">Nom de l'entreprise · 5 semaines</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2024</div>
+            <div class="tl-content">
+              <div class="tl-title">Baccalauréat</div>
+              <div class="tl-sub">[Spécialité] · [Ton lycée]</div>
+            </div>
           </div>
         </div>
       </div>
@@ -509,292 +518,371 @@
   </div>
 </section>
 
-<!-- STAGES -->
+<!-- ── STAGES ── -->
 <section id="stage">
-  <div class="wrap">
-    <div class="sec-header r">
-      <div class="sec-tag">02 · Expérience</div>
-      <h2 class="sec-title">Stages en entreprise</h2>
-    </div>
-    <div class="stage-list">
+  <div class="section-wrap section-pad">
+    <div class="s-eyebrow r">Expérience</div>
+    <h2 class="s-title r">Stages en entreprise</h2>
+    <div class="stages-grid">
 
-      <div class="stage-item r">
-        <div class="stage-meta">
-          <div class="stage-period">Jan. 2025 — Fév. 2025</div>
-          <div class="stage-duration">5 semaines</div>
+      <div class="stage-card r d1">
+        <div class="sc-top">
+          <div class="sc-ico">🏢</div>
+          <div class="sc-period">Jan. 2025 — Fév. 2025<br>5 semaines</div>
         </div>
-        <div class="stage-content">
-          <div class="stage-title">Développeur Web — Stage 2</div>
-          <div class="stage-company">Creo Ignem · Anzin</div>
-          <p class="stage-desc">
-            Développement d'une application web interne de gestion des stocks. Mise en place d'une API REST en PHP, intégration d'une base MySQL, création de l'interface utilisateur.<br>
-            <strong style="color:var(--text);font-weight:500">Mission principale :</strong> Refonte du module de facturation et ajout d'un tableau de bord statistiques temps réel.
-          </p>
-          <div class="stage-tags">
-            <span class="tag">PHP</span>
-            <span class="tag">MySQL</span>
-            <span class="tag tag-neutral">REST API</span>
-            <span class="tag tag-neutral">JavaScript</span>
-            <span class="tag tag-neutral">Git</span>
-          </div>
-        </div>
-        <a href="#" class="stage-link">Rapport ↗</a>
-      </div>
-
-      <div class="stage-item r d1">
-        <div class="stage-meta">
-          <div class="stage-period">Mai 2024 — Juin 2024</div>
-          <div class="stage-duration">5 semaines</div>
-        </div>
-        <div class="stage-content">
-          <div class="stage-title">Développeur Junior — Stage 1</div>
-          <div class="stage-company">Creo Ignem · Anzin</div>
-          <p class="stage-desc">
-            Maintenance et évolution d'une application de gestion RH. Correction de bugs, développement de nouvelles fonctionnalités, rédaction de documentation technique.<br>
-            <strong style="color:var(--text);font-weight:500">Mission principale :</strong> Module d'export PDF et implémentation de tests unitaires JUnit.
-          </p>
-          <div class="stage-tags">
-            <span class="tag">Java</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag tag-neutral">JUnit</span>
-            <span class="tag tag-neutral">Maven</span>
-          </div>
-        </div>
-        <a href="#" class="stage-link">Rapport ↗</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PROJETS -->
-<section id="cours">
-  <div class="wrap">
-    <div class="sec-header r">
-      <div class="sec-tag">03 · Projets</div>
-      <h2 class="sec-title">Travaux réalisés en cours</h2>
-    </div>
-    <div class="proj-grid">
-
-      <div class="proj-card r">
-        <div class="proj-head">
-          <div class="proj-title">Gestion de bibliothèque</div>
-          <div class="proj-icon">📚</div>
-        </div>
-        <p class="proj-desc">Application web CRUD — emprunt/retour de livres, gestion adhérents, recherche avancée. Projet fil rouge 2ème année.</p>
-        <div class="proj-footer">
-          <div class="proj-tags">
-            <span class="pill">PHP/MySQL</span>
-            <span class="pill">MVC</span>
-          </div>
-          <a href="#" class="proj-link">GitHub ↗</a>
-        </div>
-      </div>
-
-      <div class="proj-card r d1">
-        <div class="proj-head">
-          <div class="proj-title">Site e-commerce</div>
-          <div class="proj-icon">🛒</div>
-        </div>
-        <p class="proj-desc">Boutique en ligne avec panier, paiement simulé, espace client et back-office d'administration. Projet AP.</p>
-        <div class="proj-footer">
-          <div class="proj-tags">
-            <span class="pill">PHP</span>
-            <span class="pill">JavaScript</span>
-          </div>
-          <a href="#" class="proj-link">GitHub ↗</a>
-        </div>
-      </div>
-
-      <div class="proj-card r d2">
-        <div class="proj-head">
-          <div class="proj-title">App mobile To-do List</div>
-          <div class="proj-icon">📱</div>
-        </div>
-        <p class="proj-desc">Application Android en Java avec gestion de tâches, rappels et stockage local SQLite.</p>
-        <div class="proj-footer">
-          <div class="proj-tags">
-            <span class="pill">Java</span>
-            <span class="pill">SQLite</span>
-          </div>
-          <a href="#" class="proj-link">GitHub ↗</a>
-        </div>
-      </div>
-
-      <div class="proj-card r d3">
-        <div class="proj-head">
-          <div class="proj-title">Modélisation BDD médicale</div>
-          <div class="proj-icon">🗄️</div>
-        </div>
-        <p class="proj-desc">Conception MCD/MLD (Merise) et implémentation SQL d'une base de données pour cabinet médical.</p>
-        <div class="proj-footer">
-          <div class="proj-tags">
-            <span class="pill">SQL</span>
-            <span class="pill">Merise</span>
-          </div>
-          <a href="#" class="proj-link">Voir ↗</a>
-        </div>
-      </div>
-
-      <div class="proj-card r d4" style="grid-column:1/-1">
-        <div class="proj-head">
-          <div class="proj-title">Scripts d'administration système</div>
-          <div class="proj-icon">⚙️</div>
-        </div>
-        <p class="proj-desc">Scripts Bash et Python d'automatisation : sauvegarde automatique, monitoring de serveur, génération de rapports système. Cours SI5 — administration Linux.</p>
-        <div class="proj-footer">
-          <div class="proj-tags">
-            <span class="pill">Python</span>
-            <span class="pill">Bash</span>
-            <span class="pill">Linux</span>
-          </div>
-          <a href="#" class="proj-link">GitHub ↗</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- COMPÉTENCES -->
-<section id="competences">
-  <div class="wrap">
-    <div class="sec-header r">
-      <div class="sec-tag">04 · Référentiel</div>
-      <h2 class="sec-title">Compétences BTS SIO SLAM</h2>
-    </div>
-    <div class="comp-grid">
-      <div class="comp-card r">
-        <div class="comp-title">Développement logiciel</div>
-        <div class="comp-items">
-          <div class="comp-item">Algorithmique &amp; structures de données</div>
-          <div class="comp-item">Programmation orientée objet</div>
-          <div class="comp-item">Développement web full-stack</div>
-          <div class="comp-item">Développement mobile Android</div>
-        </div>
-      </div>
-      <div class="comp-card r d1">
-        <div class="comp-title">Bases de données</div>
-        <div class="comp-items">
-          <div class="comp-item">Conception MCD/MLD — Merise</div>
-          <div class="comp-item">SQL avancé, jointures, vues</div>
-          <div class="comp-item">MySQL, PostgreSQL, SQLite</div>
-          <div class="comp-item">Procédures stockées &amp; triggers</div>
-        </div>
-      </div>
-      <div class="comp-card r d2">
-        <div class="comp-title">Réseau &amp; systèmes</div>
-        <div class="comp-items">
-          <div class="comp-item">Administration Linux (Debian)</div>
-          <div class="comp-item">TCP/IP, DNS, DHCP, HTTP</div>
-          <div class="comp-item">Virtualisation — VirtualBox</div>
-          <div class="comp-item">Docker &amp; conteneurisation</div>
-        </div>
-      </div>
-      <div class="comp-card r d3">
-        <div class="comp-title">Gestion de projet</div>
-        <div class="comp-items">
-          <div class="comp-item">Méthode Agile / Scrum</div>
-          <div class="comp-item">Cahiers des charges</div>
-          <div class="comp-item">Diagrammes UML</div>
-          <div class="comp-item">Git / GitHub / versionnage</div>
-        </div>
-      </div>
-      <div class="comp-card r d4">
-        <div class="comp-title">Sécurité &amp; qualité</div>
-        <div class="comp-items">
-          <div class="comp-item">OWASP — injections, XSS</div>
-          <div class="comp-item">Authentification &amp; gestion droits</div>
-          <div class="comp-item">Tests unitaires</div>
-          <div class="comp-item">RGPD</div>
-        </div>
-      </div>
-      <div class="comp-card r d4">
-        <div class="comp-title">Savoir-être</div>
-        <div class="comp-items">
-          <div class="comp-item">Travail en équipe</div>
-          <div class="comp-item">Communication technique</div>
-          <div class="comp-item">Veille technologique</div>
-          <div class="comp-item">Autonomie &amp; rigueur</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="wrap">
-    <div class="sec-header r">
-      <div class="sec-tag">05 · Contact</div>
-      <h2 class="sec-title">Me contacter</h2>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-left r">
-        <p class="contact-intro">
-          Disponible pour des opportunités de stage, d'alternance ou pour toute question concernant mes projets. N'hésitez pas à me contacter.
+        <div class="sc-title">Développeur Web — Stage 2</div>
+        <div class="sc-company">Nom de l'entreprise · Ville</div>
+        <p class="sc-desc">
+          Développement d'une application web interne de gestion des stocks. API REST en PHP, base MySQL, interface utilisateur complète.<br><br>
+          <strong>Mission principale :</strong> Refonte du module de facturation et ajout d'un tableau de bord avec statistiques en temps réel.
         </p>
+        <div class="tags">
+          <span class="tag tag-a">PHP</span>
+          <span class="tag tag-a">MySQL</span>
+          <span class="tag tag-n">REST API</span>
+          <span class="tag tag-n">JavaScript</span>
+          <span class="tag tag-n">Git</span>
+        </div>
+        <a href="#" class="sc-link">📄 Rapport de stage ↗</a>
       </div>
-      <div class="contact-right r d1">
-        <a href="mailto:ton.email@example.com" class="contact-item">
-          <div class="contact-item-left">
-            <span class="contact-item-icon">✉</span>
-            <div>
-              <div class="contact-item-label">Email</div>
-              <div class="contact-item-val">ton.email@example.com</div>
+
+      <div class="stage-card r d2">
+        <div class="sc-top">
+          <div class="sc-ico">🏢</div>
+          <div class="sc-period">Mai 2024 — Juin 2024<br>5 semaines</div>
+        </div>
+        <div class="sc-title">Développeur Junior — Stage 1</div>
+        <div class="sc-company">Nom de l'entreprise · Ville</div>
+        <p class="sc-desc">
+          Maintenance et évolution d'une application de gestion RH. Correction de bugs, nouvelles fonctionnalités, rédaction de documentation technique.<br><br>
+          <strong>Mission principale :</strong> Module d'export PDF des fiches et mise en place de tests unitaires JUnit.
+        </p>
+        <div class="tags">
+          <span class="tag tag-a">Java</span>
+          <span class="tag tag-a">PostgreSQL</span>
+          <span class="tag tag-n">JUnit</span>
+          <span class="tag tag-n">Maven</span>
+        </div>
+        <a href="#" class="sc-link">📄 Rapport de stage ↗</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJETS ── -->
+<section id="projets">
+  <div class="section-wrap section-pad">
+    <div class="s-eyebrow r">Réalisations</div>
+    <h2 class="s-title r">Mes projets</h2>
+
+    <div class="proj-tabs r">
+      <button class="proj-tab active" onclick="switchTab('scolaire',this)">🎓 Scolaires</button>
+      <button class="proj-tab" onclick="switchTab('stage',this)">🏢 Stages</button>
+      <button class="proj-tab" onclick="switchTab('perso',this)">⚡ Personnels</button>
+    </div>
+
+    <!-- SCOLAIRES -->
+    <div class="proj-panel active" id="tab-scolaire">
+      <div class="pcard r">
+        <div class="pcard-preview">📚</div>
+        <div class="pcard-body">
+          <div class="pcard-meta">AP Mission · 2025</div>
+          <div class="pcard-title">Gestion de bibliothèque</div>
+          <p class="pcard-desc">Application web CRUD — emprunt/retour de livres, gestion adhérents, recherche avancée. Projet fil rouge 2ème année.</p>
+          <div class="pcard-foot">
+            <div class="pcard-tags">
+              <span class="tag tag-a">PHP/MySQL</span>
+              <span class="tag tag-n">MVC</span>
             </div>
+            <a href="#" class="pcard-link">GitHub ↗</a>
           </div>
-          <span class="contact-item-arr">→</span>
+        </div>
+      </div>
+      <div class="pcard r d1">
+        <div class="pcard-preview">🛒</div>
+        <div class="pcard-body">
+          <div class="pcard-meta">AP Mission · 2024</div>
+          <div class="pcard-title">Site e-commerce</div>
+          <p class="pcard-desc">Boutique en ligne avec panier, paiement simulé, espace client et back-office d'administration complet.</p>
+          <div class="pcard-foot">
+            <div class="pcard-tags">
+              <span class="tag tag-a">PHP</span>
+              <span class="tag tag-n">JavaScript</span>
+            </div>
+            <a href="#" class="pcard-link">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="pcard r d2">
+        <div class="pcard-preview">📱</div>
+        <div class="pcard-body">
+          <div class="pcard-meta">Projet · 2024</div>
+          <div class="pcard-title">App mobile To-do List</div>
+          <p class="pcard-desc">Application Android en Java avec gestion de tâches, notifications et synchronisation SQLite locale.</p>
+          <div class="pcard-foot">
+            <div class="pcard-tags">
+              <span class="tag tag-a">Java</span>
+              <span class="tag tag-n">Android</span>
+            </div>
+            <a href="#" class="pcard-link">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="pcard r d3">
+        <div class="pcard-preview">🗄️</div>
+        <div class="pcard-body">
+          <div class="pcard-meta">Projet BDD · 2024</div>
+          <div class="pcard-title">Modélisation médicale</div>
+          <p class="pcard-desc">Conception MCD/MLD Merise et implémentation SQL complète pour un cabinet médical fictif.</p>
+          <div class="pcard-foot">
+            <div class="pcard-tags">
+              <span class="tag tag-a">SQL</span>
+              <span class="tag tag-n">Merise</span>
+            </div>
+            <a href="#" class="pcard-link">Voir ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGES -->
+    <div class="proj-panel" id="tab-stage">
+      <div class="pcard r">
+        <div class="pcard-preview">🏢</div>
+        <div class="pcard-body">
+          <div class="pcard-meta">Stage 2 · Jan–Fév 2025</div>
+          <div class="pcard-title">Application gestion des stocks</div>
+          <p class="pcard-desc">Application web interne avec API REST, tableau de bord statistiques et module de facturation.</p>
+          <div class="pcard-foot">
+            <div class="pcard-tags">
+              <span class="tag tag-a">PHP</span>
+              <span class="tag tag-n">MySQL</span>
+            </div>
+            <a href="#" class="pcard-link">Rapport ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="pcard r d1">
+        <div class="pcard-preview">🏢</div>
+        <div class="pcard-body">
+          <div class="pcard-meta">Stage 1 · Mai–Juin 2024</div>
+          <div class="pcard-title">Module export PDF — RH</div>
+          <p class="pcard-desc">Développement d'un module d'export PDF et de tests unitaires pour une application RH en Java.</p>
+          <div class="pcard-foot">
+            <div class="pcard-tags">
+              <span class="tag tag-a">Java</span>
+              <span class="tag tag-n">JUnit</span>
+            </div>
+            <a href="#" class="pcard-link">Rapport ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERSO -->
+    <div class="proj-panel" id="tab-perso">
+      <div class="pcard r" style="grid-column:1/-1">
+        <div class="pcard-preview" style="height:120px">⚡</div>
+        <div class="pcard-body">
+          <div class="pcard-meta">Projet personnel · 2025</div>
+          <div class="pcard-title">Ajoute tes projets perso ici</div>
+          <p class="pcard-desc">Tu peux mettre ici des projets que tu as faits en dehors de l'école — petits sites, scripts, jeux, outils…</p>
+          <div class="pcard-foot">
+            <div class="pcard-tags"><span class="tag tag-n">À venir</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERTIFS -->
+    <div style="margin-top:2.5rem" class="r">
+      <div class="s-eyebrow" style="margin-bottom:1rem">Certifications</div>
+      <div class="certifs-grid">
+        <div class="certif-card">
+          <div class="certif-ico">🎓</div>
+          <div>
+            <div class="certif-name">Pix</div>
+            <div class="certif-org">PixGIP · pix.fr</div>
+          </div>
+          <div class="certif-year">2025 ✓</div>
+        </div>
+        <div class="certif-card">
+          <div class="certif-ico">🛡️</div>
+          <div>
+            <div class="certif-name">SecNumAcadémie</div>
+            <div class="certif-org">ANSSI</div>
+          </div>
+          <div class="certif-year">2024 ✓</div>
+        </div>
+        <div class="certif-card" style="border-style:dashed">
+          <div class="certif-ico">➕</div>
+          <div>
+            <div class="certif-name">À compléter</div>
+            <div class="certif-org">Tes autres certifs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── COMPÉTENCES ── -->
+<section id="competences">
+  <div class="section-wrap section-pad">
+    <div class="s-eyebrow r">Référentiel BTS SIO</div>
+    <h2 class="s-title r">Compétences &amp; Stack</h2>
+
+    <div class="stack-row r d1">
+      <div class="stack-item"><span>🌐</span>HTML</div>
+      <div class="stack-item"><span>🎨</span>CSS</div>
+      <div class="stack-item"><span>⚡</span>JavaScript</div>
+      <div class="stack-item"><span>⚛️</span>React</div>
+      <div class="stack-item"><span>🐘</span>PHP</div>
+      <div class="stack-item"><span>🔴</span>Laravel</div>
+      <div class="stack-item"><span>☕</span>Java</div>
+      <div class="stack-item"><span>🐍</span>Python</div>
+      <div class="stack-item"><span>🗄️</span>MySQL</div>
+      <div class="stack-item"><span>🐙</span>Git</div>
+      <div class="stack-item"><span>🐧</span>Linux</div>
+      <div class="stack-item"><span>🐳</span>Docker</div>
+    </div>
+
+    <div class="s-eyebrow r" style="margin-bottom:1.25rem">Grille de compétences</div>
+    <div class="bts-grid r d1">
+      <div class="bts-cell">
+        <div class="bts-num">B1 · 01</div>
+        <div class="bts-title">Gérer le patrimoine informatique</div>
+        <div class="bts-items">
+          <div class="bts-item">Recenser et identifier les ressources</div>
+          <div class="bts-item">Exploiter normes et référentiels</div>
+          <div class="bts-item">Gérer les sauvegardes</div>
+          <div class="bts-item">Vérifier les niveaux d'habilitation</div>
+        </div>
+      </div>
+      <div class="bts-cell">
+        <div class="bts-num">B1 · 02</div>
+        <div class="bts-title">Répondre aux incidents</div>
+        <div class="bts-items">
+          <div class="bts-item">Collecter et suivre les demandes</div>
+          <div class="bts-item">Traiter les demandes réseau/système</div>
+          <div class="bts-item">Traiter les demandes applicatives</div>
+        </div>
+      </div>
+      <div class="bts-cell">
+        <div class="bts-num">B1 · 03</div>
+        <div class="bts-title">Développer la présence en ligne</div>
+        <div class="bts-items">
+          <div class="bts-item">Valoriser l'image sur le web</div>
+          <div class="bts-item">Référencer les services en ligne</div>
+          <div class="bts-item">Faire évoluer un site web</div>
+        </div>
+      </div>
+      <div class="bts-cell">
+        <div class="bts-num">B2 · 04</div>
+        <div class="bts-title">Travailler en mode projet</div>
+        <div class="bts-items">
+          <div class="bts-item">Analyser les objectifs</div>
+          <div class="bts-item">Planifier les activités</div>
+          <div class="bts-item">Évaluer les indicateurs</div>
+        </div>
+      </div>
+      <div class="bts-cell">
+        <div class="bts-num">B2 · 05</div>
+        <div class="bts-title">Mettre à disposition un service</div>
+        <div class="bts-items">
+          <div class="bts-item">Tests d'intégration et d'acceptation</div>
+          <div class="bts-item">Déployer un service</div>
+          <div class="bts-item">Accompagner les utilisateurs</div>
+        </div>
+      </div>
+      <div class="bts-cell">
+        <div class="bts-num">B2 · 06</div>
+        <div class="bts-title">Développement professionnel</div>
+        <div class="bts-items">
+          <div class="bts-item">Environnement d'apprentissage</div>
+          <div class="bts-item">Veille informationnelle</div>
+          <div class="bts-item">Gérer son identité professionnelle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-wrap section-pad">
+    <div class="s-eyebrow r">Contact</div>
+    <h2 class="s-title r">Entrons en contact</h2>
+    <div class="contact-box r d1">
+      <div>
+        <div class="contact-title">Parlons de ton projet 👋</div>
+        <p class="contact-sub">Disponible pour des opportunités de stage, d'alternance, ou simplement pour échanger. N'hésite pas !</p>
+        <div class="cv-box">
+          <div class="cv-txt">
+            <strong>Mon curriculum vitæ</strong>
+            Retrouve l'ensemble de mon parcours et mes compétences
+          </div>
+          <a href="#" class="btn btn-s" style="white-space:nowrap">↓ Télécharger</a>
+        </div>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:ton.email@example.com" class="cl">
+          <div class="cl-l">
+            <div class="cl-ic">✉️</div>
+            <div><div class="cl-name">Email</div><div class="cl-val">ton.email@example.com</div></div>
+          </div>
+          <span class="cl-arr">→</span>
         </a>
-        <a href="https://github.com/ton-username" target="_blank" class="contact-item">
-          <div class="contact-item-left">
-            <span class="contact-item-icon">⌥</span>
-            <div>
-              <div class="contact-item-label">GitHub</div>
-              <div class="contact-item-val">github.com/kirikou18</div>
-            </div>
+        <a href="https://github.com/ton-username" target="_blank" class="cl">
+          <div class="cl-l">
+            <div class="cl-ic">🐙</div>
+            <div><div class="cl-name">GitHub</div><div class="cl-val">github.com/ton-username</div></div>
           </div>
-          <span class="contact-item-arr">→</span>
+          <span class="cl-arr">→</span>
         </a>
-        <a href="https://linkedin.com/in/ton-profil" target="_blank" class="contact-item">
-          <div class="contact-item-left">
-            <span class="contact-item-icon">◈</span>
-            <div>
-              <div class="contact-item-label">LinkedIn</div>
-              <div class="contact-item-val">linkedin.com/in/thomascomin</div>
-            </div>
+        <a href="https://linkedin.com/in/ton-profil" target="_blank" class="cl">
+          <div class="cl-l">
+            <div class="cl-ic">💼</div>
+            <div><div class="cl-name">LinkedIn</div><div class="cl-val">linkedin.com/in/ton-profil</div></div>
           </div>
-          <span class="contact-item-arr">→</span>
+          <span class="cl-arr">→</span>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ── FOOTER ── -->
 <footer>
-  <span>© 2025 Thomas COMIN — BTS SIO SLAM</span>
+  <span>© 2025 Prénom NOM · BTS SIO SLAM</span>
   <span>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></span>
 </footer>
 
 <script>
-  // Scroll reveal
+  // Reveal on scroll
   const obs = new IntersectionObserver(e => {
     e.forEach(x => { if (x.isIntersecting) x.target.classList.add('on'); });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.07 });
   document.querySelectorAll('.r').forEach(el => obs.observe(el));
 
   // Active nav
   const secs = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  const onScroll = () => {
+  const navAs = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
     let cur = '';
-    secs.forEach(s => { if (scrollY >= s.offsetTop - 100) cur = s.id; });
-    navLinks.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
-    });
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
+    secs.forEach(s => { if (scrollY >= s.offsetTop - 120) cur = s.id; });
+    navAs.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
+  }, { passive:true });
+
+  // Project tabs
+  function switchTab(id, btn) {
+    document.querySelectorAll('.proj-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.proj-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
 </script>
 
 </body>
