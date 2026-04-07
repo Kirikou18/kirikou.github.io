@@ -406,7 +406,7 @@
     <div class="hero-btns">
       <a href="#missions" class="btn btn-p">Voir mes missions</a>
       <a href="#parcours" class="btn btn-s">Mon parcours →</a>
-      <a href="#" class="btn btn-s">↓ Mon CV</a>
+      
     </div>
     <div class="hero-stats">
       <div><div class="stat-n">2</div><div class="stat-l">Stages en entreprise</div></div>
@@ -579,80 +579,68 @@
         <div class="mc-header">
           <div>
             <div class="mc-type">⚙️ Mission principale</div>
-            <div class="mc-title">Tests d'intégration — Projet Scenario Commerce</div>
-            <div class="mc-context">Projet e-commerce complet · API panier, catalogue, livraison</div>
+            <div class="mc-title">Vérification automatique du bon fonctionnement de la boutique en ligne</div>
+            <div class="mc-context">Projet Scenario Commerce · Altazion · Jan–Fév 2026</div>
           </div>
           <div class="mc-period">Jan. 2026 → Fév. 2026<br>6 semaines</div>
         </div>
         <div class="mc-body">
           <p class="mc-desc">
-            Ma mission était d'implémenter une suite complète de <strong>tests d'intégration</strong> sur le projet "Scenario Commerce" — une API C# couvrant toutes les fonctionnalités d'un e-commerce professionnel (catalogue, panier, livraison, coupons, magasins…) utilisée par des clients comme IKEA et King Jouet.<br><br>
-            Chaque test lance automatiquement des <strong>conteneurs Docker</strong> via TestContainers (SQL Server, Redis, MongoDB, Commerce API) pour reproduire l'environnement réel, exécute les scénarios, puis les détruit. J'ai lu et appliqué la documentation <code>TEST_INTEGRATION.md</code>, travaillé en collaboration avec mon tuteur <strong>Michael CARBENAY</strong> sur Teams, et utilisé <strong>GitHub Copilot</strong> comme outil d'aide tout en comprenant chaque ligne.
+            Altazion développe des outils de boutique en ligne utilisés par de grandes enseignes comme <strong>IKEA, King Jouet ou MR Bricolage</strong>. Ma mission était de créer des programmes automatiques qui vérifient que chaque fonctionnalité de la boutique marche correctement — comme si on simulait un vrai client qui cherche un produit, l'ajoute au panier, applique un code promo et finalise sa commande.<br><br>
+            Pour ça, j'ai travaillé avec <strong>Docker</strong>, un outil qui permet de recréer un environnement de boutique complet sur mon ordinateur le temps des vérifications. J'ai collaboré régulièrement avec mon tuteur <strong>Michael CARBENAY</strong> via Teams.
           </p>
           <div class="mc-tasks">
-            <div class="mc-tasks-title">Scénarios développés</div>
-            <div class="mc-task"><strong>ProductSearchAndFilterScenarioTest</strong> — Recherches textuelles, pagination, filtres et facettes catalogue</div>
-            <div class="mc-task"><strong>ProductDetailsAndAvailabilityScenarioTest</strong> — Détails produit, prix, images, attributs, disponibilité web/magasins</div>
-            <div class="mc-task"><strong>CartManagementScenarioTest</strong> — Ajout/suppression/modification quantités, calcul des totaux panier</div>
-            <div class="mc-task"><strong>CartPromotionsScenarioTest</strong> — Application et retrait de coupons, calcul des remises</div>
-            <div class="mc-task"><strong>CartValidationAndShippingScenarioTest</strong> — Validation panier, choix mode livraison, frais de port</div>
-            <div class="mc-task"><strong>PickupPointSelectionScenarioTest</strong> — Recherche de points relais, sélection retrait en magasin</div>
-            <div class="mc-task"><strong>CompleteOrderFlowScenarioTest</strong> — Scénario end-to-end : session → catalogue → panier → coupon → livraison → validation</div>
+            <div class="mc-tasks-title">Ce que j'ai vérifié et automatisé</div>
+            <div class="mc-task">La <strong>recherche de produits</strong> — filtres, pagination, résultats corrects</div>
+            <div class="mc-task">L'<strong>affichage d'un produit</strong> — prix, images, disponibilité en ligne et en magasin</div>
+            <div class="mc-task">La <strong>gestion du panier</strong> — ajout, suppression, modification des quantités</div>
+            <div class="mc-task">Les <strong>codes promo</strong> — application et calcul des réductions</div>
+            <div class="mc-task">La <strong>livraison</strong> — choix du mode de livraison, points relais, frais</div>
+            <div class="mc-task">Le <strong>parcours complet</strong> — de la recherche jusqu'à la validation de commande</div>
           </div>
 
-          <!-- SCREENSHOTS RÉELS -->
           <div class="mc-screens">
             <div class="mc-screens-title">Captures d'écran</div>
             <div class="screens-row">
-              <div class="screen-placeholder" onclick="openLb('images/stage2/structure_du_projet.png')" title="Structure du projet Visual Studio">
-                <img src="images/stage2/structure_du_projet.png" alt="Structure du projet">
+              <div class="screen-placeholder" onclick="openLb('images/stage2/structure%20du%20projet.png')" title="Structure du projet Visual Studio">
+                <img src="images/stage2/structure%20du%20projet.png" alt="Structure du projet">
               </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/azuredevops.png')" title="Azure DevOps — Repo Scenario-Commerce-Main">
+              <div class="screen-placeholder" onclick="openLb('images/stage2/azuredevops.png')" title="Azure DevOps — dépôt du projet">
                 <img src="images/stage2/azuredevops.png" alt="Azure DevOps repo">
               </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/azure_dev_ops_push.png')" title="Historique des commits Thomas COMIN">
-                <img src="images/stage2/azure_dev_ops_push.png" alt="Commits Azure DevOps">
+              <div class="screen-placeholder" onclick="openLb('images/stage2/azure%20dev%20ops%20push.png')" title="Historique de mes contributions">
+                <img src="images/stage2/azure%20dev%20ops%20push.png" alt="Commits Azure DevOps">
               </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/azuredevops_projet_au_quel_jai_acces.png')" title="Projets Altazion auxquels j'ai accès">
-                <img src="images/stage2/azuredevops_projet_au_quel_jai_acces.png" alt="Projets Azure DevOps">
+              <div class="screen-placeholder" onclick="openLb('images/stage2/azuredevops%20projet%20au%20quel%20jai%20acces.png')" title="Projets Altazion auxquels j'ai eu accès">
+                <img src="images/stage2/azuredevops%20projet%20au%20quel%20jai%20acces.png" alt="Projets Azure DevOps">
               </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/docker_avant_test.png')" title="Docker Desktop — avant lancement des tests">
-                <img src="images/stage2/docker_avant_test.png" alt="Docker avant tests">
+              <div class="screen-placeholder" onclick="openLb('images/stage2/docker%20avant%20test.png')" title="Docker — avant le lancement des tests">
+                <img src="images/stage2/docker%20avant%20test.png" alt="Docker avant tests">
               </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/docker_apres_les_tests.png')" title="Docker Desktop — conteneurs lancés par TestContainers">
-                <img src="images/stage2/docker_apres_les_tests.png" alt="Docker après tests">
+              <div class="screen-placeholder" onclick="openLb('images/stage2/docker%20apres%20les%20tests.png')" title="Docker — environnement lancé automatiquement pendant les tests">
+                <img src="images/stage2/docker%20apres%20les%20tests.png" alt="Docker après tests">
               </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/console_apres_le_test_d_inté.png')" title="Console Visual Studio — tests en cours d'exécution">
-                <img src="images/stage2/console_apres_le_test_d_inté.png" alt="Console tests">
+              <div class="screen-placeholder" onclick="openLb('images/stage2/console%20apres%202.png')" title="Résultats des tests — tout est validé">
+                <img src="images/stage2/console%20apres%202.png" alt="Résultats tests">
               </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/console_apres_2.png')" title="Console Visual Studio — résultats des tests">
-                <img src="images/stage2/console_apres_2.png" alt="Résultats tests">
+              <div class="screen-placeholder" onclick="openLb('images/stage2/swagger%20part1.png')" title="Documentation de l'API Altazion Commerce">
+                <img src="images/stage2/swagger%20part1.png" alt="Swagger API">
               </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/swagger_part1.png')" title="Swagger UI — API Altazion Commerce">
-                <img src="images/stage2/swagger_part1.png" alt="Swagger API">
+              <div class="screen-placeholder" onclick="openLb('images/stage2/teams%20mich.png')" title="Échange Teams avec mon tuteur Michael CARBENAY">
+                <img src="images/stage2/teams%20mich.png" alt="Teams tuteur">
               </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/swagger_product.png')" title="Swagger — endpoint Products">
-                <img src="images/stage2/swagger_product.png" alt="Swagger Products">
-              </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/teams_mich.png')" title="Teams — échange avec tuteur sur Docker auth Azure">
-                <img src="images/stage2/teams_mich.png" alt="Teams tuteur">
-              </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/teams_mich2.png')" title="Teams — réception docker-compose.yml du tuteur">
-                <img src="images/stage2/teams_mich2.png" alt="Teams docker-compose">
+              <div class="screen-placeholder" onclick="openLb('images/stage2/teams%20mich2.png')" title="Mon tuteur m'envoie la configuration Docker">
+                <img src="images/stage2/teams%20mich2.png" alt="Teams docker-compose">
               </div>
             </div>
           </div>
 
           <div class="tags">
             <span class="tag ta">C#</span>
-            <span class="tag ta">TestContainers</span>
             <span class="tag ta">Docker</span>
             <span class="tag ta">Azure DevOps</span>
-            <span class="tag tn">SQL Server</span>
-            <span class="tag tn">Redis</span>
-            <span class="tag tn">MongoDB</span>
-            <span class="tag tn">Swagger</span>
-            <span class="tag tn">GitHub Copilot</span>
+            <span class="tag tn">Tests automatisés</span>
+            <span class="tag tn">API e-commerce</span>
           </div>
           <a href="#" class="mc-doc-link">📄 Rapport de stage ↗</a>
         </div>
@@ -670,17 +658,16 @@
             <div class="mc-title">Altazion / Creo Ignem</div>
             <div class="mc-context">Commerce digital · Anzin · <a href="https://www.altazion-services.com/" target="_blank" style="color:var(--accent2)">altazion-services.com</a></div>
           </div>
-          <div class="mc-period">Mai 2025 — Juin 2025<br>Stage 1ère année</div>
+          <div class="mc-period">Mai 2025 — Juin 2025<br>Stage 1ère année · 4 semaines</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">Premier stage chez Altazion, j'ai travaillé sur le module <strong>Unified Stock</strong> — un système de gestion de stocks unifié utilisant <strong>Redis</strong> comme base de données clé-valeur, avec une architecture API en C# (.NET).</p>
+          <p class="mc-desc">Premier stage chez Altazion, dans la même entreprise que le stage 2. J'ai travaillé sur un module de <strong>gestion de stocks</strong> pour leur système interne, en utilisant des technologies professionnelles comme Redis et Docker.</p>
           <div class="tags">
-            <span class="tag ta">C# / .NET</span>
+            <span class="tag ta">C#</span>
             <span class="tag ta">Redis</span>
             <span class="tag ta">Docker</span>
-            <span class="tag tn">Swagger</span>
-            <span class="tag tn">VS Code</span>
-            <span class="tag tn">Git</span>
+            <span class="tag tn">Azure DevOps</span>
+            <span class="tag tn">Visual Studio</span>
           </div>
         </div>
       </div>
@@ -688,89 +675,30 @@
       <div class="mission-card r d1">
         <div class="mc-header">
           <div>
-            <div class="mc-type">⚙️ Mission — Semaine 1</div>
-            <div class="mc-title">Découverte Redis &amp; Docker · Warehouses CRUD</div>
-            <div class="mc-context">Unified Stock · Module gestion des entrepôts</div>
+            <div class="mc-type">⚙️ Mission</div>
+            <div class="mc-title">Développement du module de gestion des stocks</div>
+            <div class="mc-context">Projet Unified Stock · Altazion</div>
           </div>
-          <div class="mc-period">26 mai → 30 mai 2025</div>
+          <div class="mc-period">Mai → Juin 2025<br>4 semaines</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">Prise en main de l'environnement : configuration du poste, découverte de <strong>Redis</strong> (types String, List, Hash…), Docker, et du projet Orchestrator. Développement du CRUD complet pour les <strong>Warehouses</strong> (entrepôts) avec BLL, Controller et tests unitaires.</p>
+          <p class="mc-desc">
+            Altazion gère les stocks de grandes enseignes en temps réel. Ma mission était de développer un ensemble de fonctionnalités pour <strong>consulter, ajouter, modifier et supprimer</strong> des données de stock (entrepôts, articles, références d'articles) dans leur système.<br><br>
+            J'ai aussi créé des <strong>tests automatiques</strong> pour vérifier que chaque fonctionnalité développée fonctionne correctement, puis j'ai livré l'ensemble de mon travail à l'équipe via un dépôt de code partagé.
+          </p>
           <div class="mc-tasks">
-            <div class="mc-tasks-title">Réalisations</div>
-            <div class="mc-task">Recherche et prise en main de Redis, Docker, TestContainers</div>
-            <div class="mc-task">Implémentation <strong>Delete une seule Warehouse</strong>, <strong>Delete toutes les Warehouses</strong>, <strong>Upsert plusieurs Warehouses</strong></div>
-            <div class="mc-task">BLL + Controller complets pour les Warehouses</div>
-            <div class="mc-task">Tests en Swagger (Postman refusait l'authentification)</div>
-          </div>
-          <div class="mc-screens">
-            <div class="mc-screens-title">Captures d'écran</div>
-            <div class="screens-row">
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-add">＋<span>Ajouter</span></div>
-            </div>
+            <div class="mc-tasks-title">Ce que j'ai développé</div>
+            <div class="mc-task">Gestion des <strong>entrepôts</strong> — ajouter, modifier, supprimer, consulter</div>
+            <div class="mc-task">Gestion des <strong>articles</strong> — toutes les opérations de consultation et mise à jour</div>
+            <div class="mc-task">Gestion des <strong>références articles</strong> — classement par type et groupe</div>
+            <div class="mc-task"><strong>Tests automatiques</strong> sur chaque fonctionnalité pour garantir leur bon fonctionnement</div>
+            <div class="mc-task">Livraison finale du module complet, relu et validé par l'équipe</div>
           </div>
           <div class="tags">
-            <span class="tag ta">C#</span><span class="tag ta">Redis</span><span class="tag ta">Docker</span><span class="tag tn">Swagger</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="mission-card r d2">
-        <div class="mc-header">
-          <div>
-            <div class="mc-type">⚙️ Mission — Semaines 2–3</div>
-            <div class="mc-title">Articles CRUD + Tests unitaires</div>
-            <div class="mc-context">Unified Stock · Module gestion des articles</div>
-          </div>
-          <div class="mc-period">2 juin → 13 juin 2025</div>
-        </div>
-        <div class="mc-body">
-          <p class="mc-desc">Implémentation complète des CRUDs pour les <strong>Articles</strong> et leurs références (ArtRefs). Développement du BLL, des Controllers, puis des tests unitaires complets pour chaque méthode.</p>
-          <div class="mc-tasks">
-            <div class="mc-tasks-title">Réalisations</div>
-            <div class="mc-task"><strong>Semaine 2 :</strong> CountArticles, GetAllArticlesBaseInfos, DeleteArticle, UpsertArticlesBasesInfos, UpsertArticleBase, DeleteArticles — BLL + Controller</div>
-            <div class="mc-task"><strong>Tests unitaires Articles :</strong> CountAllArt, GetAllArt, DeleteAllArt, DeleteAnArt, GetAArt, UpsertAnArt, UpsertMultipleArt, DeleteMultipleArt, GetArtByRef, CheckIfArtExist</div>
-            <div class="mc-task"><strong>Semaine 3 :</strong> Module ArtRefs — Bll, Controller (Get, Post, Delete), tests unitaires complets</div>
-            <div class="mc-task">Découverte des Lambda expressions, comprendre la différence tests unitaires vs tests d'intégration (Mocker)</div>
-          </div>
-          <div class="mc-screens">
-            <div class="mc-screens-title">Captures d'écran</div>
-            <div class="screens-row">
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-add">＋<span>Ajouter</span></div>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag ta">C#</span><span class="tag ta">xUnit</span><span class="tag tn">Lambda</span><span class="tag tn">Git</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="mission-card r d3">
-        <div class="mc-header">
-          <div>
-            <div class="mc-type">✅ Finalisation — Semaine 4</div>
-            <div class="mc-title">Unified Stock finalisé · PR &amp; livraison</div>
-            <div class="mc-context">Unified Stock · Livraison finale</div>
-          </div>
-          <div class="mc-period">16 juin → 20 juin 2025</div>
-        </div>
-        <div class="mc-body">
-          <p class="mc-desc">Finalisation du module Unified Stock : vérification de l'ensemble du code, ajout des counts avant/après chaque test (upsert/delete), push et PR. <strong>Tous les items sont terminés.</strong></p>
-          <div class="mc-tasks">
-            <div class="mc-tasks-title">Réalisations finales</div>
-            <div class="mc-task">Tests unitaires ArtRefs complets et vérifiés</div>
-            <div class="mc-task">Ajout des Count systématiques avant/après chaque test</div>
-            <div class="mc-task">Nettoyage du code, rangement, suppression des controllers inutiles</div>
-            <div class="mc-task">Push final, Pull Request créée, livret de stage complété</div>
-            <div class="mc-task"><strong>Unified Stock 100% finalisé</strong></div>
-          </div>
-          <div class="tags">
-            <span class="tag tg">✅ Livré</span><span class="tag ta">Git</span><span class="tag tn">Azure DevOps</span>
+            <span class="tag tg">✅ Livré</span>
+            <span class="tag ta">C#</span>
+            <span class="tag tn">Tests automatisés</span>
+            <span class="tag tn">Git</span>
           </div>
           <a href="#" class="mc-doc-link">📄 Rapport de stage ↗</a>
         </div>
@@ -785,201 +713,118 @@
       <div class="mission-card r">
         <div class="mc-header">
           <div>
-            <div class="mc-type">🏥 Contexte AP — GSB</div>
-            <div class="mc-title">Galaxy Swiss Bourdin — Projet fil rouge</div>
-            <div class="mc-context">Groupe <strong>CVL</strong> (Centre-Val de Loire) · Sous-réseau 172.23.64.0/20 · Avec Lucas Cornu &amp; Druesne Théo</div>
+            <div class="mc-type">🏥 Projet fil rouge — GSB</div>
+            <div class="mc-title">Galaxy Swiss Bourdin</div>
+            <div class="mc-context">Groupe CVL · Avec Lucas Cornu &amp; Druesne Théo · Lycée Henri Wallon</div>
           </div>
           <div class="mc-period">2025–2026<br>AP SIO2</div>
         </div>
         <div class="mc-body">
           <p class="mc-desc">
-            Le projet fil rouge de 2ème année est centré sur le laboratoire fictif <strong>Galaxy Swiss Bourdin (GSB)</strong>. Notre groupe <strong>CVL</strong> est responsable de la région Centre-Val de Loire (départements 18, 28, 36, 37, 41, 45). Chaque groupe monte une infrastructure complète (VM dev, serveur BDD Linux, serveur web Linux, machine de production) et réalise plusieurs missions applicatives autour de la gestion des praticiens GSB.
+            GSB est un laboratoire pharmaceutique fictif utilisé comme fil rouge pendant la 2ème année. Notre groupe est en charge de la région <strong>Centre-Val de Loire</strong>. On a monté une infrastructure réseau complète (serveurs Linux, machines virtuelles) et développé plusieurs applications pour gérer les praticiens de la région.
           </p>
-          <div class="mc-tasks">
-            <div class="mc-tasks-title">Infrastructure mise en place (Fiche 1 — B1.4, B1.5)</div>
-            <div class="mc-task">Machine de développement Windows (Visual Studio, VS Code, MariaDB local)</div>
-            <div class="mc-task">Serveur Linux BDD — <strong>CVL_DBTEST</strong> · IP fixe · MariaDB + phpMyAdmin</div>
-            <div class="mc-task">Serveur Linux Web — <strong>CVL_WEBTEST</strong> · IP fixe · Apache + PHP dernière version</div>
-            <div class="mc-task">Machine de production Windows connectée aux serveurs</div>
-            <div class="mc-task">Espace partagé GitLab + Google Drive pour le groupe (accès lecture enseignants)</div>
-            <div class="mc-task">Communication réseau testée et validée sur la plage 172.23.64.0/20</div>
-          </div>
           <div class="tags">
             <span class="tag ta">Linux</span><span class="tag ta">Apache</span><span class="tag ta">MariaDB</span>
-            <span class="tag tn">phpMyAdmin</span><span class="tag tn">VirtualBox</span><span class="tag tn">GitLab</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- MISSION APPLICATIF — PHP praticiens -->
-      <div class="mission-card r d1">
-        <div class="mc-header">
-          <div>
-            <div class="mc-type">🌐 Mission Applicatif</div>
-            <div class="mc-title">Interface web PHP — Gestion des praticiens GSB</div>
-            <div class="mc-context">B1.2 · B1.4 · B2.1 · B2.3 — Groupe CVL</div>
-          </div>
-          <div class="mc-period">2025<br>AP3-4</div>
-        </div>
-        <div class="mc-body">
-          <p class="mc-desc">
-            Interface web en <strong>PHP</strong> pour consulter, modifier, supprimer et ajouter des praticiens depuis la base de données GSB. L'interface se connecte au serveur de BDD et récupère les praticiens de la région CVL uniquement (via une vue SQL filtrée sur les départements 18, 28, 36, 37, 41, 45).
-          </p>
-          <div class="mc-tasks">
-            <div class="mc-tasks-title">Réalisations</div>
-            <div class="mc-task">Récupération et import de la base de données <strong>Gsb_praticien</strong></div>
-            <div class="mc-task">Création d'une vue SQL filtrée sur la région CVL</div>
-            <div class="mc-task">Interface CRUD complète en PHP : liste, ajout, modification, suppression</div>
-            <div class="mc-task">Connexion sécurisée au serveur MariaDB CVL_DBTEST</div>
-            <div class="mc-task">Déploiement sur le serveur Apache CVL_WEBTEST</div>
-          </div>
-          <div class="mc-screens">
-            <div class="mc-screens-title">Captures d'écran</div>
-            <div class="screens-row">
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-add">＋<span>Ajouter</span></div>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag ta">PHP</span><span class="tag ta">MySQL</span><span class="tag tn">Apache</span><span class="tag tn">HTML/CSS</span><span class="tag tn">SQL (Vue)</span>
+            <span class="tag tn">VirtualBox</span><span class="tag tn">GitLab</span>
           </div>
         </div>
       </div>
 
       <!-- MISSION 1 — C# Congés -->
-      <div class="mission-card r d2">
+      <div class="mission-card r d1">
         <div class="mc-header">
           <div>
-            <div class="mc-type">💻 Mission 1 — Application bureau</div>
-            <div class="mc-title">Gestion des congés des praticiens — C# Windows</div>
-            <div class="mc-context">B1.2.2 · B1.3.1 · B1.4.1/2/3 · B1.5.1 — Groupe CVL</div>
+            <div class="mc-type">💻 Mission 1</div>
+            <div class="mc-title">Application de gestion des congés</div>
+            <div class="mc-context">Application Windows · C# · GSB</div>
           </div>
-          <div class="mc-period">2025<br>AP3-4 Mission 1</div>
+          <div class="mc-period">2025<br>En cours</div>
         </div>
         <div class="mc-body">
           <p class="mc-desc">
-            Application <strong>Windows C#</strong> de gestion des congés des praticiens GSB. Deux rôles distincts : le <strong>compte praticien</strong> peut soumettre des demandes de congé (avec vérification automatique du solde) et le <strong>compte RH</strong> peut accepter ou refuser les demandes. À la connexion, l'utilisateur reçoit une notification sur l'état de ses demandes en cours. Basé sur le projet GitHub <em>GsbVille</em> d'Axel Trocquet, adapté et enrichi.
+            Application Windows qui permet aux praticiens de demander des congés en ligne. Un responsable RH peut ensuite accepter ou refuser chaque demande. L'application vérifie automatiquement que le praticien a bien des jours restants avant de valider.
           </p>
           <div class="mc-tasks">
-            <div class="mc-tasks-title">Fonctionnalités développées</div>
-            <div class="mc-task"><strong>Compte praticien :</strong> formulaire de demande de congé, sélection date début/fin, affichage du solde restant, refus automatique si solde insuffisant</div>
-            <div class="mc-task"><strong>Compte RH (admin) :</strong> liste des praticiens ayant demandé un congé, consultation détaillée, acceptation ou refus</div>
-            <div class="mc-task"><strong>Notifications :</strong> à la connexion, affichage des demandes en cours et de leur statut</div>
-            <div class="mc-task">Modélisation objet : utilisation d'objets C# pour chaque entité de la BDD</div>
-            <div class="mc-task">Connexion et requêtes à la base de données MariaDB</div>
+            <div class="mc-tasks-title">Fonctionnalités</div>
+            <div class="mc-task"><strong>Praticien :</strong> demande de congé avec dates, solde affiché en temps réel</div>
+            <div class="mc-task"><strong>RH :</strong> liste des demandes, acceptation ou refus</div>
+            <div class="mc-task">Notification automatique à la connexion sur l'état de ses demandes</div>
           </div>
           <div class="mc-screens">
             <div class="mc-screens-title">Captures d'écran</div>
             <div class="screens-row">
               <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
               <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-add">＋<span>Ajouter</span></div>
             </div>
           </div>
           <div class="tags">
-            <span class="tag ta">C#</span><span class="tag ta">WinForms</span><span class="tag ta">MySQL</span>
-            <span class="tag tn">POO</span><span class="tag tn">Visual Studio</span><span class="tag tn">GitLab</span>
+            <span class="tag ta">C#</span><span class="tag ta">WinForms</span><span class="tag tn">MySQL</span><span class="tag tn">GitLab</span>
           </div>
         </div>
       </div>
 
       <!-- MISSION 2 — Laravel Salaires -->
+      <div class="mission-card r d2">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">🌐 Mission 2</div>
+            <div class="mc-title">Site web de gestion des salaires</div>
+            <div class="mc-context">Application web · Laravel · GSB</div>
+          </div>
+          <div class="mc-period">2025–2026<br>En cours</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">
+            Site web pour le service RH permettant de consulter et gérer les salaires des praticiens. Le salaire est calculé automatiquement selon l'ancienneté du praticien, sur une grille de 13 niveaux (de 4 633 € à 9 368 €).
+          </p>
+          <div class="mc-tasks">
+            <div class="mc-tasks-title">Fonctionnalités</div>
+            <div class="mc-task">Connexion sécurisée pour le service RH</div>
+            <div class="mc-task">Consultation du salaire, échelon et ancienneté de chaque praticien</div>
+            <div class="mc-task">Mise à jour de l'ancienneté et recalcul automatique du salaire</div>
+          </div>
+          <div class="mc-screens">
+            <div class="mc-screens-title">Captures d'écran</div>
+            <div class="screens-row">
+              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
+              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag ta">Laravel</span><span class="tag ta">PHP</span><span class="tag tn">MySQL</span><span class="tag tn">GitLab</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MISSION 5 — Mobile Notes -->
       <div class="mission-card r d3">
         <div class="mc-header">
           <div>
-            <div class="mc-type">🌐 Mission 2 — Application web</div>
-            <div class="mc-title">Gestion des salaires des praticiens — Laravel</div>
-            <div class="mc-context">B1.2.2 · B1.3.1 · B1.4.1/2/3 · B1.5.1 — Groupe CVL</div>
+            <div class="mc-type">📱 Mission 5</div>
+            <div class="mc-title">Application mobile — Notes des praticiens</div>
+            <div class="mc-context">Application mobile · Flutter · GSB</div>
           </div>
-          <div class="mc-period">2025–2026<br>AP3-4 Mission 2</div>
+          <div class="mc-period">Déc. 2025<br>En cours</div>
         </div>
         <div class="mc-body">
           <p class="mc-desc">
-            Interface web avec le framework <strong>Laravel</strong> pour la gestion des salaires des praticiens GSB. Le service RH peut consulter et mettre à jour l'ancienneté de chaque praticien. Le salaire est calculé automatiquement selon une grille tarifaire à <strong>13 échelons</strong> (de 4 633 € à 9 368 €) en fonction de l'ancienneté. Une API REST est également fournie pour un futur portage mobile.
+            Application mobile qui permet aux clients de consulter et comparer les praticiens de la région selon leurs notes. Chaque praticien a une note donnée par les clients et une note d'experts, toutes les deux sur 5.
           </p>
           <div class="mc-tasks">
-            <div class="mc-tasks-title">Fonctionnalités développées</div>
-            <div class="mc-task">Modification de la BDD : ajout colonnes ancienneté et échelon</div>
-            <div class="mc-task">Calcul automatique de l'échelon selon la grille tarifaire (13 niveaux)</div>
-            <div class="mc-task">Interface RH sécurisée (connexion avec droits spécifiques)</div>
-            <div class="mc-task">Sélection d'un praticien → affichage ancienneté, échelon, salaire brut</div>
-            <div class="mc-task">Filtres de recherche par ancienneté / échelon / salaire</div>
-            <div class="mc-task">Mise à jour de l'ancienneté directement depuis l'interface</div>
-            <div class="mc-task">API REST : liste des praticiens avec ancienneté et salaire</div>
+            <div class="mc-tasks-title">Fonctionnalités</div>
+            <div class="mc-task">Liste des praticiens avec leurs notes visibles directement</div>
+            <div class="mc-task">Détail d'un praticien : infos, commentaires clients et experts</div>
+            <div class="mc-task">Tri des praticiens par note</div>
           </div>
           <div class="mc-screens">
             <div class="mc-screens-title">Captures d'écran</div>
             <div class="screens-row">
               <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
               <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-add">＋<span>Ajouter</span></div>
             </div>
           </div>
           <div class="tags">
-            <span class="tag ta">Laravel</span><span class="tag ta">PHP</span><span class="tag ta">MySQL</span>
-            <span class="tag tn">API REST</span><span class="tag tn">Blade</span><span class="tag tn">GitLab</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- MISSION 5 — Flutter Notes -->
-      <div class="mission-card r d4">
-        <div class="mc-header">
-          <div>
-            <div class="mc-type">📱 Mission 5 — Application mobile</div>
-            <div class="mc-title">Notes &amp; avis des praticiens — Flutter</div>
-            <div class="mc-context">A1.1.1 · A1.4.1 · A4.1.2 · A4.1.7 · A4.1.9 — Groupe CVL · Décembre 2025</div>
-          </div>
-          <div class="mc-period">Déc. 2025<br>AP3-4 Mission 5</div>
-        </div>
-        <div class="mc-body">
-          <p class="mc-desc">
-            Application mobile <strong>Flutter</strong> permettant aux clients de consulter les notes des praticiens GSB de la région CVL. Chaque praticien possède deux notes sur 5 : une <strong>note client</strong> et une <strong>note expert</strong>. L'application permet d'afficher le détail des avis avec commentaires et de trier les praticiens selon leurs notes.
-          </p>
-          <div class="mc-tasks">
-            <div class="mc-tasks-title">Fonctionnalités développées</div>
-            <div class="mc-task">Liste des praticiens avec leurs deux notes (client / expert) affichées</div>
-            <div class="mc-task">Bouton "Détail" : affichage du nom, prénom, adresse, ville, code postal</div>
-            <div class="mc-task">Détail de la note expert + liste commentaires experts</div>
-            <div class="mc-task">Détail de la note client + liste commentaires clients</div>
-            <div class="mc-task">Tri des praticiens par note (client ou expert)</div>
-            <div class="mc-task">Consommation de l'API REST développée en Mission 2</div>
-          </div>
-          <div class="mc-screens">
-            <div class="mc-screens-title">Captures d'écran</div>
-            <div class="screens-row">
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-add">＋<span>Ajouter</span></div>
-            </div>
-          </div>
-          <div class="tags">
-            <span class="tag ta">Flutter</span><span class="tag ta">Dart</span>
-            <span class="tag tn">API REST</span><span class="tag tn">Android</span><span class="tag tn">GitLab</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- PORTFOLIO -->
-      <div class="mission-card r">
-        <div class="mc-header">
-          <div>
-            <div class="mc-type">🌐 Projet personnel</div>
-            <div class="mc-title">Site web portfolio — E5</div>
-            <div class="mc-context">BTS SIO SLAM · Épreuve E5 · 2025–2026</div>
-          </div>
-          <div class="mc-period">2026<br>Projet perso</div>
-        </div>
-        <div class="mc-body">
-          <p class="mc-desc">Création de ce portfolio pour présenter mon parcours, mes stages et mes réalisations dans le cadre de la préparation à l'épreuve E5 du BTS SIO. Hébergé sur GitHub Pages.</p>
-          <div class="tags">
-            <span class="tag ta">HTML</span><span class="tag ta">CSS</span><span class="tag tn">JavaScript</span><span class="tag tn">GitHub Pages</span>
+            <span class="tag ta">Flutter</span><span class="tag ta">Dart</span><span class="tag tn">API REST</span><span class="tag tn">GitLab</span>
           </div>
         </div>
       </div>
@@ -1084,9 +929,7 @@
         <div><div class="certif-name">SecNumAcadémie</div><div class="certif-org">ANSSI</div></div>
         <div class="certif-year">2024 ✓</div>
       </div>
-      <div class="certif-card" style="border-style:dashed">
-        <div class="certif-ico">➕</div>
-        <div><div class="certif-name">À compléter</div><div class="certif-org">Tes autres certifs</div></div>
+      </div>
       </div>
     </div>
   </div>
@@ -1101,19 +944,12 @@
       <div>
         <div class="contact-title">Parlons ensemble 👋</div>
         <p class="contact-sub">Une question, une opportunité de stage ou d'alternance ? Je suis disponible et ouvert à toute discussion. N'hésitez pas à me contacter !</p>
-        <div class="cv-box">
-          <div class="cv-txt">
-            <strong>Mon curriculum vitæ</strong>
-            Retrouve l'ensemble de mon parcours et mes compétences
-          </div>
-          <a href="#" class="btn btn-s" style="white-space:nowrap">↓ Télécharger</a>
         </div>
-      </div>
       <div class="contact-links">
-        <a href="mailto:tcomin3@gmail.com" class="cl">
+        <a href="/cdn-cgi/l/email-protection#ec988f83818582dfac8b818d8580c28f8381" class="cl">
           <div class="cl-l">
             <div class="cl-ic">✉️</div>
-            <div><div class="cl-name">Email</div><div class="cl-val">tcomin3@gmail.com</div></div>
+            <div><div class="cl-name">Email</div><div class="cl-val"><span class="__cf_email__" data-cfemail="b3c7d0dcdedadd80f3d4ded2dadf9dd0dcde">[email&#160;protected]</span></div></div>
           </div>
           <span class="cl-arr">→</span>
         </a>
@@ -1141,7 +977,7 @@
   <span>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Active reveal animations only when JS loads
   document.body.classList.add('js-ready');
 
@@ -1173,7 +1009,7 @@
     document.getElementById('lb-img').src = src;
     document.getElementById('lb').classList.add('open');
   }
-  function closeLb() {
+    function closeLb() {
     document.getElementById('lb').classList.remove('open');
   }
   document.querySelectorAll('.screen-placeholder').forEach(el => {
