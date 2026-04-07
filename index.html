@@ -545,13 +545,13 @@
       <button class="tab-btn active" onclick="switchTab('stage2',this)">🏢 Stage 2 — 2026</button>
       <button class="tab-btn" onclick="switchTab('stage1',this)">🏢 Stage 1 — 2025</button>
       <button class="tab-btn" onclick="switchTab('scolaire',this)">🎓 Projets scolaires</button>
+      <button class="tab-btn" onclick="switchTab('perso',this)">⚡ Projet personnel</button>
 
     </div>
 
     <!-- ===== STAGE 2 — 2026 ===== -->
     <div class="tab-panel active" id="tab-stage2">
 
-      <!-- Contexte entreprise -->
       <div class="mission-card r">
         <div class="mc-header">
           <div>
@@ -562,79 +562,50 @@
           <div class="mc-period">Jan. 2026 — Fév. 2026<br>Stage 2ème année</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">Altazion (anciennement Creo Ignem, fondée en 2004) est une entreprise spécialisée dans le développement d'outils de commerce digital pour de grandes entreprises françaises : <strong>IKEA, King Jouet, MR Bricolage</strong>. Ils développent des solutions e-commerce, des bornes en magasin (style McDonald's), et des outils pour vendeurs. Clients pratiquement tous français.</p>
+          <p class="mc-desc">Altazion (anciennement Creo Ignem, fondée en 2004) développe des outils e-commerce pour de grandes enseignes : <strong>IKEA, King Jouet, MR Bricolage</strong>.</p>
           <div class="tags">
-            <span class="tag ta">C# / .NET</span>
+            <span class="tag ta">C#</span>
             <span class="tag ta">Docker</span>
-            <span class="tag ta">TestContainers</span>
-            <span class="tag tn">Postman</span>
-            <span class="tag tn">Azure DevOps</span>
-            <span class="tag tn">VS Code</span>
+            <span class="tag ta">Azure DevOps</span>
+            <span class="tag tn">Visual Studio</span>
           </div>
         </div>
       </div>
 
-      <!-- Mission principale : tests d'intégration -->
       <div class="mission-card r d1">
         <div class="mc-header">
           <div>
             <div class="mc-type">⚙️ Mission principale</div>
             <div class="mc-title">Vérification automatique du bon fonctionnement de la boutique en ligne</div>
-            <div class="mc-context">Projet Scenario Commerce · Altazion · Jan–Fév 2026</div>
+            <div class="mc-context">Projet Scenario Commerce · Altazion</div>
           </div>
           <div class="mc-period">Jan. 2026 → Fév. 2026<br>6 semaines</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">
-            Altazion développe des outils de boutique en ligne utilisés par de grandes enseignes comme <strong>IKEA, King Jouet ou MR Bricolage</strong>. Ma mission était de créer des programmes automatiques qui vérifient que chaque fonctionnalité de la boutique marche correctement — comme si on simulait un vrai client qui cherche un produit, l'ajoute au panier, applique un code promo et finalise sa commande.<br><br>
-            Pour ça, j'ai travaillé avec <strong>Docker</strong>, un outil qui permet de recréer un environnement de boutique complet sur mon ordinateur le temps des vérifications. J'ai collaboré régulièrement avec mon tuteur <strong>Michael CARBENAY</strong> via Teams.
-          </p>
+          <p class="mc-desc">Ma mission était de créer des programmes automatiques qui vérifient que chaque fonctionnalité de la boutique marche — recherche produit, panier, code promo, livraison, commande complète. J'ai travaillé avec <strong>Docker</strong> pour recréer l'environnement et collaboré avec mon tuteur <strong>Michael CARBENAY</strong> via Teams.</p>
           <div class="mc-tasks">
             <div class="mc-tasks-title">Ce que j'ai vérifié et automatisé</div>
             <div class="mc-task">La <strong>recherche de produits</strong> — filtres, pagination, résultats corrects</div>
             <div class="mc-task">L'<strong>affichage d'un produit</strong> — prix, images, disponibilité en ligne et en magasin</div>
             <div class="mc-task">La <strong>gestion du panier</strong> — ajout, suppression, modification des quantités</div>
             <div class="mc-task">Les <strong>codes promo</strong> — application et calcul des réductions</div>
-            <div class="mc-task">La <strong>livraison</strong> — choix du mode de livraison, points relais, frais</div>
+            <div class="mc-task">La <strong>livraison</strong> — choix du mode, points relais, frais</div>
             <div class="mc-task">Le <strong>parcours complet</strong> — de la recherche jusqu'à la validation de commande</div>
           </div>
-
           <div class="mc-screens">
             <div class="mc-screens-title">Captures d'écran</div>
             <div class="screens-row">
-              <div class="screen-placeholder" onclick="openLb('images/stage2/structure%20du%20projet.png')" title="Structure du projet Visual Studio">
-                <img src="images/stage2/structure%20du%20projet.png" alt="Structure du projet">
-              </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/azuredevops.png')" title="Azure DevOps — dépôt du projet">
-                <img src="images/stage2/azuredevops.png" alt="Azure DevOps repo">
-              </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/azure%20dev%20ops%20push.png')" title="Historique de mes contributions">
-                <img src="images/stage2/azure%20dev%20ops%20push.png" alt="Commits Azure DevOps">
-              </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/azuredevops%20projet%20au%20quel%20jai%20acces.png')" title="Projets Altazion auxquels j'ai eu accès">
-                <img src="images/stage2/azuredevops%20projet%20au%20quel%20jai%20acces.png" alt="Projets Azure DevOps">
-              </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/docker%20avant%20test.png')" title="Docker — avant le lancement des tests">
-                <img src="images/stage2/docker%20avant%20test.png" alt="Docker avant tests">
-              </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/docker%20apres%20les%20tests.png')" title="Docker — environnement lancé automatiquement pendant les tests">
-                <img src="images/stage2/docker%20apres%20les%20tests.png" alt="Docker après tests">
-              </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/console%20apres%202.png')" title="Résultats des tests — tout est validé">
-                <img src="images/stage2/console%20apres%202.png" alt="Résultats tests">
-              </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/swagger%20part1.png')" title="Documentation de l'API Altazion Commerce">
-                <img src="images/stage2/swagger%20part1.png" alt="Swagger API">
-              </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/teams%20mich.png')" title="Échange Teams avec mon tuteur Michael CARBENAY">
-                <img src="images/stage2/teams%20mich.png" alt="Teams tuteur">
-              </div>
-              <div class="screen-placeholder" onclick="openLb('images/stage2/teams%20mich2.png')" title="Mon tuteur m'envoie la configuration Docker">
-                <img src="images/stage2/teams%20mich2.png" alt="Teams docker-compose">
-              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/structure%20du%20projet.png')" title="Structure du projet"><img src="images/stage2/structure%20du%20projet.png" alt="Structure"></div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/azuredevops.png')" title="Azure DevOps"><img src="images/stage2/azuredevops.png" alt="Azure DevOps"></div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/azure%20dev%20ops%20push.png')" title="Mes commits"><img src="images/stage2/azure%20dev%20ops%20push.png" alt="Commits"></div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/docker%20avant%20test.png')" title="Docker avant tests"><img src="images/stage2/docker%20avant%20test.png" alt="Docker avant"></div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/docker%20apres%20les%20tests.png')" title="Docker pendant les tests"><img src="images/stage2/docker%20apres%20les%20tests.png" alt="Docker après"></div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/console%20apres%202.png')" title="Résultats validés"><img src="images/stage2/console%20apres%202.png" alt="Console"></div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/swagger%20part1.png')" title="Documentation API"><img src="images/stage2/swagger%20part1.png" alt="Swagger"></div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/teams%20mich.png')" title="Échange Teams tuteur"><img src="images/stage2/teams%20mich.png" alt="Teams"></div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/teams%20mich2.png')" title="Config Docker reçue"><img src="images/stage2/teams%20mich2.png" alt="Teams 2"></div>
             </div>
           </div>
-
           <div class="tags">
             <span class="tag ta">C#</span>
             <span class="tag ta">Docker</span>
@@ -648,7 +619,7 @@
 
     </div>
 
-    <!-- ===== STAGE 1 — 2025 ===== -->
+    <!-- STAGE 1 -->
     <div class="tab-panel" id="tab-stage1">
 
       <div class="mission-card r">
@@ -661,13 +632,10 @@
           <div class="mc-period">Mai 2025 — Juin 2025<br>Stage 1ère année · 4 semaines</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">Premier stage chez Altazion, dans la même entreprise que le stage 2. J'ai travaillé sur un module de <strong>gestion de stocks</strong> pour leur système interne, en utilisant des technologies professionnelles comme Redis et Docker.</p>
+          <p class="mc-desc">Premier stage chez Altazion. J'ai travaillé sur un module de <strong>gestion de stocks</strong> interne en C#, avec Redis et Docker.</p>
           <div class="tags">
-            <span class="tag ta">C#</span>
-            <span class="tag ta">Redis</span>
-            <span class="tag ta">Docker</span>
-            <span class="tag tn">Azure DevOps</span>
-            <span class="tag tn">Visual Studio</span>
+            <span class="tag ta">C#</span><span class="tag ta">Redis</span><span class="tag ta">Docker</span>
+            <span class="tag tn">Azure DevOps</span><span class="tag tn">Visual Studio</span>
           </div>
         </div>
       </div>
@@ -682,23 +650,18 @@
           <div class="mc-period">Mai → Juin 2025<br>4 semaines</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">
-            Altazion gère les stocks de grandes enseignes en temps réel. Ma mission était de développer un ensemble de fonctionnalités pour <strong>consulter, ajouter, modifier et supprimer</strong> des données de stock (entrepôts, articles, références d'articles) dans leur système.<br><br>
-            J'ai aussi créé des <strong>tests automatiques</strong> pour vérifier que chaque fonctionnalité développée fonctionne correctement, puis j'ai livré l'ensemble de mon travail à l'équipe via un dépôt de code partagé.
-          </p>
+          <p class="mc-desc">Développement de fonctionnalités pour <strong>consulter, ajouter, modifier et supprimer</strong> des données de stock (entrepôts, articles, références) + tests automatiques sur chaque fonctionnalité.</p>
           <div class="mc-tasks">
             <div class="mc-tasks-title">Ce que j'ai développé</div>
             <div class="mc-task">Gestion des <strong>entrepôts</strong> — ajouter, modifier, supprimer, consulter</div>
-            <div class="mc-task">Gestion des <strong>articles</strong> — toutes les opérations de consultation et mise à jour</div>
+            <div class="mc-task">Gestion des <strong>articles</strong> — toutes les opérations</div>
             <div class="mc-task">Gestion des <strong>références articles</strong> — classement par type et groupe</div>
-            <div class="mc-task"><strong>Tests automatiques</strong> sur chaque fonctionnalité pour garantir leur bon fonctionnement</div>
-            <div class="mc-task">Livraison finale du module complet, relu et validé par l'équipe</div>
+            <div class="mc-task"><strong>Tests automatiques</strong> sur chaque fonctionnalité</div>
+            <div class="mc-task">Livraison finale du module, relu et validé par l'équipe</div>
           </div>
           <div class="tags">
             <span class="tag tg">✅ Livré</span>
-            <span class="tag ta">C#</span>
-            <span class="tag tn">Tests automatisés</span>
-            <span class="tag tn">Git</span>
+            <span class="tag ta">C#</span><span class="tag tn">Tests automatisés</span><span class="tag tn">Git</span>
           </div>
           <a href="#" class="mc-doc-link">📄 Rapport de stage ↗</a>
         </div>
@@ -706,23 +669,20 @@
 
     </div>
 
-    <!-- ===== PROJETS SCOLAIRES ===== -->
+    <!-- SCOLAIRE -->
     <div class="tab-panel" id="tab-scolaire">
 
-      <!-- CONTEXTE GSB -->
       <div class="mission-card r">
         <div class="mc-header">
           <div>
             <div class="mc-type">🏥 Projet fil rouge — GSB</div>
             <div class="mc-title">Galaxy Swiss Bourdin</div>
-            <div class="mc-context">Groupe CVL · Avec Lucas Cornu &amp; Druesne Théo · Lycée Henri Wallon</div>
+            <div class="mc-context">Groupe CVL · Avec Lucas Cornu &amp; Druesne Théo · Henri Wallon</div>
           </div>
           <div class="mc-period">2025–2026<br>AP SIO2</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">
-            GSB est un laboratoire pharmaceutique fictif utilisé comme fil rouge pendant la 2ème année. Notre groupe est en charge de la région <strong>Centre-Val de Loire</strong>. On a monté une infrastructure réseau complète (serveurs Linux, machines virtuelles) et développé plusieurs applications pour gérer les praticiens de la région.
-          </p>
+          <p class="mc-desc">GSB est un laboratoire fictif utilisé comme fil rouge. Notre groupe CVL gère la région <strong>Centre-Val de Loire</strong>. On a monté une infrastructure réseau complète et développé plusieurs applications pour gérer les praticiens.</p>
           <div class="tags">
             <span class="tag ta">Linux</span><span class="tag ta">Apache</span><span class="tag ta">MariaDB</span>
             <span class="tag tn">VirtualBox</span><span class="tag tn">GitLab</span>
@@ -730,7 +690,6 @@
         </div>
       </div>
 
-      <!-- MISSION 1 — C# Congés -->
       <div class="mission-card r d1">
         <div class="mc-header">
           <div>
@@ -741,21 +700,12 @@
           <div class="mc-period">2025<br>En cours</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">
-            Application Windows qui permet aux praticiens de demander des congés en ligne. Un responsable RH peut ensuite accepter ou refuser chaque demande. L'application vérifie automatiquement que le praticien a bien des jours restants avant de valider.
-          </p>
+          <p class="mc-desc">Application Windows permettant aux praticiens de demander des congés. Un responsable RH peut accepter ou refuser. L'app vérifie automatiquement le solde restant.</p>
           <div class="mc-tasks">
             <div class="mc-tasks-title">Fonctionnalités</div>
             <div class="mc-task"><strong>Praticien :</strong> demande de congé avec dates, solde affiché en temps réel</div>
             <div class="mc-task"><strong>RH :</strong> liste des demandes, acceptation ou refus</div>
-            <div class="mc-task">Notification automatique à la connexion sur l'état de ses demandes</div>
-          </div>
-          <div class="mc-screens">
-            <div class="mc-screens-title">Captures d'écran</div>
-            <div class="screens-row">
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-            </div>
+            <div class="mc-task">Notification à la connexion sur l'état des demandes</div>
           </div>
           <div class="tags">
             <span class="tag ta">C#</span><span class="tag ta">WinForms</span><span class="tag tn">MySQL</span><span class="tag tn">GitLab</span>
@@ -763,7 +713,6 @@
         </div>
       </div>
 
-      <!-- MISSION 2 — Laravel Salaires -->
       <div class="mission-card r d2">
         <div class="mc-header">
           <div>
@@ -774,21 +723,12 @@
           <div class="mc-period">2025–2026<br>En cours</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">
-            Site web pour le service RH permettant de consulter et gérer les salaires des praticiens. Le salaire est calculé automatiquement selon l'ancienneté du praticien, sur une grille de 13 niveaux (de 4 633 € à 9 368 €).
-          </p>
+          <p class="mc-desc">Site web pour le service RH pour consulter et gérer les salaires. Calcul automatique selon l'ancienneté, sur une grille de 13 niveaux (4 633 € à 9 368 €).</p>
           <div class="mc-tasks">
             <div class="mc-tasks-title">Fonctionnalités</div>
-            <div class="mc-task">Connexion sécurisée pour le service RH</div>
-            <div class="mc-task">Consultation du salaire, échelon et ancienneté de chaque praticien</div>
-            <div class="mc-task">Mise à jour de l'ancienneté et recalcul automatique du salaire</div>
-          </div>
-          <div class="mc-screens">
-            <div class="mc-screens-title">Captures d'écran</div>
-            <div class="screens-row">
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-            </div>
+            <div class="mc-task">Connexion sécurisée RH</div>
+            <div class="mc-task">Consultation salaire, échelon et ancienneté</div>
+            <div class="mc-task">Mise à jour ancienneté et recalcul automatique</div>
           </div>
           <div class="tags">
             <span class="tag ta">Laravel</span><span class="tag ta">PHP</span><span class="tag tn">MySQL</span><span class="tag tn">GitLab</span>
@@ -796,7 +736,6 @@
         </div>
       </div>
 
-      <!-- MISSION 5 — Mobile Notes -->
       <div class="mission-card r d3">
         <div class="mc-header">
           <div>
@@ -807,21 +746,12 @@
           <div class="mc-period">Déc. 2025<br>En cours</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">
-            Application mobile qui permet aux clients de consulter et comparer les praticiens de la région selon leurs notes. Chaque praticien a une note donnée par les clients et une note d'experts, toutes les deux sur 5.
-          </p>
+          <p class="mc-desc">Application mobile pour consulter et comparer les praticiens selon leurs notes clients et experts (sur 5).</p>
           <div class="mc-tasks">
             <div class="mc-tasks-title">Fonctionnalités</div>
-            <div class="mc-task">Liste des praticiens avec leurs notes visibles directement</div>
-            <div class="mc-task">Détail d'un praticien : infos, commentaires clients et experts</div>
-            <div class="mc-task">Tri des praticiens par note</div>
-          </div>
-          <div class="mc-screens">
-            <div class="mc-screens-title">Captures d'écran</div>
-            <div class="screens-row">
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-              <div class="screen-placeholder" style="font-size:.6rem;color:var(--muted);font-family:var(--mono);">📷 à venir</div>
-            </div>
+            <div class="mc-task">Liste des praticiens avec leurs notes</div>
+            <div class="mc-task">Détail : infos, commentaires clients et experts</div>
+            <div class="mc-task">Tri par note</div>
           </div>
           <div class="tags">
             <span class="tag ta">Flutter</span><span class="tag ta">Dart</span><span class="tag tn">API REST</span><span class="tag tn">GitLab</span>
@@ -831,10 +761,53 @@
 
     </div>
 
+    <!-- PROJET PERSONNEL -->
+    <!-- ===== PROJET PERSONNEL ===== -->
+    <div class="tab-panel" id="tab-perso">
+
+      <div class="mission-card r">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">🎬 Projet personnel · Auto-entrepreneur</div>
+            <div class="mc-title">Site de suivi de stats YouTube — API YouTube</div>
+            <div class="mc-context">Développement web · API publique · Micro-entreprise</div>
+          </div>
+          <div class="mc-period">2025 → aujourd'hui<br>Projet perso</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">
+            En parallèle de ma formation, j'ai développé un <strong>site web personnel</strong> qui se connecte à l'<strong>API publique YouTube</strong> pour suivre en temps réel les statistiques de ma chaîne : abonnés, vues totales, activité récente, revenus estimés.<br><br>
+            Ce projet m'a permis de pratiquer la <strong>consommation d'une API externe</strong>, la gestion de données dynamiques et l'affichage d'un dashboard interactif. En parallèle, j'ai créé ma <strong>micro-entreprise en tant qu'auto-entrepreneur</strong> suite à la monétisation de ma chaîne, ce qui m'a appris à gérer les aspects administratifs d'une activité professionnelle.
+          </p>
+          <div class="mc-tasks">
+            <div class="mc-tasks-title">Ce que j'ai développé et appris</div>
+            <div class="mc-task">Connexion et récupération de données via l'<strong>API publique YouTube</strong></div>
+            <div class="mc-task">Affichage d'un dashboard : abonnés, vues, activité, revenus estimés</div>
+            <div class="mc-task">Gestion administrative d'une <strong>micro-entreprise</strong> : déclarations, facturation</div>
+            <div class="mc-task">Compréhension concrète du référencement et de la visibilité en ligne (B1.3)</div>
+          </div>
+          <div class="mc-screens">
+            <div class="mc-screens-title">Capture d'écran</div>
+            <div class="screens-row">
+              <div class="screen-placeholder" onclick="openLb('images/perso/youtube-stats-site.png')" title="Dashboard de suivi des stats YouTube" style="width:280px;height:160px">
+                <img src="images/perso/youtube-stats-site.png" alt="Site stats YouTube">
+              </div>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag ta">API YouTube</span>
+            <span class="tag ta">JavaScript</span>
+            <span class="tag tn">Dashboard</span>
+            <span class="tag tn">Auto-entrepreneur</span>
+            <span class="tag tn">B1.3 BTS SIO</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>
-
-<!-- COMPÉTENCES -->
 <section id="competences">
   <div class="wrap sp">
     <div class="eyebrow r">Référentiel BTS SIO</div>
@@ -960,13 +933,7 @@
           </div>
           <span class="cl-arr">→</span>
         </a>
-        <a href="https://linkedin.com/in/thomas-comin" target="_blank" class="cl">
-          <div class="cl-l">
-            <div class="cl-ic">💼</div>
-            <div><div class="cl-name">LinkedIn</div><div class="cl-val">linkedin.com/in/thomas-comin</div></div>
-          </div>
-          <span class="cl-arr">→</span>
-        </a>
+        
       </div>
     </div>
   </div>
