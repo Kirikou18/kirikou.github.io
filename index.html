@@ -1010,5 +1010,15 @@
     document.getElementById('lb-img').src = src;
     document.getElementById('lb').classList.add('open');
   }
-    function closeLb() {
-    document.getElementById('lb').classList.rem
+  function closeLb() {
+    document.getElementById('lb').classList.remove('open');
+  }
+  document.querySelectorAll('.screen-placeholder').forEach(el => {
+    el.addEventListener('click', () => {
+      const img = el.querySelector('img');
+      if (img) openLb(img.src);
+    });
+  });
+</script>
+</body>
+</html>
