@@ -401,16 +401,16 @@
     <div class="hero-status">En formation · BTS SIO SLAM · Henri Wallon · 2026</div>
     <h1 class="hero-name">Bonjour, je suis<br><span class="grad">Thomas Comin</span> 👋</h1>
     <p class="hero-role"><strong>Développeur web &amp; logiciel</strong> — BTS SIO option SLAM</p>
-    <p class="hero-desc">Étudiant passionné par le développement d'applications, basé à Valenciennes. Curieux, autonome, avec déjà 2 stages chez <strong style="color:var(--text)">Altazion / Creo Ignem</strong>.</p>
+    <p class="hero-desc">Étudiant passionné par le développement d'applications, basé à Quarouble (59). Curieux, autonome, avec déjà 2 stages chez <strong style="color:var(--text)">Altazion / Creo Ignem</strong>.</p>
     <div class="hero-btns">
       <a href="#missions" class="btn btn-p">Voir mes missions</a>
       <a href="#parcours" class="btn btn-s">Mon parcours →</a>
       <a href="#" class="btn btn-s">↓ Mon CV</a>
     </div>
     <div class="hero-stats">
-      <div><div class="stat-n">2<em>×</em></div><div class="stat-l">Stages Altazion</div></div>
-      <div><div class="stat-n">10<em>+</em></div><div class="stat-l">Tests d'intégration</div></div>
-      <div><div class="stat-n">19<em>ans</em></div><div class="stat-l">Valenciennes</div></div>
+      <div><div class="stat-n">2</div><div class="stat-l">Stages en entreprise</div></div>
+      <div><div class="stat-n">1<em>,6M</em></div><div class="stat-l">Abonnés YouTube</div></div>
+      <div><div class="stat-n">19<em> ans</em></div><div class="stat-l">Quarouble, Nord</div></div>
     </div>
   </div>
   <div class="hero-right">
@@ -451,7 +451,7 @@
         </div>
         <div class="info-row">
           <div class="info-icon">📍</div>
-          <div><div class="info-label">Localisation</div><div class="info-val">Valenciennes, France</div></div>
+          <div><div class="info-label">Localisation</div><div class="info-val">Quarouble (59), Nord</div></div>
         </div>
         <div class="info-row">
           <div class="info-icon">🎓</div>
@@ -544,6 +544,7 @@
       <button class="tab-btn active" onclick="switchTab('stage2',this)">🏢 Stage 2 — 2026</button>
       <button class="tab-btn" onclick="switchTab('stage1',this)">🏢 Stage 1 — 2025</button>
       <button class="tab-btn" onclick="switchTab('scolaire',this)">🎓 Projets scolaires</button>
+
     </div>
 
     <!-- ===== STAGE 2 — 2026 ===== -->
@@ -584,35 +585,73 @@
         </div>
         <div class="mc-body">
           <p class="mc-desc">
-            Ma mission principale était d'implémenter <strong>10+ tests d'intégration</strong> sur le projet "Scenario Commerce", un projet C# qui simule toutes les fonctionnalités d'un e-commerce classique (catalogue, panier, livraison, coupons, etc.).<br><br>
-            J'ai travaillé avec <strong>Docker et TestContainers</strong> pour isoler les tests dans des conteneurs, lu et appliqué la documentation TEST_INTEGRATION.md, et utilisé <strong>GitHub Copilot</strong> comme aide tout en veillant à comprendre chaque ligne générée.
+            Ma mission était d'implémenter une suite complète de <strong>tests d'intégration</strong> sur le projet "Scenario Commerce" — une API C# couvrant toutes les fonctionnalités d'un e-commerce professionnel (catalogue, panier, livraison, coupons, magasins…) utilisée par des clients comme IKEA et King Jouet.<br><br>
+            Chaque test lance automatiquement des <strong>conteneurs Docker</strong> via TestContainers (SQL Server, Redis, MongoDB, Commerce API) pour reproduire l'environnement réel, exécute les scénarios, puis les détruit. J'ai lu et appliqué la documentation <code>TEST_INTEGRATION.md</code>, travaillé en collaboration avec mon tuteur <strong>Michael CARBENAY</strong> sur Teams, et utilisé <strong>GitHub Copilot</strong> comme outil d'aide tout en comprenant chaque ligne.
           </p>
           <div class="mc-tasks">
-            <div class="mc-tasks-title">Tests implémentés</div>
-            <div class="mc-task"><strong>ProductSearchAndFilterScenarioTest</strong> — Recherches textuelles, pagination, application de filtres et facettes (✅ terminé en priorité n°1)</div>
-            <div class="mc-task"><strong>ProductDetailsAndAvailabilityScenarioTest</strong> — Détails produit + endpoint disponibilité web/magasins (priorité n°2)</div>
-            <div class="mc-task"><strong>CartManagementScenarioTest</strong> — Ajout/suppression/modification de quantités, calcul des totaux (Phase 2)</div>
-            <div class="mc-task"><strong>CartPromotionsScenarioTest</strong> — Application/retrait de coupons, calcul des remises</div>
-            <div class="mc-task"><strong>CartValidationAndShippingScenarioTest</strong> — Validation panier, choix mode livraison, frais</div>
-            <div class="mc-task"><strong>PickupPointSelectionScenarioTest</strong> — Recherche points relais, sélection retrait en magasin</div>
-            <div class="mc-task"><strong>CompleteOrderFlowScenarioTest</strong> — Scénario end-to-end complet (session → recherche → panier → livraison → validation)</div>
+            <div class="mc-tasks-title">Scénarios développés</div>
+            <div class="mc-task"><strong>ProductSearchAndFilterScenarioTest</strong> — Recherches textuelles, pagination, filtres et facettes catalogue</div>
+            <div class="mc-task"><strong>ProductDetailsAndAvailabilityScenarioTest</strong> — Détails produit, prix, images, attributs, disponibilité web/magasins</div>
+            <div class="mc-task"><strong>CartManagementScenarioTest</strong> — Ajout/suppression/modification quantités, calcul des totaux panier</div>
+            <div class="mc-task"><strong>CartPromotionsScenarioTest</strong> — Application et retrait de coupons, calcul des remises</div>
+            <div class="mc-task"><strong>CartValidationAndShippingScenarioTest</strong> — Validation panier, choix mode livraison, frais de port</div>
+            <div class="mc-task"><strong>PickupPointSelectionScenarioTest</strong> — Recherche de points relais, sélection retrait en magasin</div>
+            <div class="mc-task"><strong>CompleteOrderFlowScenarioTest</strong> — Scénario end-to-end : session → catalogue → panier → coupon → livraison → validation</div>
           </div>
+
+          <!-- SCREENSHOTS RÉELS -->
           <div class="mc-screens">
-            <div class="mc-screens-title">Captures d'écran <span style="color:var(--muted);font-weight:400">(glisse tes screens ici)</span></div>
+            <div class="mc-screens-title">Captures d'écran</div>
             <div class="screens-row">
-              <div class="screen-placeholder">screen 1</div>
-              <div class="screen-placeholder">screen 2</div>
-              <div class="screen-placeholder">screen 3</div>
-              <div class="screen-add">＋<span>Ajouter</span></div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/structure_du_projet.png')" title="Structure du projet Visual Studio">
+                <img src="images/stage2/structure_du_projet.png" alt="Structure du projet">
+              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/azuredevops.png')" title="Azure DevOps — Repo Scenario-Commerce-Main">
+                <img src="images/stage2/azuredevops.png" alt="Azure DevOps repo">
+              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/azure_dev_ops_push.png')" title="Historique des commits Thomas COMIN">
+                <img src="images/stage2/azure_dev_ops_push.png" alt="Commits Azure DevOps">
+              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/azuredevops_projet_au_quel_jai_acces.png')" title="Projets Altazion auxquels j'ai accès">
+                <img src="images/stage2/azuredevops_projet_au_quel_jai_acces.png" alt="Projets Azure DevOps">
+              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/docker_avant_test.png')" title="Docker Desktop — avant lancement des tests">
+                <img src="images/stage2/docker_avant_test.png" alt="Docker avant tests">
+              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/docker_apres_les_tests.png')" title="Docker Desktop — conteneurs lancés par TestContainers">
+                <img src="images/stage2/docker_apres_les_tests.png" alt="Docker après tests">
+              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/console_apres_le_test_d_inté.png')" title="Console Visual Studio — tests en cours d'exécution">
+                <img src="images/stage2/console_apres_le_test_d_inté.png" alt="Console tests">
+              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/console_apres_2.png')" title="Console Visual Studio — résultats des tests">
+                <img src="images/stage2/console_apres_2.png" alt="Résultats tests">
+              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/swagger_part1.png')" title="Swagger UI — API Altazion Commerce">
+                <img src="images/stage2/swagger_part1.png" alt="Swagger API">
+              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/swagger_product.png')" title="Swagger — endpoint Products">
+                <img src="images/stage2/swagger_product.png" alt="Swagger Products">
+              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/teams_mich.png')" title="Teams — échange avec tuteur sur Docker auth Azure">
+                <img src="images/stage2/teams_mich.png" alt="Teams tuteur">
+              </div>
+              <div class="screen-placeholder" onclick="openLb('images/stage2/teams_mich2.png')" title="Teams — réception docker-compose.yml du tuteur">
+                <img src="images/stage2/teams_mich2.png" alt="Teams docker-compose">
+              </div>
             </div>
           </div>
+
           <div class="tags">
             <span class="tag ta">C#</span>
             <span class="tag ta">TestContainers</span>
             <span class="tag ta">Docker</span>
-            <span class="tag tn">xUnit</span>
+            <span class="tag ta">Azure DevOps</span>
+            <span class="tag tn">SQL Server</span>
+            <span class="tag tn">Redis</span>
+            <span class="tag tn">MongoDB</span>
+            <span class="tag tn">Swagger</span>
             <span class="tag tn">GitHub Copilot</span>
-            <span class="tag tn">Azure</span>
           </div>
           <a href="#" class="mc-doc-link">📄 Rapport de stage ↗</a>
         </div>
@@ -741,19 +780,58 @@
     <!-- ===== PROJETS SCOLAIRES ===== -->
     <div class="tab-panel" id="tab-scolaire">
 
+      <!-- CONTEXTE GSB -->
       <div class="mission-card r">
         <div class="mc-header">
           <div>
-            <div class="mc-type">🎓 Projet AP — GSB</div>
-            <div class="mc-title">Application de gestion des congés — GSB</div>
-            <div class="mc-context">Projet AP · BTS SIO SLAM · En groupe avec Lucas Cornu</div>
+            <div class="mc-type">🏥 Contexte AP — GSB</div>
+            <div class="mc-title">Galaxy Swiss Bourdin — Projet fil rouge</div>
+            <div class="mc-context">Groupe <strong>CVL</strong> (Centre-Val de Loire) · Sous-réseau 172.23.64.0/20 · Avec Lucas Cornu &amp; Druesne Théo</div>
           </div>
-          <div class="mc-period">2025<br>Projet scolaire</div>
+          <div class="mc-period">2025–2026<br>AP SIO2</div>
         </div>
         <div class="mc-body">
           <p class="mc-desc">
-            Application Windows de gestion des demandes de congé des praticiens pour le laboratoire fictif GSB. Deux rôles : <strong>praticien</strong> (soumettre une demande) et <strong>administrateur RH</strong> (accepter/refuser). Connexion sécurisée, notifications à la connexion, vérification automatique du solde de congés.
+            Le projet fil rouge de 2ème année est centré sur le laboratoire fictif <strong>Galaxy Swiss Bourdin (GSB)</strong>. Notre groupe <strong>CVL</strong> est responsable de la région Centre-Val de Loire (départements 18, 28, 36, 37, 41, 45). Chaque groupe monte une infrastructure complète (VM dev, serveur BDD Linux, serveur web Linux, machine de production) et réalise plusieurs missions applicatives autour de la gestion des praticiens GSB.
           </p>
+          <div class="mc-tasks">
+            <div class="mc-tasks-title">Infrastructure mise en place (Fiche 1 — B1.4, B1.5)</div>
+            <div class="mc-task">Machine de développement Windows (Visual Studio, VS Code, MariaDB local)</div>
+            <div class="mc-task">Serveur Linux BDD — <strong>CVL_DBTEST</strong> · IP fixe · MariaDB + phpMyAdmin</div>
+            <div class="mc-task">Serveur Linux Web — <strong>CVL_WEBTEST</strong> · IP fixe · Apache + PHP dernière version</div>
+            <div class="mc-task">Machine de production Windows connectée aux serveurs</div>
+            <div class="mc-task">Espace partagé GitLab + Google Drive pour le groupe (accès lecture enseignants)</div>
+            <div class="mc-task">Communication réseau testée et validée sur la plage 172.23.64.0/20</div>
+          </div>
+          <div class="tags">
+            <span class="tag ta">Linux</span><span class="tag ta">Apache</span><span class="tag ta">MariaDB</span>
+            <span class="tag tn">phpMyAdmin</span><span class="tag tn">VirtualBox</span><span class="tag tn">GitLab</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MISSION APPLICATIF — PHP praticiens -->
+      <div class="mission-card r d1">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">🌐 Mission Applicatif</div>
+            <div class="mc-title">Interface web PHP — Gestion des praticiens GSB</div>
+            <div class="mc-context">B1.2 · B1.4 · B2.1 · B2.3 — Groupe CVL</div>
+          </div>
+          <div class="mc-period">2025<br>AP3-4</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">
+            Interface web en <strong>PHP</strong> pour consulter, modifier, supprimer et ajouter des praticiens depuis la base de données GSB. L'interface se connecte au serveur de BDD et récupère les praticiens de la région CVL uniquement (via une vue SQL filtrée sur les départements 18, 28, 36, 37, 41, 45).
+          </p>
+          <div class="mc-tasks">
+            <div class="mc-tasks-title">Réalisations</div>
+            <div class="mc-task">Récupération et import de la base de données <strong>Gsb_praticien</strong></div>
+            <div class="mc-task">Création d'une vue SQL filtrée sur la région CVL</div>
+            <div class="mc-task">Interface CRUD complète en PHP : liste, ajout, modification, suppression</div>
+            <div class="mc-task">Connexion sécurisée au serveur MariaDB CVL_DBTEST</div>
+            <div class="mc-task">Déploiement sur le serveur Apache CVL_WEBTEST</div>
+          </div>
           <div class="mc-screens">
             <div class="mc-screens-title">Captures d'écran</div>
             <div class="screens-row">
@@ -764,54 +842,149 @@
             </div>
           </div>
           <div class="tags">
-            <span class="tag ta">Java</span><span class="tag ta">MySQL</span><span class="tag tn">Swing</span><span class="tag tn">JDBC</span>
+            <span class="tag ta">PHP</span><span class="tag ta">MySQL</span><span class="tag tn">Apache</span><span class="tag tn">HTML/CSS</span><span class="tag tn">SQL (Vue)</span>
           </div>
         </div>
       </div>
 
-      <div class="mission-card r d1">
+      <!-- MISSION 1 — C# Congés -->
+      <div class="mission-card r d2">
         <div class="mc-header">
           <div>
-            <div class="mc-type">🎓 Projet AP</div>
-            <div class="mc-title">Application mobile</div>
-            <div class="mc-context">Projet BTS SIO SLAM · Développement mobile</div>
+            <div class="mc-type">💻 Mission 1 — Application bureau</div>
+            <div class="mc-title">Gestion des congés des praticiens — C# Windows</div>
+            <div class="mc-context">B1.2.2 · B1.3.1 · B1.4.1/2/3 · B1.5.1 — Groupe CVL</div>
           </div>
-          <div class="mc-period">2024–2025<br>Projet scolaire</div>
+          <div class="mc-period">2025<br>AP3-4 Mission 1</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">Développement d'une application mobile dans le cadre des travaux pratiques, avec connexion à une API REST.</p>
+          <p class="mc-desc">
+            Application <strong>Windows C#</strong> de gestion des congés des praticiens GSB. Deux rôles distincts : le <strong>compte praticien</strong> peut soumettre des demandes de congé (avec vérification automatique du solde) et le <strong>compte RH</strong> peut accepter ou refuser les demandes. À la connexion, l'utilisateur reçoit une notification sur l'état de ses demandes en cours. Basé sur le projet GitHub <em>GsbVille</em> d'Axel Trocquet, adapté et enrichi.
+          </p>
+          <div class="mc-tasks">
+            <div class="mc-tasks-title">Fonctionnalités développées</div>
+            <div class="mc-task"><strong>Compte praticien :</strong> formulaire de demande de congé, sélection date début/fin, affichage du solde restant, refus automatique si solde insuffisant</div>
+            <div class="mc-task"><strong>Compte RH (admin) :</strong> liste des praticiens ayant demandé un congé, consultation détaillée, acceptation ou refus</div>
+            <div class="mc-task"><strong>Notifications :</strong> à la connexion, affichage des demandes en cours et de leur statut</div>
+            <div class="mc-task">Modélisation objet : utilisation d'objets C# pour chaque entité de la BDD</div>
+            <div class="mc-task">Connexion et requêtes à la base de données MariaDB</div>
+          </div>
           <div class="mc-screens">
             <div class="mc-screens-title">Captures d'écran</div>
             <div class="screens-row">
               <div class="screen-placeholder">screen 1</div>
               <div class="screen-placeholder">screen 2</div>
+              <div class="screen-placeholder">screen 3</div>
+              <div class="screen-placeholder">screen 4</div>
               <div class="screen-add">＋<span>Ajouter</span></div>
             </div>
           </div>
           <div class="tags">
-            <span class="tag ta">Flutter</span><span class="tag ta">Dart</span><span class="tag tn">API REST</span>
+            <span class="tag ta">C#</span><span class="tag ta">WinForms</span><span class="tag ta">MySQL</span>
+            <span class="tag tn">POO</span><span class="tag tn">Visual Studio</span><span class="tag tn">GitLab</span>
           </div>
         </div>
       </div>
 
-      <div class="mission-card r d2">
+      <!-- MISSION 2 — Laravel Salaires -->
+      <div class="mission-card r d3">
         <div class="mc-header">
           <div>
-            <div class="mc-type">🎓 Projet scolaire</div>
-            <div class="mc-title">Site web portfolio</div>
-            <div class="mc-context">Projet BTS SIO SLAM</div>
+            <div class="mc-type">🌐 Mission 2 — Application web</div>
+            <div class="mc-title">Gestion des salaires des praticiens — Laravel</div>
+            <div class="mc-context">B1.2.2 · B1.3.1 · B1.4.1/2/3 · B1.5.1 — Groupe CVL</div>
           </div>
-          <div class="mc-period">2025–2026<br>Projet scolaire</div>
+          <div class="mc-period">2025–2026<br>AP3-4 Mission 2</div>
         </div>
         <div class="mc-body">
-          <p class="mc-desc">Création de ce portfolio pour présenter mes compétences, mon parcours et mes réalisations dans le cadre de ma formation BTS SIO SLAM.</p>
+          <p class="mc-desc">
+            Interface web avec le framework <strong>Laravel</strong> pour la gestion des salaires des praticiens GSB. Le service RH peut consulter et mettre à jour l'ancienneté de chaque praticien. Le salaire est calculé automatiquement selon une grille tarifaire à <strong>13 échelons</strong> (de 4 633 € à 9 368 €) en fonction de l'ancienneté. Une API REST est également fournie pour un futur portage mobile.
+          </p>
+          <div class="mc-tasks">
+            <div class="mc-tasks-title">Fonctionnalités développées</div>
+            <div class="mc-task">Modification de la BDD : ajout colonnes ancienneté et échelon</div>
+            <div class="mc-task">Calcul automatique de l'échelon selon la grille tarifaire (13 niveaux)</div>
+            <div class="mc-task">Interface RH sécurisée (connexion avec droits spécifiques)</div>
+            <div class="mc-task">Sélection d'un praticien → affichage ancienneté, échelon, salaire brut</div>
+            <div class="mc-task">Filtres de recherche par ancienneté / échelon / salaire</div>
+            <div class="mc-task">Mise à jour de l'ancienneté directement depuis l'interface</div>
+            <div class="mc-task">API REST : liste des praticiens avec ancienneté et salaire</div>
+          </div>
+          <div class="mc-screens">
+            <div class="mc-screens-title">Captures d'écran</div>
+            <div class="screens-row">
+              <div class="screen-placeholder">screen 1</div>
+              <div class="screen-placeholder">screen 2</div>
+              <div class="screen-placeholder">screen 3</div>
+              <div class="screen-add">＋<span>Ajouter</span></div>
+            </div>
+          </div>
           <div class="tags">
-            <span class="tag ta">HTML</span><span class="tag ta">CSS</span><span class="tag tn">JavaScript</span>
+            <span class="tag ta">Laravel</span><span class="tag ta">PHP</span><span class="tag ta">MySQL</span>
+            <span class="tag tn">API REST</span><span class="tag tn">Blade</span><span class="tag tn">GitLab</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MISSION 5 — Flutter Notes -->
+      <div class="mission-card r d4">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">📱 Mission 5 — Application mobile</div>
+            <div class="mc-title">Notes &amp; avis des praticiens — Flutter</div>
+            <div class="mc-context">A1.1.1 · A1.4.1 · A4.1.2 · A4.1.7 · A4.1.9 — Groupe CVL · Décembre 2025</div>
+          </div>
+          <div class="mc-period">Déc. 2025<br>AP3-4 Mission 5</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">
+            Application mobile <strong>Flutter</strong> permettant aux clients de consulter les notes des praticiens GSB de la région CVL. Chaque praticien possède deux notes sur 5 : une <strong>note client</strong> et une <strong>note expert</strong>. L'application permet d'afficher le détail des avis avec commentaires et de trier les praticiens selon leurs notes.
+          </p>
+          <div class="mc-tasks">
+            <div class="mc-tasks-title">Fonctionnalités développées</div>
+            <div class="mc-task">Liste des praticiens avec leurs deux notes (client / expert) affichées</div>
+            <div class="mc-task">Bouton "Détail" : affichage du nom, prénom, adresse, ville, code postal</div>
+            <div class="mc-task">Détail de la note expert + liste commentaires experts</div>
+            <div class="mc-task">Détail de la note client + liste commentaires clients</div>
+            <div class="mc-task">Tri des praticiens par note (client ou expert)</div>
+            <div class="mc-task">Consommation de l'API REST développée en Mission 2</div>
+          </div>
+          <div class="mc-screens">
+            <div class="mc-screens-title">Captures d'écran</div>
+            <div class="screens-row">
+              <div class="screen-placeholder">screen 1</div>
+              <div class="screen-placeholder">screen 2</div>
+              <div class="screen-placeholder">screen 3</div>
+              <div class="screen-add">＋<span>Ajouter</span></div>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag ta">Flutter</span><span class="tag ta">Dart</span>
+            <span class="tag tn">API REST</span><span class="tag tn">Android</span><span class="tag tn">GitLab</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PORTFOLIO -->
+      <div class="mission-card r">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">🌐 Projet personnel</div>
+            <div class="mc-title">Site web portfolio — E5</div>
+            <div class="mc-context">BTS SIO SLAM · Épreuve E5 · 2025–2026</div>
+          </div>
+          <div class="mc-period">2026<br>Projet perso</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">Création de ce portfolio pour présenter mon parcours, mes stages et mes réalisations dans le cadre de la préparation à l'épreuve E5 du BTS SIO. Hébergé sur GitHub Pages.</p>
+          <div class="tags">
+            <span class="tag ta">HTML</span><span class="tag ta">CSS</span><span class="tag tn">JavaScript</span><span class="tag tn">GitHub Pages</span>
           </div>
         </div>
       </div>
 
     </div>
+
   </div>
 </section>
 
@@ -827,15 +1000,15 @@
       <div class="stack-item"><span>⚡</span>JavaScript</div>
       <div class="stack-item"><span>🔷</span>C#</div>
       <div class="stack-item"><span>🐘</span>PHP</div>
-      <div class="stack-item"><span>☕</span>Java</div>
+      
       <div class="stack-item"><span>🐍</span>Python</div>
       <div class="stack-item"><span>🗄️</span>MySQL</div>
       <div class="stack-item"><span>🔴</span>Redis</div>
       <div class="stack-item"><span>🐳</span>Docker</div>
       <div class="stack-item"><span>🐙</span>Git</div>
       <div class="stack-item"><span>🐧</span>Linux</div>
-      <div class="stack-item"><span>📱</span>Flutter</div>
-      <div class="stack-item"><span>🔬</span>xUnit</div>
+      
+      
     </div>
 
     <div class="eyebrow r" style="margin-bottom:1.25rem">Grille de compétences BTS SIO</div>
@@ -936,17 +1109,17 @@
         </div>
       </div>
       <div class="contact-links">
-        <a href="mailto:thomas.comin@example.com" class="cl">
+        <a href="mailto:tcomin3@gmail.com" class="cl">
           <div class="cl-l">
             <div class="cl-ic">✉️</div>
-            <div><div class="cl-name">Email</div><div class="cl-val">thomas.comin@example.com</div></div>
+            <div><div class="cl-name">Email</div><div class="cl-val">tcomin3@gmail.com</div></div>
           </div>
           <span class="cl-arr">→</span>
         </a>
-        <a href="https://github.com/ton-username" target="_blank" class="cl">
+        <a href="https://github.com/Kirikou18" target="_blank" class="cl">
           <div class="cl-l">
             <div class="cl-ic">🐙</div>
-            <div><div class="cl-name">GitHub</div><div class="cl-val">github.com/ton-username</div></div>
+            <div><div class="cl-name">GitHub</div><div class="cl-val">github.com/Kirikou18</div></div>
           </div>
           <span class="cl-arr">→</span>
         </a>
@@ -967,7 +1140,7 @@
   <span>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Scroll reveal
   const obs = new IntersectionObserver(e => {
     e.forEach(x => { if (x.isIntersecting) x.target.classList.add('on'); });
@@ -997,15 +1170,4 @@
     document.getElementById('lb').classList.add('open');
   }
   function closeLb() {
-    document.getElementById('lb').classList.remove('open');
-  }
-  document.querySelectorAll('.screen-placeholder').forEach(el => {
-    el.addEventListener('click', () => {
-      const img = el.querySelector('img');
-      if (img) openLb(img.src);
-    });
-  });
-</script>
-
-</body>
-</html>
+    document.getElementById('lb').c
