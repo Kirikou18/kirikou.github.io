@@ -3,143 +3,120 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio · Prénom NOM · BTS SIO SLAM</title>
+  <title>Portfolio · Thomas Comin · BTS SIO SLAM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:       #0b0b0f;
-      --s1:       #0f0f14;
-      --s2:       #141419;
-      --card:     #1a1a22;
-      --card2:    #1f1f28;
-      --line:     #252530;
-      --line2:    #2f2f3e;
-      --accent:   #7c6ff7;
-      --accent2:  #a89cff;
-      --a-glow:   rgba(124,111,247,.15);
-      --a-bd:     rgba(124,111,247,.25);
-      --green:    #22c55e;
-      --text:     #eeeef5;
-      --sub:      #9292a8;
-      --muted:    #4e4e62;
-      --sans:     'Plus Jakarta Sans', sans-serif;
-      --mono:     'JetBrains Mono', monospace;
+      --bg:      #0b0b0f;
+      --s1:      #0f0f14;
+      --s2:      #141419;
+      --card:    #1a1a22;
+      --card2:   #1f1f28;
+      --line:    #252530;
+      --line2:   #2f2f3e;
+      --accent:  #7c6ff7;
+      --accent2: #a89cff;
+      --ag:      rgba(124,111,247,.13);
+      --ab:      rgba(124,111,247,.25);
+      --green:   #22c55e;
+      --text:    #eeeef5;
+      --sub:     #9292a8;
+      --muted:   #4e4e62;
+      --sans:    'Plus Jakarta Sans', sans-serif;
+      --mono:    'JetBrains Mono', monospace;
     }
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { background:var(--bg); color:var(--text); font-family:var(--sans); overflow-x:hidden; -webkit-font-smoothing:antialiased; }
 
-    /* ── NAV ─────────────────────────────── */
+    /* ── NAV ── */
     nav {
       position:fixed; top:0; left:0; right:0; z-index:300;
       height:62px; display:flex; align-items:center; justify-content:space-between;
       padding:0 3rem;
-      background:rgba(11,11,15,.88); backdrop-filter:blur(20px) saturate(180%);
+      background:rgba(11,11,15,.92); backdrop-filter:blur(20px);
       border-bottom:1px solid var(--line);
     }
-    .logo { font-size:.9rem; font-weight:700; color:var(--text); letter-spacing:-.01em; }
-    .logo em { font-style:normal; color:var(--accent2); }
+    .logo {
+      width:38px; height:38px; border-radius:10px;
+      background:linear-gradient(135deg, var(--accent), #a78bfa);
+      display:flex; align-items:center; justify-content:center;
+      font-size:.9rem; font-weight:800; color:#fff; letter-spacing:-.02em;
+      flex-shrink:0;
+    }
+    .nav-name { font-size:.9rem; font-weight:700; color:var(--text); margin-left:.75rem; }
+    .nav-left { display:flex; align-items:center; }
     .nav-links { display:flex; gap:1.75rem; list-style:none; align-items:center; }
-    .nav-links a {
-      font-size:.8rem; font-weight:500; color:var(--muted);
-      text-decoration:none; transition:color .18s;
-    }
+    .nav-links a { font-size:.8rem; font-weight:500; color:var(--muted); text-decoration:none; transition:color .18s; }
     .nav-links a:hover, .nav-links a.on { color:var(--text); }
-    .nav-cta {
-      font-size:.78rem; font-weight:600;
-      background:var(--accent); color:#fff;
-      padding:.4rem 1rem; border-radius:7px;
-      text-decoration:none; transition:all .18s;
-    }
-    .nav-cta:hover { background:#6a5ee0; }
+    .nav-cta { font-size:.78rem !important; font-weight:600 !important; background:var(--accent); color:#fff !important; padding:.42rem 1rem; border-radius:7px; transition:background .18s; }
+    .nav-cta:hover { background:#6a5ee0 !important; }
 
-    /* ── HERO ────────────────────────────── */
+    /* ── HERO ── */
     #hero {
-      min-height:100vh;
-      display:flex; align-items:center;
-      padding:80px 3rem 0;
-      max-width:1140px; margin:0 auto;
-      gap:5rem;
+      min-height:100vh; display:flex; align-items:center;
+      padding:80px 3rem 0; max-width:1140px; margin:0 auto; gap:5rem;
     }
     .hero-left { flex:1; }
     .hero-right { flex-shrink:0; }
 
     .hero-status {
       display:inline-flex; align-items:center; gap:.55rem;
-      font-size:.75rem; font-weight:600;
-      color:var(--green);
-      background:rgba(34,197,94,.08);
-      border:1px solid rgba(34,197,94,.2);
-      padding:.3rem .85rem; border-radius:100px;
-      margin-bottom:1.75rem;
+      font-size:.75rem; font-weight:600; color:var(--green);
+      background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.2);
+      padding:.3rem .9rem; border-radius:100px; margin-bottom:1.75rem;
     }
     .hero-status::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--green); animation:blink 2s ease infinite; }
 
     .hero-name {
-      font-size:clamp(2.6rem,5.5vw,4.5rem);
-      font-weight:800; letter-spacing:-.035em; line-height:1.07;
-      color:#fff; margin-bottom:.75rem;
+      font-size:clamp(2.6rem,5.5vw,4.6rem); font-weight:800;
+      letter-spacing:-.035em; line-height:1.07; color:#fff; margin-bottom:.75rem;
       opacity:0; animation:up .55s ease .1s forwards;
     }
-    .hero-name .hi { color:var(--accent2); }
-
-    .hero-title {
-      font-size:1.1rem; font-weight:400; color:var(--sub);
-      margin-bottom:1.5rem; line-height:1.5;
-      opacity:0; animation:up .55s ease .2s forwards;
+    .hero-name .grad {
+      background:linear-gradient(135deg, var(--accent2), #c4b5fd);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
-    .hero-title strong { color:var(--text); font-weight:600; }
+    .hero-role { font-size:1.05rem; font-weight:400; color:var(--sub); margin-bottom:1.5rem; opacity:0; animation:up .55s ease .2s forwards; }
+    .hero-role strong { color:var(--text); font-weight:600; }
+    .hero-desc { font-size:.9rem; color:var(--sub); line-height:1.8; max-width:480px; margin-bottom:2.25rem; opacity:0; animation:up .55s ease .3s forwards; }
 
-    .hero-desc {
-      font-size:.9rem; color:var(--sub); line-height:1.8; max-width:480px;
-      margin-bottom:2.25rem;
-      opacity:0; animation:up .55s ease .3s forwards;
-    }
-
-    .hero-btns {
-      display:flex; gap:.65rem; flex-wrap:wrap;
-      opacity:0; animation:up .55s ease .4s forwards;
-    }
+    .hero-btns { display:flex; gap:.65rem; flex-wrap:wrap; opacity:0; animation:up .55s ease .4s forwards; }
     .btn {
       display:inline-flex; align-items:center; gap:.45rem;
       padding:.65rem 1.35rem; font-size:.85rem; font-weight:600;
-      text-decoration:none; border-radius:9px; transition:all .18s; border:none; cursor:pointer;
+      text-decoration:none; border-radius:9px; transition:all .18s;
+      border:none; cursor:pointer; font-family:var(--sans);
     }
     .btn-p { background:var(--accent); color:#fff; }
     .btn-p:hover { background:#6a5ee0; transform:translateY(-1px); box-shadow:0 8px 25px rgba(124,111,247,.35); }
     .btn-s { background:var(--card); color:var(--sub); border:1px solid var(--line2); }
     .btn-s:hover { color:var(--text); border-color:var(--muted); transform:translateY(-1px); }
 
-    /* avatar placeholder */
     .avatar-wrap {
       width:260px; height:260px; border-radius:24px;
-      background:linear-gradient(135deg, var(--card) 0%, var(--card2) 100%);
+      background:linear-gradient(135deg, var(--card), var(--card2));
       border:1px solid var(--line2);
       display:flex; align-items:center; justify-content:center;
-      font-size:5rem; color:var(--muted);
-      position:relative; overflow:hidden;
+      font-size:6rem; position:relative; overflow:hidden;
       opacity:0; animation:up .6s ease .5s forwards;
     }
-    .avatar-wrap::after {
-      content:'';
-      position:absolute; inset:0;
-      background:linear-gradient(135deg, rgba(124,111,247,.08) 0%, transparent 60%);
-    }
+    .avatar-wrap img { width:100%; height:100%; object-fit:cover; }
+    .avatar-wrap::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(124,111,247,.1) 0%,transparent 60%); pointer-events:none; }
     .avatar-badge {
-      position:absolute; bottom:12px; left:12px; right:12px;
-      background:rgba(11,11,15,.85); backdrop-filter:blur(10px);
+      position:absolute; bottom:12px; left:12px; right:12px; z-index:2;
+      background:rgba(11,11,15,.9); backdrop-filter:blur(10px);
       border:1px solid var(--line2); border-radius:10px;
-      padding:.6rem .9rem; display:flex; align-items:center; gap:.6rem; z-index:1;
+      padding:.6rem .9rem; display:flex; align-items:center; gap:.6rem;
     }
-    .avatar-badge-dot { width:8px; height:8px; border-radius:50%; background:var(--green); animation:blink 2s ease infinite; }
-    .avatar-badge-txt { font-size:.72rem; font-weight:600; color:var(--text); }
-    .avatar-badge-sub { font-size:.65rem; color:var(--sub); }
+    .abadge-dot { width:8px; height:8px; border-radius:50%; background:var(--green); animation:blink 2s ease infinite; flex-shrink:0; }
+    .abadge-txt { font-size:.72rem; font-weight:600; color:var(--text); }
+    .abadge-sub { font-size:.63rem; color:var(--sub); }
 
     .hero-stats {
-      display:flex; gap:2.5rem;
-      margin-top:3.5rem; padding-top:2.25rem;
+      display:flex; gap:2.5rem; margin-top:3.5rem; padding-top:2.25rem;
       border-top:1px solid var(--line);
       opacity:0; animation:up .55s ease .55s forwards;
     }
@@ -147,247 +124,232 @@
     .stat-n em { font-style:normal; color:var(--accent2); }
     .stat-l { font-size:.74rem; color:var(--muted); margin-top:.15rem; }
 
-    /* ── SHARED ──────────────────────────── */
-    .section-wrap { max-width:1140px; margin:0 auto; padding:0 3rem; }
-    .section-pad { padding:6rem 0; }
-    .s-eyebrow {
+    /* ── SHARED ── */
+    .wrap { max-width:1140px; margin:0 auto; padding:0 3rem; }
+    .sp { padding:6rem 0; }
+    section { border-top:1px solid var(--line); }
+    #hero { border-top:none; }
+
+    .eyebrow {
       display:inline-flex; align-items:center; gap:.5rem;
       font-family:var(--mono); font-size:.68rem; font-weight:500;
-      color:var(--accent2); letter-spacing:.1em; text-transform:uppercase;
-      margin-bottom:.8rem;
+      color:var(--accent2); letter-spacing:.1em; text-transform:uppercase; margin-bottom:.8rem;
     }
-    .s-eyebrow::before { content:''; width:20px; height:1px; background:var(--accent2); }
-    .s-title { font-size:clamp(1.6rem,3vw,2.1rem); font-weight:800; letter-spacing:-.025em; color:#fff; margin-bottom:2.5rem; }
+    .eyebrow::before { content:''; width:20px; height:1px; background:var(--accent2); }
+    .stitle { font-size:clamp(1.6rem,3vw,2.1rem); font-weight:800; letter-spacing:-.025em; color:#fff; margin-bottom:2.5rem; }
+    .stitle em { font-style:italic; color:var(--accent2); }
 
     .r { opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
     .r.on { opacity:1; transform:none; }
-    .d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s} .d4{transition-delay:.32s} .d5{transition-delay:.4s}
+    .d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s} .d4{transition-delay:.32s}
 
-    /* ── ABOUT / PARCOURS ────────────────── */
-    #about { background:var(--s1); border-top:1px solid var(--line); }
-
-    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; }
-
+    /* ── PRÉSENTATION ── */
+    #presentation { background:var(--s1); }
+    .pres-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; }
     .about-text { font-size:.88rem; color:var(--sub); line-height:1.85; }
     .about-text p+p { margin-top:1rem; }
     .about-text strong { color:var(--text); font-weight:600; }
 
-    /* timeline */
-    .timeline { display:flex; flex-direction:column; gap:0; }
+    .info-card {
+      background:var(--card); border:1px solid var(--line); border-radius:16px; padding:1.75rem;
+    }
+    .info-card-title { font-size:.78rem; font-weight:700; color:var(--text); margin-bottom:1.25rem; letter-spacing:.04em; text-transform:uppercase; }
+    .info-row {
+      display:flex; align-items:flex-start; gap:.85rem;
+      padding:.65rem 0; border-bottom:1px solid var(--line);
+    }
+    .info-row:last-child { border-bottom:none; }
+    .info-icon {
+      width:32px; height:32px; border-radius:8px;
+      background:var(--ag); border:1px solid var(--ab);
+      display:flex; align-items:center; justify-content:center; font-size:.85rem; flex-shrink:0;
+    }
+    .info-label { font-size:.72rem; color:var(--muted); margin-bottom:.1rem; }
+    .info-val { font-size:.83rem; font-weight:500; color:var(--text); }
+
+    /* ── PARCOURS ── */
+    #parcours { background:var(--bg); }
+    .timeline { display:flex; flex-direction:column; }
     .tl-item {
-      display:grid; grid-template-columns:90px 1fr;
-      gap:1.25rem; padding:.75rem 0;
-      border-bottom:1px solid var(--line);
-      align-items:start;
+      display:grid; grid-template-columns:110px 1fr;
+      gap:1.5rem; padding:1.1rem 0; border-bottom:1px solid var(--line); align-items:start;
     }
     .tl-item:last-child { border-bottom:none; }
-    .tl-year { font-family:var(--mono); font-size:.68rem; color:var(--accent2); padding-top:.15rem; }
-    .tl-content {}
-    .tl-title { font-size:.85rem; font-weight:700; color:var(--text); margin-bottom:.15rem; }
+    .tl-year { font-family:var(--mono); font-size:.68rem; color:var(--accent2); padding-top:.1rem; line-height:1.6; }
+    .tl-title { font-size:.88rem; font-weight:700; color:var(--text); margin-bottom:.2rem; }
     .tl-sub { font-size:.78rem; color:var(--sub); }
     .tl-badge {
-      display:inline-block; font-size:.62rem; font-weight:600;
-      background:var(--a-glow); border:1px solid var(--a-bd);
-      color:var(--accent2); padding:.15rem .5rem; border-radius:4px;
-      margin-top:.3rem;
+      display:inline-block; font-size:.62rem; font-weight:600; margin-top:.35rem;
+      background:var(--ag); border:1px solid var(--ab); color:var(--accent2);
+      padding:.15rem .55rem; border-radius:4px;
+    }
+    .tl-badge-green {
+      background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.2); color:var(--green);
     }
 
-    /* ── STAGES ──────────────────────────── */
-    #stage { background:var(--bg); border-top:1px solid var(--line); }
-    .stages-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    /* ── MISSIONS ── */
+    #missions { background:var(--s1); }
 
-    .stage-card {
-      background:var(--card); border:1px solid var(--line); border-radius:16px;
-      padding:2rem; transition:border-color .2s, transform .2s;
-      position:relative; overflow:hidden;
-    }
-    .stage-card::before {
-      content:''; position:absolute; top:0; left:0; right:0; height:2px;
-      background:linear-gradient(90deg, var(--accent), transparent);
-      opacity:0; transition:opacity .2s;
-    }
-    .stage-card:hover { border-color:var(--a-bd); transform:translateY(-3px); }
-    .stage-card:hover::before { opacity:1; }
-
-    .sc-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1.5rem; }
-    .sc-ico {
-      width:44px; height:44px; border-radius:11px;
-      background:var(--a-glow); border:1px solid var(--a-bd);
-      display:flex; align-items:center; justify-content:center; font-size:1.2rem;
-    }
-    .sc-period {
-      text-align:right; font-family:var(--mono);
-      font-size:.65rem; color:var(--accent2); line-height:1.6;
-    }
-    .sc-title { font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:.25rem; }
-    .sc-company { font-size:.8rem; color:var(--sub); margin-bottom:1.1rem; }
-    .sc-desc { font-size:.82rem; color:var(--sub); line-height:1.75; margin-bottom:1.25rem; }
-    .sc-desc strong { color:var(--text); font-weight:500; }
-
-    .tags { display:flex; flex-wrap:wrap; gap:.35rem; margin-bottom:1.25rem; }
-    .tag {
-      font-size:.7rem; font-weight:500; padding:.22rem .6rem; border-radius:5px;
-    }
-    .tag-a { background:var(--a-glow); color:var(--accent2); border:1px solid var(--a-bd); }
-    .tag-n { background:var(--s2); color:var(--muted); border:1px solid var(--line); }
-
-    .sc-link {
-      display:inline-flex; align-items:center; gap:.4rem;
-      font-size:.78rem; font-weight:600; color:var(--sub);
-      text-decoration:none; border:1px solid var(--line2);
-      padding:.4rem .9rem; border-radius:7px; transition:all .18s;
-    }
-    .sc-link:hover { color:var(--accent2); border-color:var(--a-bd); background:var(--a-glow); }
-
-    /* ── PROJETS ─────────────────────────── */
-    #projets { background:var(--s1); border-top:1px solid var(--line); }
-
-    .proj-tabs { display:flex; gap:.4rem; margin-bottom:2rem; }
-    .proj-tab {
+    /* tabs */
+    .tabs { display:flex; gap:.4rem; margin-bottom:2.5rem; flex-wrap:wrap; }
+    .tab-btn {
       font-size:.78rem; font-weight:600; padding:.45rem 1.1rem;
       border-radius:8px; border:1px solid var(--line2);
       color:var(--muted); background:transparent; cursor:pointer;
-      transition:all .18s;
+      transition:all .18s; font-family:var(--sans);
     }
-    .proj-tab.active, .proj-tab:hover { color:var(--text); background:var(--card); border-color:var(--muted); }
-    .proj-tab.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+    .tab-btn:hover { color:var(--text); background:var(--card); border-color:var(--muted); }
+    .tab-btn.active { background:var(--accent); border-color:var(--accent); color:#fff; }
+    .tab-panel { display:none; }
+    .tab-panel.active { display:block; }
 
-    .proj-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-    .proj-panel { display:none; }
-    .proj-panel.active { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-
-    .pcard {
-      background:var(--card); border:1px solid var(--line); border-radius:14px;
-      overflow:hidden; transition:border-color .2s, transform .2s;
-      display:flex; flex-direction:column;
+    /* mission card */
+    .mission-card {
+      background:var(--card); border:1px solid var(--line); border-radius:16px;
+      overflow:hidden; margin-bottom:1.5rem; transition:border-color .2s;
     }
-    .pcard:hover { border-color:var(--a-bd); transform:translateY(-3px); }
+    .mission-card:hover { border-color:var(--ab); }
+    .mc-header {
+      padding:2rem 2rem 1.5rem;
+      display:grid; grid-template-columns:1fr auto; gap:1.5rem; align-items:start;
+      border-bottom:1px solid var(--line);
+    }
+    .mc-type {
+      display:inline-flex; align-items:center; gap:.4rem;
+      font-size:.68rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+      color:var(--accent2); background:var(--ag); border:1px solid var(--ab);
+      padding:.22rem .65rem; border-radius:4px; margin-bottom:.6rem;
+    }
+    .mc-title { font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:.35rem; }
+    .mc-context { font-size:.8rem; color:var(--sub); }
+    .mc-period {
+      font-family:var(--mono); font-size:.68rem; color:var(--accent2);
+      text-align:right; line-height:1.7; white-space:nowrap;
+    }
 
-    .pcard-preview {
-      height:160px; background:var(--s2);
+    .mc-body { padding:1.5rem 2rem; }
+    .mc-desc { font-size:.85rem; color:var(--sub); line-height:1.8; margin-bottom:1.5rem; }
+    .mc-desc strong { color:var(--text); font-weight:500; }
+
+    .mc-tasks { margin-bottom:1.5rem; }
+    .mc-tasks-title { font-size:.72rem; font-weight:700; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.75rem; }
+    .mc-task {
+      display:flex; gap:.6rem; align-items:flex-start;
+      font-size:.82rem; color:var(--sub); padding:.35rem 0;
+      border-bottom:1px solid var(--line);
+    }
+    .mc-task:last-child { border-bottom:none; }
+    .mc-task::before { content:'→'; color:var(--accent2); flex-shrink:0; font-size:.75rem; margin-top:.1rem; }
+
+    /* screenshots */
+    .mc-screens { margin-bottom:1.5rem; }
+    .mc-screens-title { font-size:.72rem; font-weight:700; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.75rem; }
+    .screens-row { display:flex; gap:.6rem; flex-wrap:wrap; }
+    .screen-placeholder {
+      width:120px; height:80px; border-radius:8px;
+      background:var(--s2); border:1px solid var(--line2);
       display:flex; align-items:center; justify-content:center;
-      font-size:2.5rem; border-bottom:1px solid var(--line);
-      position:relative; overflow:hidden;
+      font-size:.65rem; color:var(--muted); font-family:var(--mono);
+      cursor:pointer; transition:border-color .18s; flex-shrink:0;
+      overflow:hidden;
     }
-    .pcard-preview::after {
-      content:''; position:absolute; inset:0;
-      background:linear-gradient(135deg, rgba(124,111,247,.06) 0%, transparent 60%);
-    }
-
-    .pcard-body { padding:1.35rem; flex:1; display:flex; flex-direction:column; }
-    .pcard-meta { font-family:var(--mono); font-size:.65rem; color:var(--accent2); margin-bottom:.4rem; }
-    .pcard-title { font-size:.95rem; font-weight:700; color:#fff; margin-bottom:.5rem; }
-    .pcard-desc { font-size:.8rem; color:var(--sub); line-height:1.7; flex:1; margin-bottom:1rem; }
-    .pcard-foot { display:flex; justify-content:space-between; align-items:center; }
-    .pcard-tags { display:flex; gap:.3rem; flex-wrap:wrap; }
-    .pcard-link {
-      font-size:.72rem; font-weight:600; color:var(--muted);
-      text-decoration:none; transition:color .15s;
-    }
-    .pcard-link:hover { color:var(--accent2); }
-
-    /* certifs */
-    .certifs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem; margin-top:2rem; }
-    .certif-card {
-      background:var(--card); border:1px solid var(--line); border-radius:12px;
-      padding:1.25rem; display:flex; align-items:center; gap:.9rem;
-    }
-    .certif-ico { font-size:1.6rem; }
-    .certif-name { font-size:.84rem; font-weight:700; color:var(--text); }
-    .certif-org { font-size:.72rem; color:var(--sub); }
-    .certif-year {
-      margin-left:auto; font-family:var(--mono);
-      font-size:.65rem; color:var(--green);
-      background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.2);
-      padding:.2rem .5rem; border-radius:5px;
+    .screen-placeholder:hover { border-color:var(--ab); }
+    .screen-placeholder img { width:100%; height:100%; object-fit:cover; }
+    .screen-add {
+      width:120px; height:80px; border-radius:8px;
+      background:transparent; border:1px dashed var(--line2);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:.25rem; font-size:.62rem; color:var(--muted); font-family:var(--mono);
+      flex-shrink:0;
     }
 
-    /* ── COMPÉTENCES ─────────────────────── */
-    #competences { background:var(--bg); border-top:1px solid var(--line); }
+    .tags { display:flex; flex-wrap:wrap; gap:.35rem; }
+    .tag { font-size:.7rem; font-weight:500; padding:.22rem .6rem; border-radius:5px; }
+    .ta { background:var(--ag); color:var(--accent2); border:1px solid var(--ab); }
+    .tn { background:var(--s2); color:var(--muted); border:1px solid var(--line); }
+    .tg { background:rgba(34,197,94,.08); color:var(--green); border:1px solid rgba(34,197,94,.2); }
 
-    .comp-intro { font-size:.88rem; color:var(--sub); line-height:1.8; max-width:580px; margin-bottom:2.5rem; }
-
-    /* tech stack icons row */
-    .stack-row {
-      display:flex; flex-wrap:wrap; gap:.75rem; margin-bottom:3rem;
+    .mc-doc-link {
+      display:inline-flex; align-items:center; gap:.4rem;
+      font-size:.78rem; font-weight:600; color:var(--sub);
+      text-decoration:none; border:1px solid var(--line2); padding:.4rem .9rem;
+      border-radius:7px; margin-top:1rem; transition:all .18s;
     }
+    .mc-doc-link:hover { color:var(--accent2); border-color:var(--ab); background:var(--ag); }
+
+    /* lightbox */
+    .lb-overlay {
+      position:fixed; inset:0; background:rgba(0,0,0,.85); z-index:1000;
+      display:none; align-items:center; justify-content:center;
+      backdrop-filter:blur(6px);
+    }
+    .lb-overlay.open { display:flex; }
+    .lb-img { max-width:90vw; max-height:85vh; border-radius:10px; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+    .lb-close {
+      position:absolute; top:1.5rem; right:1.5rem;
+      width:36px; height:36px; border-radius:50%;
+      background:var(--card); border:1px solid var(--line2);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.1rem; color:var(--sub); cursor:pointer; transition:all .18s;
+    }
+    .lb-close:hover { color:var(--text); border-color:var(--muted); }
+
+    /* ── COMPÉTENCES ── */
+    #competences { background:var(--bg); }
+    .stack-row { display:flex; flex-wrap:wrap; gap:.65rem; margin-bottom:3rem; }
     .stack-item {
       display:flex; flex-direction:column; align-items:center; gap:.4rem;
       font-size:.65rem; font-weight:600; color:var(--sub);
       background:var(--card); border:1px solid var(--line);
-      border-radius:10px; padding:.75rem 1rem;
-      min-width:64px; transition:all .18s;
+      border-radius:10px; padding:.75rem 1rem; min-width:62px; transition:all .18s;
     }
-    .stack-item:hover { border-color:var(--a-bd); color:var(--text); }
-    .stack-item span { font-size:1.5rem; }
+    .stack-item:hover { border-color:var(--ab); color:var(--text); }
+    .stack-item span { font-size:1.4rem; }
 
-    /* BTS grid */
-    .bts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border-radius:16px; overflow:hidden; border:1px solid var(--line); }
-    .bts-cell {
-      background:var(--card); padding:1.5rem;
-      transition:background .18s;
+    .bts-grid {
+      display:grid; grid-template-columns:repeat(3,1fr);
+      gap:1px; background:var(--line); border-radius:16px; overflow:hidden; border:1px solid var(--line);
     }
+    .bts-cell { background:var(--card); padding:1.5rem; transition:background .18s; }
     .bts-cell:hover { background:var(--card2); }
-    .bts-num {
-      font-family:var(--mono); font-size:.65rem; color:var(--accent2);
-      margin-bottom:.5rem;
-    }
+    .bts-num { font-family:var(--mono); font-size:.65rem; color:var(--accent2); margin-bottom:.5rem; }
     .bts-title { font-size:.88rem; font-weight:700; color:#fff; margin-bottom:.9rem; }
     .bts-items { display:flex; flex-direction:column; gap:.3rem; }
-    .bts-item {
-      font-size:.76rem; color:var(--sub); line-height:1.5;
-      display:flex; gap:.5rem; align-items:flex-start;
-    }
+    .bts-item { font-size:.76rem; color:var(--sub); display:flex; gap:.5rem; align-items:flex-start; line-height:1.5; }
     .bts-item::before { content:'→'; color:var(--muted); flex-shrink:0; font-size:.7rem; margin-top:.1rem; }
 
-    /* ── CONTACT ─────────────────────────── */
-    #contact { background:var(--s1); border-top:1px solid var(--line); }
+    /* certifs */
+    .certifs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem; margin-top:3rem; }
+    .certif-card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1.25rem; display:flex; align-items:center; gap:.9rem; }
+    .certif-ico { font-size:1.5rem; }
+    .certif-name { font-size:.84rem; font-weight:700; color:var(--text); }
+    .certif-org { font-size:.72rem; color:var(--sub); }
+    .certif-year { margin-left:auto; font-family:var(--mono); font-size:.65rem; color:var(--green); background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.2); padding:.2rem .5rem; border-radius:5px; white-space:nowrap; }
 
+    /* ── CONTACT ── */
+    #contact { background:var(--s1); }
     .contact-box {
       background:var(--card); border:1px solid var(--line); border-radius:20px;
       padding:3.5rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem;
       position:relative; overflow:hidden;
     }
-    .contact-box::before {
-      content:''; position:absolute; width:350px; height:350px;
-      background:radial-gradient(circle, rgba(124,111,247,.1) 0%, transparent 65%);
-      top:-80px; right:-80px; pointer-events:none;
-    }
+    .contact-box::before { content:''; position:absolute; width:350px; height:350px; background:radial-gradient(circle, rgba(124,111,247,.1) 0%, transparent 65%); top:-80px; right:-80px; pointer-events:none; }
     .contact-title { font-size:1.8rem; font-weight:800; color:#fff; letter-spacing:-.03em; margin-bottom:.75rem; }
     .contact-sub { font-size:.88rem; color:var(--sub); line-height:1.8; margin-bottom:2rem; }
-    .contact-links { display:flex; flex-direction:column; gap:.6rem; }
-    .cl {
-      display:flex; align-items:center; justify-content:space-between;
-      padding:.85rem 1.1rem;
-      background:var(--s1); border:1px solid var(--line);
-      border-radius:11px; text-decoration:none; transition:all .2s;
-    }
-    .cl:hover { border-color:var(--a-bd); background:var(--a-glow); }
-    .cl-l { display:flex; align-items:center; gap:.75rem; }
-    .cl-ic {
-      width:36px; height:36px; background:var(--a-glow); border:1px solid var(--a-bd);
-      border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:.9rem;
-    }
-    .cl-name { font-size:.84rem; font-weight:600; color:var(--text); }
-    .cl-val { font-family:var(--mono); font-size:.68rem; color:var(--muted); }
-    .cl-arr { color:var(--muted); transition:all .2s; font-size:.85rem; }
-    .cl:hover .cl-arr { color:var(--accent2); transform:translateX(3px); }
-
-    /* cv section */
-    .cv-box {
-      margin-top:1.5rem; padding:1.25rem;
-      background:var(--s1); border:1px dashed var(--line2); border-radius:11px;
-      display:flex; align-items:center; justify-content:space-between; gap:1rem;
-    }
+    .cv-box { padding:1.25rem; background:var(--s1); border:1px dashed var(--line2); border-radius:11px; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
     .cv-txt { font-size:.82rem; color:var(--sub); }
     .cv-txt strong { color:var(--text); display:block; margin-bottom:.1rem; font-size:.88rem; }
+    .contact-links { display:flex; flex-direction:column; gap:.6rem; }
+    .cl { display:flex; align-items:center; justify-content:space-between; padding:.85rem 1.1rem; background:var(--s1); border:1px solid var(--line); border-radius:11px; text-decoration:none; transition:all .2s; }
+    .cl:hover { border-color:var(--ab); background:var(--ag); }
+    .cl-l { display:flex; align-items:center; gap:.75rem; }
+    .cl-ic { width:36px; height:36px; background:var(--ag); border:1px solid var(--ab); border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:.9rem; }
+    .cl-name { font-size:.84rem; font-weight:600; color:var(--text); }
+    .cl-val { font-family:var(--mono); font-size:.68rem; color:var(--muted); }
+    .cl-arr { color:var(--muted); transition:all .2s; }
+    .cl:hover .cl-arr { color:var(--accent2); transform:translateX(3px); }
 
-    /* ── FOOTER ──────────────────────────── */
-    footer {
-      border-top:1px solid var(--line); padding:1.5rem 3rem;
-      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
-      font-size:.73rem; color:var(--muted);
-    }
+    footer { border-top:1px solid var(--line); padding:1.5rem 3rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:.73rem; color:var(--muted); }
     footer a { color:var(--muted); text-decoration:none; }
     footer a:hover { color:var(--sub); }
 
@@ -397,365 +359,492 @@
     @media(max-width:900px){
       nav { padding:0 1.25rem; }
       .nav-links li:not(:last-child) { display:none; }
-      #hero, .section-wrap { padding-left:1.25rem; padding-right:1.25rem; }
+      #hero, .wrap { padding-left:1.25rem; padding-right:1.25rem; }
       #hero { flex-direction:column; gap:2.5rem; align-items:flex-start; padding-top:100px; }
       .hero-right { display:none; }
-      .about-grid, .stages-grid, .proj-panel.active, .contact-box { grid-template-columns:1fr; gap:2rem; }
-      .bts-grid { grid-template-columns:1fr 1fr; }
-      .certifs-grid { grid-template-columns:1fr 1fr; }
+      .pres-grid, .contact-box { grid-template-columns:1fr; gap:2.5rem; }
       .contact-box { padding:2rem; }
+      .bts-grid, .certifs-grid { grid-template-columns:1fr 1fr; }
+      .mc-header { grid-template-columns:1fr; }
+      .mc-period { text-align:left; }
       footer { padding:1.25rem; }
     }
-    @media(max-width:540px){
-      .bts-grid { grid-template-columns:1fr; }
-      .certifs-grid { grid-template-columns:1fr; }
-      .hero-stats { gap:1.5rem; }
-    }
+    @media(max-width:540px) { .bts-grid, .certifs-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lb" onclick="closeLb()">
+  <div class="lb-close" onclick="closeLb()">✕</div>
+  <img class="lb-img" id="lb-img" src="" alt="">
+</div>
+
+<!-- NAV -->
 <nav>
-  <div class="logo">Prénom <em>NOM</em></div>
+  <div class="nav-left">
+    <div class="logo">TC</div>
+    <span class="nav-name">Thomas Comin</span>
+  </div>
   <ul class="nav-links">
-    <li><a href="#about">Parcours</a></li>
-    <li><a href="#stage">Stages</a></li>
-    <li><a href="#projets">Projets</a></li>
+    <li><a href="#presentation">Profil</a></li>
+    <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#missions">Missions</a></li>
     <li><a href="#competences">Compétences</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-status">En formation · BTS SIO SLAM 2026</div>
-    <h1 class="hero-name">Bonjour, je suis<br><span class="hi">Prénom NOM</span> 👋</h1>
-    <p class="hero-title"><strong>Développeur web &amp; logiciel</strong> — BTS SIO option SLAM</p>
-    <p class="hero-desc">Étudiant passionné par le développement d'applications, basé à [Ta ville]. Curieux, autonome et toujours en train d'apprendre.</p>
+    <div class="hero-status">En formation · BTS SIO SLAM · Henri Wallon · 2026</div>
+    <h1 class="hero-name">Bonjour, je suis<br><span class="grad">Thomas Comin</span> 👋</h1>
+    <p class="hero-role"><strong>Développeur web &amp; logiciel</strong> — BTS SIO option SLAM</p>
+    <p class="hero-desc">Étudiant passionné par le développement d'applications, basé à Valenciennes. Curieux, autonome, avec déjà 2 stages chez <strong style="color:var(--text)">Altazion / Creo Ignem</strong>.</p>
     <div class="hero-btns">
-      <a href="#projets" class="btn btn-p">Voir mes projets</a>
-      <a href="#stage" class="btn btn-s">Mes stages →</a>
+      <a href="#missions" class="btn btn-p">Voir mes missions</a>
+      <a href="#parcours" class="btn btn-s">Mon parcours →</a>
       <a href="#" class="btn btn-s">↓ Mon CV</a>
     </div>
     <div class="hero-stats">
-      <div><div class="stat-n">2<em>×</em></div><div class="stat-l">Stages</div></div>
-      <div><div class="stat-n">5<em>+</em></div><div class="stat-l">Projets</div></div>
-      <div><div class="stat-n">2<em>ans</em></div><div class="stat-l">BTS SIO</div></div>
+      <div><div class="stat-n">2<em>×</em></div><div class="stat-l">Stages Altazion</div></div>
+      <div><div class="stat-n">10<em>+</em></div><div class="stat-l">Tests d'intégration</div></div>
+      <div><div class="stat-n">19<em>ans</em></div><div class="stat-l">Valenciennes</div></div>
     </div>
   </div>
   <div class="hero-right">
     <div class="avatar-wrap">
       👤
       <div class="avatar-badge">
-        <div class="avatar-badge-dot"></div>
+        <div class="abadge-dot"></div>
         <div>
-          <div class="avatar-badge-txt">En formation</div>
-          <div class="avatar-badge-sub">Disponible dès juin 2026</div>
+          <div class="abadge-txt">En formation</div>
+          <div class="abadge-sub">Disponible dès juin 2026</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── PARCOURS ── -->
-<section id="about">
-  <div class="section-wrap section-pad">
-    <div class="s-eyebrow r">Parcours</div>
-    <h2 class="s-title r">Mon parcours</h2>
-    <div class="about-grid">
-      <div class="r d1">
-        <div class="about-text">
-          <p>Je m'appelle <strong>Prénom NOM</strong>, étudiant en 2ème année de BTS SIO option <strong>SLAM</strong> au lycée <strong>[Ton lycée] · [Ta ville]</strong>.</p>
-          <p>Passionné par le développement logiciel depuis [X ans], j'aime créer des applications utiles et bien conçues. J'apprécie autant le côté technique que la réflexion autour de l'expérience utilisateur.</p>
-          <p>En dehors du code, je pratique <strong>[tes loisirs]</strong> et je fais de la veille techno régulièrement.</p>
-          <br>
-          <a href="#" class="btn btn-s" style="display:inline-flex">↓ Télécharger mon CV</a>
-        </div>
+<!-- PRÉSENTATION -->
+<section id="presentation">
+  <div class="wrap sp">
+    <div class="eyebrow r">Présentation</div>
+    <h2 class="stitle r">Qui suis-je <em>en quelques mots.</em></h2>
+    <div class="pres-grid">
+      <div class="about-text r d1">
+        <p>Je m'appelle <strong>Thomas Comin</strong>, j'ai <strong>19 ans</strong> et je suis en 2ème année de <strong>BTS SIO option SLAM</strong> au lycée <strong>Henri Wallon à Valenciennes</strong>.</p>
+        <p>Passionné par le développement logiciel, j'ai effectué mes <strong>deux stages chez Altazion (Creo Ignem)</strong>, une entreprise spécialisée dans les outils de commerce digital pour de grands clients comme IKEA, King Jouet ou MR Bricolage. Ces expériences m'ont permis de travailler sur des projets professionnels réels avec des technologies comme <strong>C#, Docker, Redis et les tests d'intégration</strong>.</p>
+        <p>Avant le BTS, j'ai fait un <strong>Bac Pro SN (Systèmes Numériques)</strong> pendant 3 ans au lycée Pierre Joseph Fontaine à Anzin, ce qui m'a donné des bases solides en systèmes et réseaux.</p>
+        <p>J'aime apprendre en pratiquant, relever des défis techniques, et comprendre en profondeur les projets sur lesquels je travaille.</p>
       </div>
-      <div class="r d2">
-        <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-year">2026</div>
-            <div class="tl-content">
-              <div class="tl-title">BTS SIO SLAM — 2ème année</div>
-              <div class="tl-sub">[Ton lycée] · [Ta ville]</div>
-              <span class="tl-badge">En cours</span>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-year">2025</div>
-            <div class="tl-content">
-              <div class="tl-title">Stage 2 · Développeur Web</div>
-              <div class="tl-sub">Nom de l'entreprise · 5 semaines</div>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-year">2024</div>
-            <div class="tl-content">
-              <div class="tl-title">BTS SIO SLAM — 1ère année</div>
-              <div class="tl-sub">[Ton lycée] · [Ta ville]</div>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-year">2024</div>
-            <div class="tl-content">
-              <div class="tl-title">Stage 1 · Développeur Junior</div>
-              <div class="tl-sub">Nom de l'entreprise · 5 semaines</div>
-            </div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-year">2024</div>
-            <div class="tl-content">
-              <div class="tl-title">Baccalauréat</div>
-              <div class="tl-sub">[Spécialité] · [Ton lycée]</div>
-            </div>
-          </div>
+      <div class="info-card r d2">
+        <div class="info-card-title">Informations</div>
+        <div class="info-row">
+          <div class="info-icon">👤</div>
+          <div><div class="info-label">Nom complet</div><div class="info-val">Thomas Comin</div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🎂</div>
+          <div><div class="info-label">Âge</div><div class="info-val">19 ans</div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div><div class="info-label">Localisation</div><div class="info-val">Valenciennes, France</div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🎓</div>
+          <div><div class="info-label">Formation</div><div class="info-val">BTS SIO option SLAM — 2ème année</div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🏫</div>
+          <div><div class="info-label">Établissement</div><div class="info-val">Lycée Henri Wallon · Valenciennes</div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">⚡</div>
+          <div><div class="info-label">Statut</div><div class="info-val">En formation · Disponible juin 2026</div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🌍</div>
+          <div><div class="info-label">Langues</div><div class="info-val">Français · Anglais</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── STAGES ── -->
-<section id="stage">
-  <div class="section-wrap section-pad">
-    <div class="s-eyebrow r">Expérience</div>
-    <h2 class="s-title r">Stages en entreprise</h2>
-    <div class="stages-grid">
+<!-- PARCOURS -->
+<section id="parcours">
+  <div class="wrap sp">
+    <div class="eyebrow r">Parcours</div>
+    <h2 class="stitle r">Mon parcours <em>académique.</em></h2>
+    <div class="timeline r d1">
 
-      <div class="stage-card r d1">
-        <div class="sc-top">
-          <div class="sc-ico">🏢</div>
-          <div class="sc-period">Jan. 2025 — Fév. 2025<br>5 semaines</div>
+      <div class="tl-item">
+        <div class="tl-year">2025 → 2026</div>
+        <div>
+          <div class="tl-title">BTS SIO option SLAM — 2ème année</div>
+          <div class="tl-sub">Lycée Henri Wallon · Valenciennes</div>
+          <div class="tl-sub" style="margin-top:.3rem">Approfondissement du développement d'applications, projets professionnels, stages en entreprise.</div>
+          <span class="tl-badge tl-badge-green">En cours</span>
         </div>
-        <div class="sc-title">Développeur Web — Stage 2</div>
-        <div class="sc-company">Nom de l'entreprise · Ville</div>
-        <p class="sc-desc">
-          Développement d'une application web interne de gestion des stocks. API REST en PHP, base MySQL, interface utilisateur complète.<br><br>
-          <strong>Mission principale :</strong> Refonte du module de facturation et ajout d'un tableau de bord avec statistiques en temps réel.
-        </p>
-        <div class="tags">
-          <span class="tag tag-a">PHP</span>
-          <span class="tag tag-a">MySQL</span>
-          <span class="tag tag-n">REST API</span>
-          <span class="tag tag-n">JavaScript</span>
-          <span class="tag tag-n">Git</span>
-        </div>
-        <a href="#" class="sc-link">📄 Rapport de stage ↗</a>
       </div>
 
-      <div class="stage-card r d2">
-        <div class="sc-top">
-          <div class="sc-ico">🏢</div>
-          <div class="sc-period">Mai 2024 — Juin 2024<br>5 semaines</div>
+      <div class="tl-item">
+        <div class="tl-year">Jan–Fév 2026</div>
+        <div>
+          <div class="tl-title">Stage 2 · Développeur — Tests d'intégration</div>
+          <div class="tl-sub">Altazion / Creo Ignem · Anzin · 6 semaines</div>
+          <div class="tl-sub" style="margin-top:.3rem">Implémentation de tests d'intégration sur le projet Scenario Commerce (e-commerce) avec Docker, TestContainers et C#.</div>
+          <span class="tl-badge">Stage 2ème année</span>
         </div>
-        <div class="sc-title">Développeur Junior — Stage 1</div>
-        <div class="sc-company">Nom de l'entreprise · Ville</div>
-        <p class="sc-desc">
-          Maintenance et évolution d'une application de gestion RH. Correction de bugs, nouvelles fonctionnalités, rédaction de documentation technique.<br><br>
-          <strong>Mission principale :</strong> Module d'export PDF des fiches et mise en place de tests unitaires JUnit.
-        </p>
-        <div class="tags">
-          <span class="tag tag-a">Java</span>
-          <span class="tag tag-a">PostgreSQL</span>
-          <span class="tag tag-n">JUnit</span>
-          <span class="tag tag-n">Maven</span>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">2024 → 2025</div>
+        <div>
+          <div class="tl-title">BTS SIO option SLAM — 1ère année</div>
+          <div class="tl-sub">Lycée Henri Wallon · Valenciennes</div>
+          <div class="tl-sub" style="margin-top:.3rem">Découverte des fondamentaux : algorithmique, développement, bases de données, réseaux et gestion de projet.</div>
         </div>
-        <a href="#" class="sc-link">📄 Rapport de stage ↗</a>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">Mai–Juin 2025</div>
+        <div>
+          <div class="tl-title">Stage 1 · Développeur — Unified Stock</div>
+          <div class="tl-sub">Altazion / Creo Ignem · Anzin · 4 semaines</div>
+          <div class="tl-sub" style="margin-top:.3rem">Développement de CRUDs (Warehouses, Articles, ArtRefs) avec Redis, Docker et tests unitaires en C#.</div>
+          <span class="tl-badge">Stage 1ère année</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">2021 → 2024</div>
+        <div>
+          <div class="tl-title">Bac Pro SN — Systèmes Numériques</div>
+          <div class="tl-sub">Lycée Pierre Joseph Fontaine · Anzin · 3 ans</div>
+          <div class="tl-sub" style="margin-top:.3rem">Formation en systèmes numériques, réseaux, électronique et informatique industrielle.</div>
+          <span class="tl-badge">Obtenu</span>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ── PROJETS ── -->
-<section id="projets">
-  <div class="section-wrap section-pad">
-    <div class="s-eyebrow r">Réalisations</div>
-    <h2 class="s-title r">Mes projets</h2>
+<!-- MISSIONS -->
+<section id="missions">
+  <div class="wrap sp">
+    <div class="eyebrow r">Expériences &amp; Projets</div>
+    <h2 class="stitle r">Missions <em>professionnelles.</em></h2>
 
-    <div class="proj-tabs r">
-      <button class="proj-tab active" onclick="switchTab('scolaire',this)">🎓 Scolaires</button>
-      <button class="proj-tab" onclick="switchTab('stage',this)">🏢 Stages</button>
-      <button class="proj-tab" onclick="switchTab('perso',this)">⚡ Personnels</button>
+    <div class="tabs r">
+      <button class="tab-btn active" onclick="switchTab('stage2',this)">🏢 Stage 2 — 2026</button>
+      <button class="tab-btn" onclick="switchTab('stage1',this)">🏢 Stage 1 — 2025</button>
+      <button class="tab-btn" onclick="switchTab('scolaire',this)">🎓 Projets scolaires</button>
     </div>
 
-    <!-- SCOLAIRES -->
-    <div class="proj-panel active" id="tab-scolaire">
-      <div class="pcard r">
-        <div class="pcard-preview">📚</div>
-        <div class="pcard-body">
-          <div class="pcard-meta">AP Mission · 2025</div>
-          <div class="pcard-title">Gestion de bibliothèque</div>
-          <p class="pcard-desc">Application web CRUD — emprunt/retour de livres, gestion adhérents, recherche avancée. Projet fil rouge 2ème année.</p>
-          <div class="pcard-foot">
-            <div class="pcard-tags">
-              <span class="tag tag-a">PHP/MySQL</span>
-              <span class="tag tag-n">MVC</span>
-            </div>
-            <a href="#" class="pcard-link">GitHub ↗</a>
-          </div>
-        </div>
-      </div>
-      <div class="pcard r d1">
-        <div class="pcard-preview">🛒</div>
-        <div class="pcard-body">
-          <div class="pcard-meta">AP Mission · 2024</div>
-          <div class="pcard-title">Site e-commerce</div>
-          <p class="pcard-desc">Boutique en ligne avec panier, paiement simulé, espace client et back-office d'administration complet.</p>
-          <div class="pcard-foot">
-            <div class="pcard-tags">
-              <span class="tag tag-a">PHP</span>
-              <span class="tag tag-n">JavaScript</span>
-            </div>
-            <a href="#" class="pcard-link">GitHub ↗</a>
-          </div>
-        </div>
-      </div>
-      <div class="pcard r d2">
-        <div class="pcard-preview">📱</div>
-        <div class="pcard-body">
-          <div class="pcard-meta">Projet · 2024</div>
-          <div class="pcard-title">App mobile To-do List</div>
-          <p class="pcard-desc">Application Android en Java avec gestion de tâches, notifications et synchronisation SQLite locale.</p>
-          <div class="pcard-foot">
-            <div class="pcard-tags">
-              <span class="tag tag-a">Java</span>
-              <span class="tag tag-n">Android</span>
-            </div>
-            <a href="#" class="pcard-link">GitHub ↗</a>
-          </div>
-        </div>
-      </div>
-      <div class="pcard r d3">
-        <div class="pcard-preview">🗄️</div>
-        <div class="pcard-body">
-          <div class="pcard-meta">Projet BDD · 2024</div>
-          <div class="pcard-title">Modélisation médicale</div>
-          <p class="pcard-desc">Conception MCD/MLD Merise et implémentation SQL complète pour un cabinet médical fictif.</p>
-          <div class="pcard-foot">
-            <div class="pcard-tags">
-              <span class="tag tag-a">SQL</span>
-              <span class="tag tag-n">Merise</span>
-            </div>
-            <a href="#" class="pcard-link">Voir ↗</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- ===== STAGE 2 — 2026 ===== -->
+    <div class="tab-panel active" id="tab-stage2">
 
-    <!-- STAGES -->
-    <div class="proj-panel" id="tab-stage">
-      <div class="pcard r">
-        <div class="pcard-preview">🏢</div>
-        <div class="pcard-body">
-          <div class="pcard-meta">Stage 2 · Jan–Fév 2025</div>
-          <div class="pcard-title">Application gestion des stocks</div>
-          <p class="pcard-desc">Application web interne avec API REST, tableau de bord statistiques et module de facturation.</p>
-          <div class="pcard-foot">
-            <div class="pcard-tags">
-              <span class="tag tag-a">PHP</span>
-              <span class="tag tag-n">MySQL</span>
-            </div>
-            <a href="#" class="pcard-link">Rapport ↗</a>
-          </div>
-        </div>
-      </div>
-      <div class="pcard r d1">
-        <div class="pcard-preview">🏢</div>
-        <div class="pcard-body">
-          <div class="pcard-meta">Stage 1 · Mai–Juin 2024</div>
-          <div class="pcard-title">Module export PDF — RH</div>
-          <p class="pcard-desc">Développement d'un module d'export PDF et de tests unitaires pour une application RH en Java.</p>
-          <div class="pcard-foot">
-            <div class="pcard-tags">
-              <span class="tag tag-a">Java</span>
-              <span class="tag tag-n">JUnit</span>
-            </div>
-            <a href="#" class="pcard-link">Rapport ↗</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PERSO -->
-    <div class="proj-panel" id="tab-perso">
-      <div class="pcard r" style="grid-column:1/-1">
-        <div class="pcard-preview" style="height:120px">⚡</div>
-        <div class="pcard-body">
-          <div class="pcard-meta">Projet personnel · 2025</div>
-          <div class="pcard-title">Ajoute tes projets perso ici</div>
-          <p class="pcard-desc">Tu peux mettre ici des projets que tu as faits en dehors de l'école — petits sites, scripts, jeux, outils…</p>
-          <div class="pcard-foot">
-            <div class="pcard-tags"><span class="tag tag-n">À venir</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CERTIFS -->
-    <div style="margin-top:2.5rem" class="r">
-      <div class="s-eyebrow" style="margin-bottom:1rem">Certifications</div>
-      <div class="certifs-grid">
-        <div class="certif-card">
-          <div class="certif-ico">🎓</div>
+      <!-- Contexte entreprise -->
+      <div class="mission-card r">
+        <div class="mc-header">
           <div>
-            <div class="certif-name">Pix</div>
-            <div class="certif-org">PixGIP · pix.fr</div>
+            <div class="mc-type">🏢 Entreprise</div>
+            <div class="mc-title">Altazion / Creo Ignem</div>
+            <div class="mc-context">Commerce digital · Outils e-commerce B2B · <a href="https://www.altazion-services.com/" target="_blank" style="color:var(--accent2)">altazion-services.com</a></div>
           </div>
-          <div class="certif-year">2025 ✓</div>
+          <div class="mc-period">Jan. 2026 — Fév. 2026<br>Stage 2ème année</div>
         </div>
-        <div class="certif-card">
-          <div class="certif-ico">🛡️</div>
-          <div>
-            <div class="certif-name">SecNumAcadémie</div>
-            <div class="certif-org">ANSSI</div>
-          </div>
-          <div class="certif-year">2024 ✓</div>
-        </div>
-        <div class="certif-card" style="border-style:dashed">
-          <div class="certif-ico">➕</div>
-          <div>
-            <div class="certif-name">À compléter</div>
-            <div class="certif-org">Tes autres certifs</div>
+        <div class="mc-body">
+          <p class="mc-desc">Altazion (anciennement Creo Ignem, fondée en 2004) est une entreprise spécialisée dans le développement d'outils de commerce digital pour de grandes entreprises françaises : <strong>IKEA, King Jouet, MR Bricolage</strong>. Ils développent des solutions e-commerce, des bornes en magasin (style McDonald's), et des outils pour vendeurs. Clients pratiquement tous français.</p>
+          <div class="tags">
+            <span class="tag ta">C# / .NET</span>
+            <span class="tag ta">Docker</span>
+            <span class="tag ta">TestContainers</span>
+            <span class="tag tn">Postman</span>
+            <span class="tag tn">Azure DevOps</span>
+            <span class="tag tn">VS Code</span>
           </div>
         </div>
       </div>
+
+      <!-- Mission principale : tests d'intégration -->
+      <div class="mission-card r d1">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">⚙️ Mission principale</div>
+            <div class="mc-title">Tests d'intégration — Projet Scenario Commerce</div>
+            <div class="mc-context">Projet e-commerce complet · API panier, catalogue, livraison</div>
+          </div>
+          <div class="mc-period">Jan. 2026 → Fév. 2026<br>6 semaines</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">
+            Ma mission principale était d'implémenter <strong>10+ tests d'intégration</strong> sur le projet "Scenario Commerce", un projet C# qui simule toutes les fonctionnalités d'un e-commerce classique (catalogue, panier, livraison, coupons, etc.).<br><br>
+            J'ai travaillé avec <strong>Docker et TestContainers</strong> pour isoler les tests dans des conteneurs, lu et appliqué la documentation TEST_INTEGRATION.md, et utilisé <strong>GitHub Copilot</strong> comme aide tout en veillant à comprendre chaque ligne générée.
+          </p>
+          <div class="mc-tasks">
+            <div class="mc-tasks-title">Tests implémentés</div>
+            <div class="mc-task"><strong>ProductSearchAndFilterScenarioTest</strong> — Recherches textuelles, pagination, application de filtres et facettes (✅ terminé en priorité n°1)</div>
+            <div class="mc-task"><strong>ProductDetailsAndAvailabilityScenarioTest</strong> — Détails produit + endpoint disponibilité web/magasins (priorité n°2)</div>
+            <div class="mc-task"><strong>CartManagementScenarioTest</strong> — Ajout/suppression/modification de quantités, calcul des totaux (Phase 2)</div>
+            <div class="mc-task"><strong>CartPromotionsScenarioTest</strong> — Application/retrait de coupons, calcul des remises</div>
+            <div class="mc-task"><strong>CartValidationAndShippingScenarioTest</strong> — Validation panier, choix mode livraison, frais</div>
+            <div class="mc-task"><strong>PickupPointSelectionScenarioTest</strong> — Recherche points relais, sélection retrait en magasin</div>
+            <div class="mc-task"><strong>CompleteOrderFlowScenarioTest</strong> — Scénario end-to-end complet (session → recherche → panier → livraison → validation)</div>
+          </div>
+          <div class="mc-screens">
+            <div class="mc-screens-title">Captures d'écran <span style="color:var(--muted);font-weight:400">(glisse tes screens ici)</span></div>
+            <div class="screens-row">
+              <div class="screen-placeholder">screen 1</div>
+              <div class="screen-placeholder">screen 2</div>
+              <div class="screen-placeholder">screen 3</div>
+              <div class="screen-add">＋<span>Ajouter</span></div>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag ta">C#</span>
+            <span class="tag ta">TestContainers</span>
+            <span class="tag ta">Docker</span>
+            <span class="tag tn">xUnit</span>
+            <span class="tag tn">GitHub Copilot</span>
+            <span class="tag tn">Azure</span>
+          </div>
+          <a href="#" class="mc-doc-link">📄 Rapport de stage ↗</a>
+        </div>
+      </div>
+
     </div>
 
+    <!-- ===== STAGE 1 — 2025 ===== -->
+    <div class="tab-panel" id="tab-stage1">
+
+      <div class="mission-card r">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">🏢 Entreprise</div>
+            <div class="mc-title">Altazion / Creo Ignem</div>
+            <div class="mc-context">Commerce digital · Anzin · <a href="https://www.altazion-services.com/" target="_blank" style="color:var(--accent2)">altazion-services.com</a></div>
+          </div>
+          <div class="mc-period">Mai 2025 — Juin 2025<br>Stage 1ère année</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">Premier stage chez Altazion, j'ai travaillé sur le module <strong>Unified Stock</strong> — un système de gestion de stocks unifié utilisant <strong>Redis</strong> comme base de données clé-valeur, avec une architecture API en C# (.NET).</p>
+          <div class="tags">
+            <span class="tag ta">C# / .NET</span>
+            <span class="tag ta">Redis</span>
+            <span class="tag ta">Docker</span>
+            <span class="tag tn">Swagger</span>
+            <span class="tag tn">VS Code</span>
+            <span class="tag tn">Git</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mission-card r d1">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">⚙️ Mission — Semaine 1</div>
+            <div class="mc-title">Découverte Redis &amp; Docker · Warehouses CRUD</div>
+            <div class="mc-context">Unified Stock · Module gestion des entrepôts</div>
+          </div>
+          <div class="mc-period">26 mai → 30 mai 2025</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">Prise en main de l'environnement : configuration du poste, découverte de <strong>Redis</strong> (types String, List, Hash…), Docker, et du projet Orchestrator. Développement du CRUD complet pour les <strong>Warehouses</strong> (entrepôts) avec BLL, Controller et tests unitaires.</p>
+          <div class="mc-tasks">
+            <div class="mc-tasks-title">Réalisations</div>
+            <div class="mc-task">Recherche et prise en main de Redis, Docker, TestContainers</div>
+            <div class="mc-task">Implémentation <strong>Delete une seule Warehouse</strong>, <strong>Delete toutes les Warehouses</strong>, <strong>Upsert plusieurs Warehouses</strong></div>
+            <div class="mc-task">BLL + Controller complets pour les Warehouses</div>
+            <div class="mc-task">Tests en Swagger (Postman refusait l'authentification)</div>
+          </div>
+          <div class="mc-screens">
+            <div class="mc-screens-title">Captures d'écran</div>
+            <div class="screens-row">
+              <div class="screen-placeholder">screen 1</div>
+              <div class="screen-placeholder">screen 2</div>
+              <div class="screen-add">＋<span>Ajouter</span></div>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag ta">C#</span><span class="tag ta">Redis</span><span class="tag ta">Docker</span><span class="tag tn">Swagger</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mission-card r d2">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">⚙️ Mission — Semaines 2–3</div>
+            <div class="mc-title">Articles CRUD + Tests unitaires</div>
+            <div class="mc-context">Unified Stock · Module gestion des articles</div>
+          </div>
+          <div class="mc-period">2 juin → 13 juin 2025</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">Implémentation complète des CRUDs pour les <strong>Articles</strong> et leurs références (ArtRefs). Développement du BLL, des Controllers, puis des tests unitaires complets pour chaque méthode.</p>
+          <div class="mc-tasks">
+            <div class="mc-tasks-title">Réalisations</div>
+            <div class="mc-task"><strong>Semaine 2 :</strong> CountArticles, GetAllArticlesBaseInfos, DeleteArticle, UpsertArticlesBasesInfos, UpsertArticleBase, DeleteArticles — BLL + Controller</div>
+            <div class="mc-task"><strong>Tests unitaires Articles :</strong> CountAllArt, GetAllArt, DeleteAllArt, DeleteAnArt, GetAArt, UpsertAnArt, UpsertMultipleArt, DeleteMultipleArt, GetArtByRef, CheckIfArtExist</div>
+            <div class="mc-task"><strong>Semaine 3 :</strong> Module ArtRefs — Bll, Controller (Get, Post, Delete), tests unitaires complets</div>
+            <div class="mc-task">Découverte des Lambda expressions, comprendre la différence tests unitaires vs tests d'intégration (Mocker)</div>
+          </div>
+          <div class="mc-screens">
+            <div class="mc-screens-title">Captures d'écran</div>
+            <div class="screens-row">
+              <div class="screen-placeholder">screen 1</div>
+              <div class="screen-placeholder">screen 2</div>
+              <div class="screen-placeholder">screen 3</div>
+              <div class="screen-add">＋<span>Ajouter</span></div>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag ta">C#</span><span class="tag ta">xUnit</span><span class="tag tn">Lambda</span><span class="tag tn">Git</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mission-card r d3">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">✅ Finalisation — Semaine 4</div>
+            <div class="mc-title">Unified Stock finalisé · PR &amp; livraison</div>
+            <div class="mc-context">Unified Stock · Livraison finale</div>
+          </div>
+          <div class="mc-period">16 juin → 20 juin 2025</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">Finalisation du module Unified Stock : vérification de l'ensemble du code, ajout des counts avant/après chaque test (upsert/delete), push et PR. <strong>Tous les items sont terminés.</strong></p>
+          <div class="mc-tasks">
+            <div class="mc-tasks-title">Réalisations finales</div>
+            <div class="mc-task">Tests unitaires ArtRefs complets et vérifiés</div>
+            <div class="mc-task">Ajout des Count systématiques avant/après chaque test</div>
+            <div class="mc-task">Nettoyage du code, rangement, suppression des controllers inutiles</div>
+            <div class="mc-task">Push final, Pull Request créée, livret de stage complété</div>
+            <div class="mc-task"><strong>Unified Stock 100% finalisé</strong></div>
+          </div>
+          <div class="tags">
+            <span class="tag tg">✅ Livré</span><span class="tag ta">Git</span><span class="tag tn">Azure DevOps</span>
+          </div>
+          <a href="#" class="mc-doc-link">📄 Rapport de stage ↗</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== PROJETS SCOLAIRES ===== -->
+    <div class="tab-panel" id="tab-scolaire">
+
+      <div class="mission-card r">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">🎓 Projet AP — GSB</div>
+            <div class="mc-title">Application de gestion des congés — GSB</div>
+            <div class="mc-context">Projet AP · BTS SIO SLAM · En groupe avec Lucas Cornu</div>
+          </div>
+          <div class="mc-period">2025<br>Projet scolaire</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">
+            Application Windows de gestion des demandes de congé des praticiens pour le laboratoire fictif GSB. Deux rôles : <strong>praticien</strong> (soumettre une demande) et <strong>administrateur RH</strong> (accepter/refuser). Connexion sécurisée, notifications à la connexion, vérification automatique du solde de congés.
+          </p>
+          <div class="mc-screens">
+            <div class="mc-screens-title">Captures d'écran</div>
+            <div class="screens-row">
+              <div class="screen-placeholder">screen 1</div>
+              <div class="screen-placeholder">screen 2</div>
+              <div class="screen-placeholder">screen 3</div>
+              <div class="screen-add">＋<span>Ajouter</span></div>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag ta">Java</span><span class="tag ta">MySQL</span><span class="tag tn">Swing</span><span class="tag tn">JDBC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mission-card r d1">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">🎓 Projet AP</div>
+            <div class="mc-title">Application mobile</div>
+            <div class="mc-context">Projet BTS SIO SLAM · Développement mobile</div>
+          </div>
+          <div class="mc-period">2024–2025<br>Projet scolaire</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">Développement d'une application mobile dans le cadre des travaux pratiques, avec connexion à une API REST.</p>
+          <div class="mc-screens">
+            <div class="mc-screens-title">Captures d'écran</div>
+            <div class="screens-row">
+              <div class="screen-placeholder">screen 1</div>
+              <div class="screen-placeholder">screen 2</div>
+              <div class="screen-add">＋<span>Ajouter</span></div>
+            </div>
+          </div>
+          <div class="tags">
+            <span class="tag ta">Flutter</span><span class="tag ta">Dart</span><span class="tag tn">API REST</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mission-card r d2">
+        <div class="mc-header">
+          <div>
+            <div class="mc-type">🎓 Projet scolaire</div>
+            <div class="mc-title">Site web portfolio</div>
+            <div class="mc-context">Projet BTS SIO SLAM</div>
+          </div>
+          <div class="mc-period">2025–2026<br>Projet scolaire</div>
+        </div>
+        <div class="mc-body">
+          <p class="mc-desc">Création de ce portfolio pour présenter mes compétences, mon parcours et mes réalisations dans le cadre de ma formation BTS SIO SLAM.</p>
+          <div class="tags">
+            <span class="tag ta">HTML</span><span class="tag ta">CSS</span><span class="tag tn">JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- ── COMPÉTENCES ── -->
+<!-- COMPÉTENCES -->
 <section id="competences">
-  <div class="section-wrap section-pad">
-    <div class="s-eyebrow r">Référentiel BTS SIO</div>
-    <h2 class="s-title r">Compétences &amp; Stack</h2>
+  <div class="wrap sp">
+    <div class="eyebrow r">Référentiel BTS SIO</div>
+    <h2 class="stitle r">Compétences <em>techniques.</em></h2>
 
     <div class="stack-row r d1">
       <div class="stack-item"><span>🌐</span>HTML</div>
       <div class="stack-item"><span>🎨</span>CSS</div>
       <div class="stack-item"><span>⚡</span>JavaScript</div>
-      <div class="stack-item"><span>⚛️</span>React</div>
+      <div class="stack-item"><span>🔷</span>C#</div>
       <div class="stack-item"><span>🐘</span>PHP</div>
-      <div class="stack-item"><span>🔴</span>Laravel</div>
       <div class="stack-item"><span>☕</span>Java</div>
       <div class="stack-item"><span>🐍</span>Python</div>
       <div class="stack-item"><span>🗄️</span>MySQL</div>
+      <div class="stack-item"><span>🔴</span>Redis</div>
+      <div class="stack-item"><span>🐳</span>Docker</div>
       <div class="stack-item"><span>🐙</span>Git</div>
       <div class="stack-item"><span>🐧</span>Linux</div>
-      <div class="stack-item"><span>🐳</span>Docker</div>
+      <div class="stack-item"><span>📱</span>Flutter</div>
+      <div class="stack-item"><span>🔬</span>xUnit</div>
     </div>
 
-    <div class="s-eyebrow r" style="margin-bottom:1.25rem">Grille de compétences</div>
+    <div class="eyebrow r" style="margin-bottom:1.25rem">Grille de compétences BTS SIO</div>
     <div class="bts-grid r d1">
       <div class="bts-cell">
         <div class="bts-num">B1 · 01</div>
         <div class="bts-title">Gérer le patrimoine informatique</div>
         <div class="bts-items">
-          <div class="bts-item">Recenser et identifier les ressources</div>
+          <div class="bts-item">Recenser et identifier les ressources numériques</div>
           <div class="bts-item">Exploiter normes et référentiels</div>
           <div class="bts-item">Gérer les sauvegardes</div>
           <div class="bts-item">Vérifier les niveaux d'habilitation</div>
@@ -774,7 +863,7 @@
         <div class="bts-num">B1 · 03</div>
         <div class="bts-title">Développer la présence en ligne</div>
         <div class="bts-items">
-          <div class="bts-item">Valoriser l'image sur le web</div>
+          <div class="bts-item">Valoriser l'image sur les médias numériques</div>
           <div class="bts-item">Référencer les services en ligne</div>
           <div class="bts-item">Faire évoluer un site web</div>
         </div>
@@ -783,9 +872,9 @@
         <div class="bts-num">B2 · 04</div>
         <div class="bts-title">Travailler en mode projet</div>
         <div class="bts-items">
-          <div class="bts-item">Analyser les objectifs</div>
+          <div class="bts-item">Analyser les objectifs et modalités</div>
           <div class="bts-item">Planifier les activités</div>
-          <div class="bts-item">Évaluer les indicateurs</div>
+          <div class="bts-item">Évaluer les indicateurs de suivi</div>
         </div>
       </div>
       <div class="bts-cell">
@@ -801,24 +890,43 @@
         <div class="bts-num">B2 · 06</div>
         <div class="bts-title">Développement professionnel</div>
         <div class="bts-items">
-          <div class="bts-item">Environnement d'apprentissage</div>
-          <div class="bts-item">Veille informationnelle</div>
+          <div class="bts-item">Environnement d'apprentissage personnel</div>
+          <div class="bts-item">Veille informationnelle active</div>
           <div class="bts-item">Gérer son identité professionnelle</div>
         </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="eyebrow r" style="margin-top:3.5rem; margin-bottom:1.25rem">Certifications</div>
+    <div class="certifs-grid r d1">
+      <div class="certif-card">
+        <div class="certif-ico">🎓</div>
+        <div><div class="certif-name">Pix</div><div class="certif-org">PixGIP · pix.fr</div></div>
+        <div class="certif-year">2025 ✓</div>
+      </div>
+      <div class="certif-card">
+        <div class="certif-ico">🛡️</div>
+        <div><div class="certif-name">SecNumAcadémie</div><div class="certif-org">ANSSI</div></div>
+        <div class="certif-year">2024 ✓</div>
+      </div>
+      <div class="certif-card" style="border-style:dashed">
+        <div class="certif-ico">➕</div>
+        <div><div class="certif-name">À compléter</div><div class="certif-org">Tes autres certifs</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
+<!-- CONTACT -->
 <section id="contact">
-  <div class="section-wrap section-pad">
-    <div class="s-eyebrow r">Contact</div>
-    <h2 class="s-title r">Entrons en contact</h2>
+  <div class="wrap sp">
+    <div class="eyebrow r">Contact</div>
+    <h2 class="stitle r">Me contacter <em>facilement.</em></h2>
     <div class="contact-box r d1">
       <div>
-        <div class="contact-title">Parlons de ton projet 👋</div>
-        <p class="contact-sub">Disponible pour des opportunités de stage, d'alternance, ou simplement pour échanger. N'hésite pas !</p>
+        <div class="contact-title">Parlons ensemble 👋</div>
+        <p class="contact-sub">Une question, une opportunité de stage ou d'alternance ? Je suis disponible et ouvert à toute discussion. N'hésitez pas à me contacter !</p>
         <div class="cv-box">
           <div class="cv-txt">
             <strong>Mon curriculum vitæ</strong>
@@ -828,10 +936,10 @@
         </div>
       </div>
       <div class="contact-links">
-        <a href="mailto:ton.email@example.com" class="cl">
+        <a href="mailto:thomas.comin@example.com" class="cl">
           <div class="cl-l">
             <div class="cl-ic">✉️</div>
-            <div><div class="cl-name">Email</div><div class="cl-val">ton.email@example.com</div></div>
+            <div><div class="cl-name">Email</div><div class="cl-val">thomas.comin@example.com</div></div>
           </div>
           <span class="cl-arr">→</span>
         </a>
@@ -842,10 +950,10 @@
           </div>
           <span class="cl-arr">→</span>
         </a>
-        <a href="https://linkedin.com/in/ton-profil" target="_blank" class="cl">
+        <a href="https://linkedin.com/in/thomas-comin" target="_blank" class="cl">
           <div class="cl-l">
             <div class="cl-ic">💼</div>
-            <div><div class="cl-name">LinkedIn</div><div class="cl-val">linkedin.com/in/ton-profil</div></div>
+            <div><div class="cl-name">LinkedIn</div><div class="cl-val">linkedin.com/in/thomas-comin</div></div>
           </div>
           <span class="cl-arr">→</span>
         </a>
@@ -854,17 +962,16 @@
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
-  <span>© 2025 Prénom NOM · BTS SIO SLAM</span>
+  <span>© 2026 Thomas Comin · BTS SIO SLAM · Lycée Henri Wallon · Valenciennes</span>
   <span>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></span>
 </footer>
 
 <script>
-  // Reveal on scroll
+  // Scroll reveal
   const obs = new IntersectionObserver(e => {
     e.forEach(x => { if (x.isIntersecting) x.target.classList.add('on'); });
-  }, { threshold: 0.07 });
+  }, { threshold: 0.06 });
   document.querySelectorAll('.r').forEach(el => obs.observe(el));
 
   // Active nav
@@ -876,13 +983,28 @@
     navAs.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
   }, { passive:true });
 
-  // Project tabs
+  // Tabs
   function switchTab(id, btn) {
-    document.querySelectorAll('.proj-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.proj-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + id).classList.add('active');
     btn.classList.add('active');
   }
+
+  // Lightbox
+  function openLb(src) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lb').classList.add('open');
+  }
+  function closeLb() {
+    document.getElementById('lb').classList.remove('open');
+  }
+  document.querySelectorAll('.screen-placeholder').forEach(el => {
+    el.addEventListener('click', () => {
+      const img = el.querySelector('img');
+      if (img) openLb(img.src);
+    });
+  });
 </script>
 
 </body>
