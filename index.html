@@ -139,8 +139,9 @@
     .stitle { font-size:clamp(1.6rem,3vw,2.1rem); font-weight:800; letter-spacing:-.025em; color:#fff; margin-bottom:2.5rem; }
     .stitle em { font-style:italic; color:var(--accent2); }
 
-    .r { opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
-    .r.on { opacity:1; transform:none; }
+    .r { opacity:1; transform:none; transition:opacity .5s ease, transform .5s ease; }
+    .js-ready .r { opacity:0; transform:translateY(20px); }
+    .js-ready .r.on { opacity:1; transform:none; }
     .d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s} .d4{transition-delay:.32s}
 
     /* ── PRÉSENTATION ── */
@@ -1140,11 +1141,14 @@
   <span>Hébergé sur <a href="https://pages.github.com" target="_blank">GitHub Pages</a></span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
+  // Active reveal animations only when JS loads
+  document.body.classList.add('js-ready');
+
   // Scroll reveal
   const obs = new IntersectionObserver(e => {
     e.forEach(x => { if (x.isIntersecting) x.target.classList.add('on'); });
-  }, { threshold: 0.06 });
+  }, { threshold: 0.04, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.r').forEach(el => obs.observe(el));
 
   // Active nav
@@ -1161,4 +1165,23 @@
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + id).classList.add('active');
-    bt
+    btn.classList.add('active');
+  }
+
+  // Lightbox
+  function openLb(src) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lb').classList.add('open');
+  }
+  function closeLb() {
+    document.getElementById('lb').classList.remove('open');
+  }
+  document.querySelectorAll('.screen-placeholder').forEach(el => {
+    el.addEventListener('click', () => {
+      const img = el.querySelector('img');
+      if (img) openLb(img.src);
+    });
+  });
+</script>
+</body>
+</html>
